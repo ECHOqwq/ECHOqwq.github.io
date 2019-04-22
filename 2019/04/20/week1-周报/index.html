@@ -176,6 +176,8 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
+    <a href="https://github.com/ECHOqwq"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
@@ -311,6 +313,23 @@
     
 
     <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-留言板">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-newspaper-o"></i> <br>留言板</a>
 
   </li>
 
@@ -486,6 +505,39 @@
       
     
     
+      <div>
+        <div id="reward-container">
+  <div>Donate comment here</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/weixin.jpg" alt="水深真的一米六 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/zhifubao.jpg" alt="水深真的一米六 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
@@ -493,7 +545,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Week/" rel="tag"># Week</a>
+            <a href="/tags/Week/" rel="tag"><i class="fa fa-tag"></i> Week</a>
           
         </div>
       
@@ -535,6 +587,11 @@
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="[object Object]"></div>
+    </div>
 
   
 
@@ -731,6 +788,9 @@
 
 
 
+  
+  
+
 
 
 
@@ -747,6 +807,12 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/three/three.min.js"></script>
+
+  
+  <script src="/lib/three/canvas_lines.min.js"></script>
 
 
   
@@ -788,6 +854,21 @@
 
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/20/week1-周报/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
 
   
 
