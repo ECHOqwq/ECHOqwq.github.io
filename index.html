@@ -484,16 +484,19 @@
       
         
           
-            <p>这周学习了:<br>1.一点硬件方面最基础的知识。<br>2.同时加强了一点字符串。<br>3.还学了双向链表的建立及一些简单操作。<br>4.还学习了一点点单片机的基础知识。<br>5.学习了如何用python群发邮件。<br>下面附上双向链表的头插尾插以及一些简单操作的代码<br>typedef struct ARR<br>{<br>    struct ARR <em>front;<br>    int data;<br>    struct ARR </em>tail;<br>}*arr,node;</p>
-<p>arr CreatHead(void)<br>{<br>    int len;<br>    arr head=(arr)malloc(sizeof(node));<br>    head-&gt;front=head-&gt;tail=head;<br>    printf (“请输入链表的长度:”);<br>    scanf (“%d”,&amp;len);<br>    while (len)<br>    {<br>        arr current=(arr)malloc(sizeof(node));<br>        printf (“请输入数据:”);<br>        scanf (“%d”,&amp;current-&gt;data);<br>        current-&gt;front=head;<br>        current-&gt;tail=head-&gt;tail;<br>         head-&gt;tail-&gt;front=current;<br>        head-&gt;tail=current;<br>        len–;<br>    }<br>    return head;<br>}</p>
-<p>arr CreatTail(void)<br>{<br>    int len;<br>    arr head,end,current;<br>    head=end=(arr)malloc(sizeof(node));<br>    head-&gt;tail=end;<br>    end-&gt;front=head;<br>    end-&gt;tail=head;<br>    head-&gt;front=end;<br>    printf (“请输入链表的长度:”);<br>    scanf (“%d”,&amp;len);<br>    while (len)<br>    {<br>        current=(arr)malloc(sizeof(node));<br>        printf (“请输入数据:”);<br>        scanf (“%d”,&amp;current-&gt;data);<br>        current-&gt;front=end-&gt;front;<br>        current-&gt;tail=end;<br>        end-&gt;front-&gt;tail=current;<br>        end-&gt;front=current;<br>        len–;<br>    }<br>    return head;<br>}</p>
-<p>arr CreatTail(void)<br>{<br>    int len;<br>    arr head,pt,current;<br>    head=(arr)malloc(sizeof(node));<br>    head-&gt;front=NULL;<br>    head-&gt;tail=NULL;<br>    pt=head;<br>    printf (“请输入链表的长度:”);<br>    scanf (“%d”,&amp;len);<br>    while (len)<br>    {<br>        current=(arr)malloc(sizeof(node));<br>        printf (“请输入数据:”);<br>        scanf (“%d”,&amp;current-&gt;data);<br>        current-&gt;tail=pt-&gt;tail;<br>        current-&gt;front=pt;<br>        pt-&gt;tail=current;<br>        pt=current;<br>        len–;<br>    }<br>    current-&gt;tail=head;<br>    head-&gt;front=current;<br>    return head;<br>}</p>
-<p>void Insert(arr head)<br>{<br>    int data;<br>    arr current,pt;<br>    pt=current=(arr)malloc(sizeof(node));<br>    printf (“请输入你要插入的数据:”);<br>    scanf (“%d”,&amp;current-&gt;data);<br>    printf (“请输入你要插在哪个数据后面:”);<br>    scanf (“%d”,&amp;data);<br>    pt=head-&gt;tail;<br>    while (pt!=head)<br>    {<br>        if (pt-&gt;data==data)<br>        {<br>           current-&gt;front=pt;<br>           current-&gt;tail=pt-&gt;tail;<br>           pt-&gt;tail-&gt;front=current;<br>           pt-&gt;tail=current;<br>           return;<br>        }<br>        pt=pt-&gt;tail;<br>    }<br>    printf (“不存在该数据!\n”);<br>}</p>
-<p>void Delete(arr head)<br>{<br>    int data;<br>    printf (“请输入你要删除的数据:”);<br>    scanf (“%d”,&amp;data);<br>    arr pt=head-&gt;tail;<br>    while (pt!=head)<br>    {<br>        if (pt-&gt;data==data)<br>        {<br>            pt-&gt;front-&gt;tail=pt-&gt;tail;<br>            pt-&gt;tail-&gt;front=pt-&gt;front;<br>            return;<br>        }<br>        pt=pt-&gt;tail;<br>    }<br>    printf (“不存在该数据!\n”);<br>}</p>
-<p>void Output(arr head)<br>{<br>    arr pt=head-&gt;tail;<br>    while (pt!=head)<br>    {<br>        printf (“%d\n”,pt-&gt;data);<br>        pt=pt-&gt;tail;<br>    }<br>}</p>
-<p>int main (void)<br>{<br>    int data;<br>    arr head;<br>    head=CreatTail();<br>    Insert(head);<br>    Output(head);<br>    Delete(head);<br>    Output(head);<br>    return 0;<br>}<br>遇到的问题<br>1.字符串，感觉自己还是没理解透，所以没能很好地运用。<br>2.算法。感觉自己很多题也能做出来，但是代码太冗长，浪费太多内存了。<br>3.全英语的算法题看不懂。<br>总的代码应该敲了有1k行吧。</p>
-
+            <p>
+              这周学习了:1.一点硬件方面最基础的知识。2.同时加强了一点字符串。3.还学了双向链表的建立及一些简单操作。4.还学习了一点点单片机的基础知识。5.学习了如何用python群发邮件。下面附上双向链表的
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/20/week1-周报/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -634,17 +637,19 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/13/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
