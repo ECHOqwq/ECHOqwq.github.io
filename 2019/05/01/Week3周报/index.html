@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量 a.局部变量  方法或语句块内部定义的变量。  生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)  方法外部、类的内部定义的变量。  从属于对象，生命">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T11:08:41.992Z">
+<meta property="og:updated_time" content="2019-05-01T11:11:18.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week3">
 <meta name="twitter:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量 a.局部变量  方法或语句块内部定义的变量。  生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)  方法外部、类的内部定义的变量。  从属于对象，生命">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：19:08:41" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：19:11:18" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
             
 
             
@@ -501,14 +501,14 @@
 <p>a.局部变量<br>  方法或语句块内部定义的变量。<br>  生命周期是从声明位置开始到方法/语句块执行完毕为止。</p>
 <p>b.成员变量(实例变量)<br>  方法外部、类的内部定义的变量。<br>  从属于对象，生命周期随对象始终。<br>  注意：成员变量会自动初始化，对于数字类型自动赋为0，bool类型自动赋为false<br>c.静态变量(类变量)<br>  使用static定义。<br>  从属于类，生命周期伴随类始终，从类加载到卸载。</p>
 <pre><code>e.g:
-public class demo1{
-    int a;
-    static int c;
-    public static void main(String[] args){
-       int age;
-       int salary;
-    }
- }
+  public class demo1{
+      int a;
+      static int c;
+      public static void main(String[] args){
+         int age;
+         int salary;
+      }
+   }
  这里main为一个方法，里面定义的age、salary属于局部变量，a是一个成员变量，c是一个静态变量
 </code></pre></li>
 </ol>
