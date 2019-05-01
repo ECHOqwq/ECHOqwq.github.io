@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的内部定义的变量。 从属于对象，生命周期随对象始终">
+  <meta name="description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧这里就写一些java的基础(还没涉及到面向对象)  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习">
 <meta property="og:url" content="http://yoursite.com/2019/05/01/Java2/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的内部定义的变量。 从属于对象，生命周期随对象始终">
+<meta property="og:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧这里就写一些java的基础(还没涉及到面向对象)  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T12:01:41.374Z">
+<meta property="og:updated_time" content="2019-05-01T14:07:39.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习">
-<meta name="twitter:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的内部定义的变量。 从属于对象，生命周期随对象始终">
+<meta name="twitter:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧这里就写一些java的基础(还没涉及到面向对象)  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的">
 
 
 
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：20:01:41" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：22:07:39" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
             
 
             
@@ -494,7 +494,7 @@
       
 
       
-        <p>前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧</p>
+        <p>前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧<br>这里就写一些java的基础(还没涉及到面向对象)</p>
 <ol>
 <li>Java里的标识符规则采用了驼峰规则，即单词开头的字母大写</li>
 <li>里面的变量分为三类：局部变量、成员变量、静态变量<br>a.局部变量<pre><code>方法或语句块内部定义的变量。
@@ -547,11 +547,126 @@ System.out.println(bd1.equals(bd2));
 System.out.println(&apos;a&apos;+&apos;b&apos;); //输出195
 System.out.println(&apos;&apos;+&apos;a&apos;+&apos;b&apos;) //输出ab
 System.out.println(&apos;&apos;+&apos;a&apos;+&apos;\t&apos;+&apos;b&apos;) //输出a b
-</code></pre>7.二元运算符运算规则<br>整数运算:<pre><code>如果两个操作数有一个为long，结果为long
+</code></pre></3></2></1></li>
+<li>二元运算符运算规则<br>整数运算:<pre><code>如果两个操作数有一个为long，结果为long
 没有long时，结果为int
 如果两个操作数有一个是double，结果为double
 只有两个操作数都是float时，结果才为float
-</code></pre></3></2></1></li>
+</code></pre>取模规则:<pre><code>操作数可为浮点数，但一般使用整数
+余数符号和左边的操作数符号相同
+7%-3=1    -7%3=-1
+</code></pre></li>
+<li>字符串连接符:”+”<br>e.g<pre><code>String a=&quot;3&quot;;
+int b=4;
+int c=5;
+System.out.println(a+b); //34
+System.out.println(b+c+a); //93 (b先和c相加得到9，遇到字符串3变成93)
+注意应该区分char(参见第6点的注意3)
+</code></pre></li>
+<li>使用Scanner获取键盘输入(同C的scanf)<br>e.g<pre><code>import  java.util.Scanner;
+public class TestScanner {
+     public static void main(String[] args) {
+          Scanner  scanner =  new Scanner(System.in);
+          System.out.println(&quot;请输入名字：&quot;);
+          String  name =  scanner.nextLine(); //输入名字System.out.println(&quot;请输入你的爱好：&quot;);String  favor = scanner.nextLine();  //输入爱好
+          System.out.println(&quot;请输入你的年龄：&quot;);
+          int  age = scanner.nextInt(); //输入年龄
+          }
+}
+</code></pre></li>
+<li>简单介绍Math类<pre><code>1.java.lang包中的Math类提供了一些用于数学计算的方法
+2.Math.random()该方法用于产生一个0~1的double类型的随机数，不包括1
+  int i=(int)(6*Math.random()); //产生[0,5]之间的随机整数 
+3.Math.PI是圆周率
+4.Math.pow(a,b)是求a的b次方
+</code></pre></li>
+<li>for循环的一个注意点<pre><code>for (int i=0;i&lt;3;i++)
+  System.out.println(&quot;HAHA&quot;);
+这里的i出了for循环就不能再使用了，因为是在for循环里被定义的       
+</code></pre></li>
+<li>带标签的break和continue<pre><code>“标签”是指后面跟一个冒号的标识符，例如：“label:”。对Java来说唯一用到标签的地方是在循环语句之前。而在循环之前设置标签的唯一理由是：我们希望在其中嵌套另一个循环，由于break和continue关键字通常只中断当前循环，但若随同标签使用，它们就会中断到存在标签的地方。
+在 “goto有害”论中，最有问题的就是标签，而非goto， 随着标签在一个程序里数量的增多，产生错误的机会也越来越多。 但Java标签不会造成这方面的问题，因为它们的活动场所已被限死，不可通过特别的方式到处传递程序的控制权。由此也引出了一个有趣的问题：通过限制语句的能力，反而能使一项语言特性更加有用。
+</code></pre> e.g<pre><code>public class Test18 {
+     public static void main(String args[]) {
+          outer: for (int i = 101; i &lt; 150; i++) {
+               for (int j = 2; j &lt; i / 2; j++) {
+                    if (i % j == 0){
+                         continue outer;
+                         }
+                   }
+              System.out.print(i + &quot;  &quot;);
+         }
+    }
+}
+</code></pre></li>
+<li>语句块<pre><code>语句块(有时叫做复合语句)，是用花括号扩起的任意数量的简单Java语句。块确定了局部变量的作用域。块中的程序代码，作为一个整体，是要被一起执行的。块可以被嵌套在另一个块中，但是不能在两个嵌套的块内声明同名的变量。语句块可以使用外部的变量，而外部不能使用语句块中定义的变量，因为语句块中定义的变量作用域只限于语句块。
+</code></pre></li>
+<li>方法<pre><code>方法就是一段用来完成特定功能的代码片段。
+方法用于定义该类或该类的实例的行为特征和功能实现。 方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。
+</code></pre> 方法的调用方式：<pre><code>对象名.方法名(实参列表)
+</code></pre> 方法的详细说明<pre><code>&lt;1&gt; 形式参数：在方法声明时用于接收外界传入的数据。
+&lt;2&gt; 实参：调用方法时实际传给方法的数据。
+&lt;3&gt; 返回值：方法在执行完毕后返还给调用它的环境的数据。
+&lt;4&gt; 返回值类型：事先约定的返回值的数据类型，如无返回值，必须显示指定为为void。
+</code></pre> e.g<pre><code>public class Test20 {
+     /** main方法：程序的入口 */
+     public static void main(String[] args) {
+          int num1 = 10;
+          int num2 = 20;
+          //调用求和的方法：将num1与num2的值传给add方法中的n1与n2
+          // 求完和后将结果返回，用sum接收结果
+          int sum = add(num1, num2);
+          System.out.println(&quot;sum = &quot; + sum);//输出：sum = 30
+          //调用打印的方法：该方法没有返回值
+          print();
+          }
+          /** 求和的方法 */
+          public static int add(int n1, int n2) {
+               int sum = n1 + n2;
+               return sum;//使用return返回计算的结果
+          }
+          /** 打印的方法 */
+          public static void print() {
+               System.out.println(&quot;HAHA&quot;);
+          }
+}
+</code></pre></li>
+<li>方法的重载<pre><code>方法的重载是指一个类中可以定义多个方法名相同，但参数不同的方法。
+调用时，会根据不同的参数自动匹配对应的方法。
+</code></pre>   注意：<pre><code>&lt;1&gt; 只有返回值不同，不构成方法的重载
+    int a(String str){}  void a(String str){}
+&lt;2&gt; 只有形参的名称不同，不构成方法的重载
+    int a(String str){}  int a(String s){}
+</code></pre>   总:<pre><code>public static int add(int n1, int n2) {
+     int sum = n1 + n2;
+     return sum;
+}
+// 方法名相同，参数个数不同，构成重载
+public static int add(int n1, int n2, int n3) {
+     int sum = n1 + n2 + n3;
+     return sum;
+}
+// 方法名相同，参数类型不同，构成重载
+public static double add(double n1, int n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+// 方法名相同，参数顺序不同，构成重载
+public static double add(int n1, double n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+//编译错误：只有返回值不同，不构成方法的重载
+public static double add(int n1, int n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+//编译错误：只有参数名称不同，不构成方法的重载
+public static int add(int n2, int n1) {
+     double sum = n1 + n2;         
+     return sum;
+}  
+</code></pre></li>
 </ol>
 
       
