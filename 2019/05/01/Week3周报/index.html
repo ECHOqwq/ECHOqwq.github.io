@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的内部定义的变量。 从属于对象，生命周期随对象始终">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T11:17:09.515Z">
+<meta property="og:updated_time" content="2019-05-01T11:44:52.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week3">
 <meta name="twitter:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变量a.局部变量方法或语句块内部定义的变量。 生命周期是从声明位置开始到方法/语句块执行完毕为止。 b.成员变量(实例变量)方法外部、类的内部定义的变量。 从属于对象，生命周期随对象始终">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：19:17:09" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：19:44:52" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
             
 
             
@@ -514,6 +514,36 @@
   }
 这里main为一个方法，里面定义的age、salary属于局部变量，a是一个成员变量，c是一个静态变量
 </code></pre></li>
+<li>常量：不可更改的量<br>e.g:<pre><code>final double PI=3.14;
+</code></pre>整型常量的四种表示形式:<pre><code>十进制整数:99,-500
+八进制整数:015(以0开头)
+十六进制整数:0x15(以0x开头或0X开头)
+二进制整数:0b11011(以0b或0B开头)
+</code></pre></li>
+<li>命名规范：<pre><code>a.所有变量、方法、类名需见名知意
+b.类成员变量:首字母小写和驼峰原则:monthSalary
+c.局部变量:首字母小写和驼峰原则
+d.常量:大写字母和下划线:MAX_VALUE
+e.类名:首字母大写和驼峰原则:GoodMan
+f.方法名:首字母小写和驼峰原则:runRun()
+</code></pre></li>
+<li>数据类型分为基本数据类型和引用数据类型<br>a.基本数据类型<pre><code>数值型(又包括整数类型:byte&lt;1&gt;,short&lt;2&gt;,int&lt;4&gt;,long&lt;8&gt;和浮点类型:float&lt;4&gt;,double&lt;8&gt;)
+字符型:char&lt;2&gt;
+布尔型:boolean&lt;1位&gt;
+</code></pre>b.引用数据类型<pre><code>类
+接口
+数组
+</code></pre></li>
+<li>基本数据类型细化<br>byte:-128~127(-2的7次方~2的7次方-1)<br>short:-32768~32767(-2的15次方~2的15次方-1)<br>int:-2147483648~2147483647(-2的31次方~2的31次方-1)<br>long:-2的63次方~2的63次方-1<br>注意<1>:<pre><code>用long声明时如果变量很长，在结尾要加一个L
+用float声明时结尾加一个F
+e.g:long a=144444444444444444444L;
+    float a=3.14F;
+</code></pre>注意<2>:<pre><code>浮点型不精确，不要用于比较
+如果非要比较，可以使用BigDecimal类(实现任意精度的浮点运算)
+BigDecimal bd1=BigDecimal.valueOf(0.1);
+BigDecimal bd2=BigDecimal.valueOf(1.0/10.0);
+System.out.println(bd1.equals(bd2));
+</code></pre></2></1></li>
 </ol>
 
       

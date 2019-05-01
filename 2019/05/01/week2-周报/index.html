@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="区分&amp;amp;和&amp;amp;&amp;amp;运算符：&amp;amp;遇到前面一个表达式是假时后面一个照样运算而&amp;amp;&amp;amp;遇到前面一个表达式是假时后面一个就不运算了 异或运算:规则：相同为假（0）相反为真（1）应用：利用异或运算加密，即一个数异或同一个数两次，结果还是这个数注意：它满足交换律鸭! 取反运算符（~）：规则：0变1 1变0 移位运算符：e.g: 3&amp;lt;&amp;lt;2:把3左移两位  6&amp;g">
+  <meta name="description" content="这周就是emmm学业繁忙，所以都忙着学高数离散线代了，有点浪，五一补回来">
 <meta name="keywords" content="Week">
 <meta property="og:type" content="article">
-<meta property="og:title" content="week2">
+<meta property="og:title" content="Week2">
 <meta property="og:url" content="http://yoursite.com/2019/05/01/week2-周报/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="区分&amp;amp;和&amp;amp;&amp;amp;运算符：&amp;amp;遇到前面一个表达式是假时后面一个照样运算而&amp;amp;&amp;amp;遇到前面一个表达式是假时后面一个就不运算了 异或运算:规则：相同为假（0）相反为真（1）应用：利用异或运算加密，即一个数异或同一个数两次，结果还是这个数注意：它满足交换律鸭! 取反运算符（~）：规则：0变1 1变0 移位运算符：e.g: 3&amp;lt;&amp;lt;2:把3左移两位  6&amp;g">
+<meta property="og:description" content="这周就是emmm学业繁忙，所以都忙着学高数离散线代了，有点浪，五一补回来">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T10:45:48.007Z">
+<meta property="og:updated_time" content="2019-05-01T12:04:07.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="week2">
-<meta name="twitter:description" content="区分&amp;amp;和&amp;amp;&amp;amp;运算符：&amp;amp;遇到前面一个表达式是假时后面一个照样运算而&amp;amp;&amp;amp;遇到前面一个表达式是假时后面一个就不运算了 异或运算:规则：相同为假（0）相反为真（1）应用：利用异或运算加密，即一个数异或同一个数两次，结果还是这个数注意：它满足交换律鸭! 取反运算符（~）：规则：0变1 1变0 移位运算符：e.g: 3&amp;lt;&amp;lt;2:把3左移两位  6&amp;g">
+<meta name="twitter:title" content="Week2">
+<meta name="twitter:description" content="这周就是emmm学业繁忙，所以都忙着学高数离散线代了，有点浪，五一补回来">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>week2 | 兄控日记</title>
+  <title>Week2 | 兄控日记</title>
   
 
 
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">week2
+          <h1 class="post-title" itemprop="name headline">Week2
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-01 12:10:53 / 修改时间：18:45:48" itemprop="dateCreated datePublished" datetime="2019-05-01T12:10:53+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 20:02:16 / 修改时间：20:04:07" itemprop="dateCreated datePublished" datetime="2019-05-01T20:02:16+08:00">2019-05-01</time>
             
 
             
@@ -494,32 +494,7 @@
       
 
       
-        <ol>
-<li>区分&amp;和&amp;&amp;运算符：<br>&amp;遇到前面一个表达式是假时后面一个照样运算<br>而&amp;&amp;遇到前面一个表达式是假时后面一个就不运算了</li>
-<li>异或运算:<br>规则：相同为假（0）相反为真（1）<br>应用：利用异或运算加密，即一个数异或同一个数两次，结果还是这个数<br>注意：它满足交换律鸭!</li>
-<li>取反运算符（~）：<br>规则：0变1 1变0</li>
-<li>移位运算符：<br>e.g: 3&lt;&lt;2:把3左移两位  6&gt;&gt;2:把6右移两位<br>‘&lt;&lt;’:多出来的位去掉，空掉的位补0<pre><code>实质：左移几位其实就是该数据乘以2的几次方
-</code></pre>‘&gt;&gt;’:多出的位去掉，原来的最高位是0就用0补空位，原来的最高位是      1就用1补空位<pre><code>实质：右移几位其实就是该数据除以2的几次方，注意遵循的是整型的除法，比如6/4=1
-</code></pre>‘&gt;&gt;&gt;’:这是无符号右移，数据进行右移时，高位出现的空位，无论原来       的高位是什么，都用0补空位<br>应用1：<br> 用最有效率的方式算出2乘以8等于多少？<br> 方式1：<br>   System.out.println(2*8);<br>   实际上在电脑里的运算过程:<pre><code>     0010
-    *1000
-   --------
-     0000
-    0000
-   0000
-  0010
- ----------
-    10000
-16(2)=10000
-所以2*8=16
-但这样效率太低了
-</code></pre> 方式2：<br>   2&lt;&lt;3<br>   这样效率就提高了很多<br>应用2：<br> 方式1：利用第三方变量c来交换<br> 方式2：<pre><code>a=a+b;
-b=a-b;
-a=a-b;
-</code></pre> 但不推荐使用这种方法，如果两个整数的值过大，会超出int范围，会强制转换，数据会变化<br> 方式3：<pre><code>a=a^b;     //a=3^5
-b=a^b;     //b=(3^5)^5,即3异或了两次5，又变回3
-a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
-</code></pre></li>
-</ol>
+        <p>这周就是emmm学业繁忙，所以都忙着学高数离散线代了，有点浪，五一补回来</p>
 
       
     </div>
@@ -589,8 +564,8 @@ a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/week1-周报/" rel="next" title="Week1">
-                <i class="fa fa-chevron-left"></i> Week1
+              <a href="/2019/05/01/Java2/" rel="next" title="Java学习">
+                <i class="fa fa-chevron-left"></i> Java学习
               </a>
             
           </div>
@@ -599,7 +574,7 @@ a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/01/Week3周报/" rel="prev" title="Week3">
+              <a href="/2019/05/01/week3-周报/" rel="prev" title="Week3">
                 Week3 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -666,7 +641,7 @@ a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -685,7 +660,9 @@ a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -704,7 +681,9 @@ a=a^b;     //a=(3^5)^3,即5^3^3，又变回5
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
