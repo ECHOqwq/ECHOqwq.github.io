@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T12:09:42.785Z">
+<meta property="og:updated_time" content="2019-05-02T13:55:47.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——面向对象三大特征">
 <meta name="twitter:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：20:09:42" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：21:55:47" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
             
 
             
@@ -528,6 +528,101 @@ class Student extends Person{  //继承了Person的name、height、rest()
 </code></pre>小技巧:<pre><code>选中类后按ctrl+t可以查看它的层次
 </code></pre>instanceof运算符<pre><code>instanceof是二元运算符，左边是对象，右边是类
 当对象是右边类或者子类所创建的对象时返回true，否则返回false
+</code></pre></li>
+<li>方法的重写override<br>子类通过重写父类的方法，可以用自身的行为替换父类的行为<br>方法的重写是实现多态的必要条件<br>三要点<pre><code>&lt;1&gt; 方法名、形参列表要相同
+&lt;2&gt; 返回值类型和声明异常类型，子类小于父类
+&lt;3&gt; 访问权限，子类大于等于父类(涉及到封装)
+</code></pre></li>
+<li>介绍Object类<pre><code>是所有Java类的根基类
+</code></pre></li>
+<li>Object类里的toString方法的改写<br> toString源码<pre><code>public String toString(){
+    return getClass().getName()+&quot;@&quot;+Integer.toHexString(hashCode());
+}
+</code></pre> e.g<pre><code>class Person {
+    String name;
+    int age;
+    @Override  //这是改写的注释public String toString() { //改写了Object类里的toString方法return name+&quot;,年龄：&quot;+age;
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+        Person p=new Person();
+        p.age=18;
+        p.name=&quot;fafa&quot;;System.out.println(&quot;info:&quot;+p); //因为在p中改写toString方法，所以输出的是名字年龄Test t = new Test(); //而Test类中并没有改变toString方法，所以输出时它默认的设置System.out.println(t);
+    }
+}
+</code></pre></li>
+<li>Object里的equals方法的改写<br> “==”<pre><code>代表比较双方是否相同
+如果是基本类型则表示值相等
+如果是引用类型则表示地址相等
+</code></pre> 源代码(提供定义“对象内容相等”的逻辑)<pre><code>public boolean equals(Object obj){
+    return (this == obj);
+}
+默认就是比较两个对象的hashcode，是同一个对象的引用时返回 true 否则返回 false
+</code></pre> e.g<pre><code>public class Equals{
+    public static void main(String[] args){
+        Object obj;
+        String str;
+        User u1 = new User(100,&quot;fafa&quot;,123);
+        User u2 = new User(1000,&quot;haha&quot;,123456);
+        System.out.println(u1.equals(u2)); //比较u1和u2的地址，这样有时候不是用户想要比较的内容，所以进行改写
+    }
+}
+class User{
+    int id;
+    String name;
+    String pwd;
+    public User(int id,String name,String pwd){
+        this.id = id;
+        this.name = name;
+        this.pwd = pwd;
+    }
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj)
+          return true;
+        if (obj ==null)
+          return false;
+        if (getClass()!=obj.getClass()) //这里getClass是取类的类型
+          return false;
+        User other = (User)obj; //这一步强制类型转化目前还很懵
+        if (id!=other.id)
+          return false;
+        return true;
+    }
+}
+</code></pre> e.g<pre><code>public class TestEquals { 
+    public static void main(String[] args) {
+        Person p1 = new Person(123,&quot;高淇&quot;);
+        Person p2 = new Person(123,&quot;高小七&quot;);     System.out.println(p1==p2);     //false，不是同一个对象System.out.println(p1.equals(p2));  //true，id相同则认为两个对象内容相同
+        String s1 = new String(&quot;尚学堂&quot;);
+        String s2 = new String(&quot;尚学堂&quot;);
+        System.out.println(s1==s2);         //false, 两个字符串不是同一个对象
+        System.out.println(s1.equals(s2));  //true,  两个字符串内容相同
+    }
+}
+class Person {
+    int id;
+    String name;
+    public Person(int id,String name) {
+        this.id=id;
+        this.name=name;
+    }
+    public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        else {
+            if(obj instanceof Person) {
+                Person c = (Person)obj;
+                if(c.id==this.id) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
 </code></pre></li>
 </ol>
 
