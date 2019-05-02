@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T07:55:35.417Z">
+<meta property="og:updated_time" content="2019-05-02T08:00:07.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——Java面向对象基础">
 <meta name="twitter:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：15:55:35" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：16:00:07" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
             
 
             
@@ -761,6 +761,11 @@ import B包名.b;
 b b1 = new b();
 </code></pre>那么问题又来了，如果用户要使用B包里的好多类呢？<pre><code>import B包名.*; //但会降低编译速度，不会降低运行速度
 </code></pre>如果导入的包有同名的类怎么办？<pre><code>B包名.b b1 = new B包名.b(); //用这种办法可读性更强，也不容易出错
+</code></pre>静态导入<pre><code>未导入时调用PI
+System.out.println(Math.PI);
+导入后调用PI
+import static java.lang.Math.*; //也可Math.PI
+System.out.println(PI);
 </code></pre></li>
 </ol>
 
