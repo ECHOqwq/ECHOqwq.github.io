@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T07:14:48.271Z">
+<meta property="og:updated_time" content="2019-05-02T07:55:35.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——Java面向对象基础">
 <meta name="twitter:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：15:14:48" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：15:55:35" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
             
 
             
@@ -723,8 +723,45 @@ this.id 表示属性id，id表示形参id
 静态初始化块用于类的初始化
 </code></pre></li>
 <li>参数传值机制<br>方法中所有参数都是值传递，也就是传递的是值的副本<br>个人理解:<pre><code>把要传输的对象的值和地址都做出了一个副本给接收对象
-但原对象的值和地址都还在，即副本不会影响原件
-</code></pre>这里抛出一个小问题:Java里的变量有没有地址?<br>查了好多地方都找不到答案啊唔，如果有大佬看到跪求解答!</li>
+之后改变副本里对象的值，意味着原件该值也会被改变
+</code></pre>这里抛出一个小问题:Java里的变量有没有地址?<br>查了好多地方都找不到答案啊唔，如果有大佬看到跪求解答!<br>e.g<pre><code>public class User{
+    int id;        //id
+    String name;   //账户名
+    public User(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public void testParameterTransfer01(User u){ //拷贝到该副本
+        u.name=&quot;fa&quot;; //该副本改变成员name的值，原件也会改变，因为该副本的地址是原件的地址
+    }
+    public   void   testParameterTransfer02(User u){ //拷贝到该副本
+        u  =  new  User(100,&quot;fafafa&quot;);} //新建了一个对象，把该对象的内容拷贝给了该副本，包括地址，这时和最初新建的u1已经没有关系了
+    public static void main(String[] args) {
+        User u1  =  new User(100, &quot;FAFA&quot;); //初始化name为FAFA
+        u1.testParameterTransfer01(u1); 
+        System.out.println(u1.name); //fa
+        u1.testParameterTransfer02(u1);
+        System.out.println(u1.name); //fa
+    }
+}
+</code></pre></li>
+<li>包<br>相当于文件夹对文件的作用<pre><code>开发中，我们会遇到大量同名的类，通过包我们可以很容易地解决大量重名类
+</code></pre>包的处理(package)<pre><code>通常是类的第一句非注释性语句
+例: package cn.ECHOqwq(倒域名).user(内容)
+包名:域名倒着写
+在硬盘其实就是文件夹
+</code></pre>JDK中提供了很多包<br>注意里面有一个java.lang是核心包，String、Math等等都在这个包里<br>使用该包不需要导入</li>
+<li>import<br>情境导入说明import的作用:<pre><code>在一个Java项目下，用户新建了两个包A和B，A包里有a类，B包里有b类，这时用户想在A包的a类里调用b类
+b b1 = new b();
+编译会报错，因为A包里不存在b类，那么应该怎么办呢
+B包名.b b1 = new B包名.b();
+这样告诉了编译器b类所在的位置，就可以找到b类并使用它
+但这样做在实操中太繁琐了，因此需要import来导入类
+import B包名.b;
+b b1 = new b();
+</code></pre>那么问题又来了，如果用户要使用B包里的好多类呢？<pre><code>import B包名.*; //但会降低编译速度，不会降低运行速度
+</code></pre>如果导入的包有同名的类怎么办？<pre><code>B包名.b b1 = new B包名.b(); //用这种办法可读性更强，也不容易出错
+</code></pre></li>
 </ol>
 
       
