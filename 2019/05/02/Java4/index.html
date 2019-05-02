@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T14:10:58.745Z">
+<meta property="og:updated_time" content="2019-05-02T14:17:36.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——面向对象三大特征">
 <meta name="twitter:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：22:10:58" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：22:17:36" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
             
 
             
@@ -541,14 +541,19 @@ class Student extends Person{  //继承了Person的name、height、rest()
 </code></pre> e.g<pre><code>class Person {
     String name;
     int age;
-    @Override  //这是改写的注释public String toString() { //改写了Object类里的toString方法return name+&quot;,年龄：&quot;+age;
+    @Override  //这是改写的注释
+    public String toString() { //改写了Object类里的toString方法
+        return name+&quot;,年龄：&quot;+age;
     }
 }
 public class Test {
     public static void main(String[] args) {
         Person p=new Person();
         p.age=18;
-        p.name=&quot;fafa&quot;;System.out.println(&quot;info:&quot;+p); //因为在p中改写toString方法，所以输出的是名字年龄Test t = new Test(); //而Test类中并没有改变toString方法，所以输出时它默认的设置System.out.println(t);
+        p.name=&quot;fafa&quot;;
+        System.out.println(&quot;info:&quot;+p); //因为在p中改写toString方法，所以输出的是名字年龄
+        Test t = new Test(); //而Test类中并没有改变toString方法，所以输出时它默认的设置
+        System.out.println(t);
     }
 }
 </code></pre></li>
