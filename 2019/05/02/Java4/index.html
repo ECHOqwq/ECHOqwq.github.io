@@ -100,11 +100,11 @@
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习——面向对象三大特征">
-<meta property="og:url" content="http://yoursite.com/2019/05/02/Java5/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/02/Java4/index.html">
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T14:50:47.105Z">
+<meta property="og:updated_time" content="2019-05-02T16:18:26.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——面向对象三大特征">
 <meta name="twitter:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/02/Java5/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/02/Java4/">
 
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Java5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Java4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：22:50:47" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 19:34:27" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-03 00:18:26" itemprop="dateModified" datetime="2019-05-03T00:18:26+08:00">2019-05-03</time>
               
             
           </span>
@@ -465,8 +477,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/02/Java5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Java5/" itemprop="commentCount"></span>
+                <a href="/2019/05/02/Java4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Java4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -630,6 +642,75 @@ class Person {
         return false;
     }
 }
+</code></pre></li>
+<li><p>super关键字以及继承树追溯<br> supper是直接父类对象的引用</p>
+<pre><code>&lt;1&gt; 可以通过supper来访问父类中被子类覆盖的方法或属性
+&lt;2&gt; 使用super调用普通方法，语句没有位置限制，可以在子类中随便调用
+&lt;3&gt; 若构造方法的第一行代码没有显式的调用super/this，会默认调用super()
+    含义是会自动调用父类的无参数的构造方法，这里的super()可以省略
+划重点:这里说的是构造方法，不是普通方法啊!!!
+</code></pre><p> e.g</p>
+<pre><code>public class TestSuper01 { 
+    public static void main(String[] args) {
+        new ChildClass().f();
+    }
+}
+class FatherClass {
+    public int value;
+    public void f(){
+        value = 100;
+        System.out.println (&quot;FatherClass.value=&quot;+value);
+    }
+}
+class ChildClass extends FatherClass {
+    public int value; //子类中再定义一个value
+    /*若去掉上行，则尾句的输出结果会变成200*/
+    public void f() { 
+        super.f();  //调用父类对象的普通方法
+        value = 200;
+        System.out.println(&quot;ChildClass.value=&quot;+value);
+        System.out.println(value); //200
+        System.out.println(super.value); //在子类中调用父类对象的成员变量  100
+    }
+}
+</code></pre><p> e.g(针对上面的<3>)</3></p>
+<pre><code>public class TestSuper02{
+    public static void main(String[] args){
+        System.out.println(&quot;HAHA&quot;);
+        new ChildClass2();
+    }
+}
+class FatherClass2{
+    public FatherClass2(){
+        super(); //可写可不写，反正默认会有这一条，调用Object类里的构造函数
+        System.out.println(&quot;创建FatherClass&quot;);
+    }
+}
+class ChildClass2 extends FatherClass2{
+    public ChildClass2(){
+        super(); //可写可不写，反正默认都有，调用FatherClass2类里的构造函数
+        System.out.println(&quot;创建ChildClass&quot;);
+    }
+}
+
+输出：HAHA
+     创建FatherClass
+     创建ChildClass
+</code></pre><p> 从上例引出继承树追溯</p>
+<pre><code>main方法先调用了ChildClass2类，进入该类的构造函数
+通过默认的super()语句自动调用FatherClass2类的构造函数
+再通过FatherClass2类的构造函数的默认的super()调用Object类的super()
+所以会先调用Object的静态初始化块，再调用FatherClass2的静态初始化块，最后调用ChildClass2的静态初始化块
+</code></pre><p> 归纳</p>
+<pre><code>构造方法调用顺序：
+构造方法第一句总是super()来调用父类对应的构造方法
+流程就是：先向上追溯到Object，然后再依次向下执行类的初始化块和构造方法，直到当前子类为止
+注：静态初始化块调用顺序，与构造方法调用顺序一样
+</code></pre><p> 属性/方法查找顺序：(比如：查找变量h)</p>
+<pre><code>&lt;1&gt; 查找当前类中有没有属性/方法h
+&lt;2&gt; 依次上溯每个父类，查看每个父类中是否有h，直到Object
+&lt;3&gt; 如果没找到，则出现编译错误
+&lt;4&gt; 只要找到h变量，过程终止
 </code></pre></li>
 </ol>
 
@@ -1032,7 +1113,7 @@ class Person {
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/02/Java5/'
+    refer: '2019/05/02/Java4/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
