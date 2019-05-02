@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T17:05:09.862Z">
+<meta property="og:updated_time" content="2019-05-02T17:11:28.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——面向对象三大特征">
 <meta name="twitter:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-03 01:05:09" itemprop="dateModified" datetime="2019-05-03T01:05:09+08:00">2019-05-03</time>
+                <time title="修改时间：2019-05-03 01:11:28" itemprop="dateModified" datetime="2019-05-03T01:11:28+08:00">2019-05-03</time>
               
             
           </span>
@@ -711,12 +711,28 @@ class ChildClass2 extends FatherClass2{
 &lt;2&gt; 依次上溯每个父类，查看每个父类中是否有h，直到Object
 &lt;3&gt; 如果没找到，则出现编译错误
 &lt;4&gt; 只要找到h变量，过程终止
-</code></pre><ol start="7">
-<li><p>封装<br>封装就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节<br>好比我们运行一个网页，只能看到它的页面并对其进行操作，但不能直接看到它的复杂源代码<br>  我们程序设计要追求“高内聚，低耦合”<br>  高内聚就是类的内部数据操作细节自己完成，不允许外部干涉<br>  低耦合是仅暴露少量的方法给外部使用，尽量方便外部调用<br>封装优点<br>  <1> 提高代码的安全性<br>  <2> 提高代码的复用性<br>  <3> 高内聚：封装细节，便于修改内部代码，提高可维护性<br>  <4> 低耦合：简化外部调用，便于调用者使用，便于扩展和协作<br>没有封装的问题<br>  程序太开放，就像出考题时如果是全开放的，会有很多人随意篡改考题，导致出现问题<br>实现封装——使用访问控制符</4></3></2></1></p>
-<p>Java使用访问控制符来控制哪些细节需要封装，哪些细节需要暴露<br>Java中4种访问控制符分别为private、default、protected、public<br>它们说明了面向对象的封装性，我们利用它们让访问权限降到最低，提高安全性<br>  <1> private 私有，只有自己类能访问<br>  <2> default 没有修饰符修饰，只有同一个包的类能访问<br>  <3> protected 可以被同一个包的类以及其他包中的子类访问<br>  <4> public 可以被该项目的所有包中的所有类访问</4></3></2></1></p>
-</li>
-</ol>
-</li>
+</code></pre></li>
+<li><p>封装<br> 定义       </p>
+<pre><code>封装就是把对象的属性和操作结合为一个独立的整体，并尽可能隐藏对象的内部实现细节
+好比我们运行一个网页，只能看到它的页面并对其进行操作，但不能直接看到它的复杂源代码
+</code></pre><p> 追求</p>
+<pre><code>我们程序设计要追求“高内聚，低耦合”
+高内聚就是类的内部数据操作细节自己完成，不允许外部干涉
+低耦合是仅暴露少量的方法给外部使用，尽量方便外部调用
+</code></pre><p> 封装优点</p>
+<pre><code>&lt;1&gt; 提高代码的安全性
+&lt;2&gt; 提高代码的复用性
+&lt;3&gt; 高内聚：封装细节，便于修改内部代码，提高可维护性
+&lt;4&gt; 低耦合：简化外部调用，便于调用者使用，便于扩展和协作
+</code></pre><p> 没有封装的问题</p>
+<pre><code>程序太开放，就像出考题时如果是全开放的，会有很多人随意篡改考题，导致出现问题
+</code></pre><p> 实现封装——使用访问控制符</p>
+<p> Java使用访问控制符来控制哪些细节需要封装，哪些细节需要暴露<br> Java中4种访问控制符分别为private、default、protected、public<br> 它们说明了面向对象的封装性，我们利用它们让访问权限降到最低，提高安全性</p>
+<pre><code>&lt;1&gt; private 私有，只有自己类能访问
+&lt;2&gt; default 没有修饰符修饰，只有同一个包的类能访问
+&lt;3&gt; protected 可以被同一个包的类以及其他包中的子类访问
+&lt;4&gt; public 可以被该项目的所有包中的所有类访问
+</code></pre></li>
 </ol>
 
       
