@@ -99,14 +99,14 @@
   <meta name="description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java3">
+<meta property="og:title" content="Java学习——Java面向对象基础">
 <meta property="og:url" content="http://yoursite.com/2019/05/02/Java3/index.html">
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T04:18:04.429Z">
+<meta property="og:updated_time" content="2019-05-02T07:14:48.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java3">
+<meta name="twitter:title" content="Java学习——Java面向对象基础">
 <meta name="twitter:description" content="总述:面向过程(C) 面向对象(Java、C++)什么是面向过程?            我们首先思考”怎么按步骤实现?”并按步骤对应方法一步一步完成            适合简单、不需要协作的任务什么是面向对象?            OOA：面向对象分析            OOD：面向对象设计            需要大量协作的任务面向对象和面向过程的总结:            解决">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java3 | 兄控日记</title>
+  <title>Java学习——Java面向对象基础 | 兄控日记</title>
   
 
 
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java3
+          <h1 class="post-title" itemprop="name headline">Java学习——Java面向对象基础
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：12:18:04" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 11:02:09 / 修改时间：15:14:48" itemprop="dateCreated datePublished" datetime="2019-05-02T11:02:09+08:00">2019-05-02</time>
             
 
             
@@ -531,7 +531,8 @@ class Computer{  //再创建一个Computer型的类
 <pre><code>要想创建类里的对象要调用main函数在里面创造对象 
 类和类之间也可以相互嵌套，如上述的Computer类和Stu类
 </code></pre></li>
-<li>Java虚拟机的内存分析<br> 分为栈stack、堆heap、方法区method area<br> <1> 栈<pre><code>栈描述的是方法执行的内存模型，每个方法被调用都会创建一个栈帧(存储局部变量、操作数、方法出口等)，执行完以后会被关闭删去
+<li>Java虚拟机的内存分析<br> 分为栈stack、堆heap、方法区method area<br> <1> 栈<pre><code>栈描述的是方法执行的内存模型。
+每个方法被调用都会创建一个栈帧(存储局部变量、操作数、方法出口等)，执行完以后会被关闭删去
 它属于线程私有，不能实现线程间的共享
 先进后出，后进先出
 是一个连续的内存空间
@@ -565,7 +566,11 @@ public class TestConstructor {
 }
 </code></pre></li>
 <li>方法<pre><code>方法就是一段用来完成特定功能的代码片段。
-方法用于定义该类或该类的实例的行为特征和功能实现。 方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。
+方法用于定义该类或该类的实例的行为特征和功能实现。 
+方法是类和对象行为特征的抽象。
+方法很类似于面向过程中的函数。
+面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。
+面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。
 </code></pre>  方法的调用方式：<pre><code>对象名.方法名(实参列表)
 </code></pre>  方法的详细说明<pre><code>&lt;1&gt; 形式参数：在方法声明时用于接收外界传入的数据。
 &lt;2&gt; 实参：调用方法时实际传给方法的数据。
@@ -594,44 +599,132 @@ public class TestConstructor {
           }
 }
 </code></pre></li>
-<li>方法的重载<pre><code>     方法的重载是指一个类中可以定义多个方法名相同，但参数不同的方法。
-     调用时，会根据不同的参数自动匹配对应的方法。
-注意：
-     &lt;1&gt; 只有返回值不同，不构成方法的重载
-         int a(String str){}  void a(String str){}
-     &lt;2&gt; 只有形参的名称不同，不构成方法的重载
-         int a(String str){}  int a(String s){}
-总:
-         public static int add(int n1, int n2) {
-              int sum = n1 + n2;
-              return sum;
-         }
-         // 方法名相同，参数个数不同，构成重载
-         public static int add(int n1, int n2, int n3) {
-              int sum = n1 + n2 + n3;
-              return sum;
-         }
-         // 方法名相同，参数类型不同，构成重载
-         public static double add(double n1, int n2) {
-              double sum = n1 + n2;
-              return sum;
-         }
-         // 方法名相同，参数顺序不同，构成重载
-         public static double add(int n1, double n2) {
-              double sum = n1 + n2;
-              return sum;
-         }
-         //编译错误：只有返回值不同，不构成方法的重载
-         public static double add(int n1, int n2) {
-              double sum = n1 + n2;
-              return sum;
-         }
-         //编译错误：只有参数名称不同，不构成方法的重载
-         public static int add(int n2, int n1) {
-              double sum = n1 + n2;         
-              return sum;
-         }              
+<li>方法的重载<br> 方法的重载是指一个类中可以定义多个方法名相同，但参数不同的方法。<br> 调用时，会根据不同的参数自动匹配对应的方法。<br> 注意：<pre><code>&lt;1&gt; 只有返回值不同，不构成方法的重载
+    int a(String str){}  void a(String str){}
+&lt;2&gt; 只有形参的名称不同，不构成方法的重载
+    int a(String str){}  int a(String s){}
+</code></pre> 总:<pre><code>public static int add(int n1, int n2) {
+     int sum = n1 + n2;
+     return sum;
+}
+// 方法名相同，参数个数不同，构成重载
+public static int add(int n1, int n2, int n3) {
+     int sum = n1 + n2 + n3;
+     return sum;
+}
+// 方法名相同，参数类型不同，构成重载
+public static double add(double n1, int n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+// 方法名相同，参数顺序不同，构成重载
+public static double add(int n1, double n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+//编译错误：只有返回值不同，不构成方法的重载
+public static double add(int n1, int n2) {
+     double sum = n1 + n2;
+     return sum;
+}
+//编译错误：只有参数名称不同，不构成方法的重载
+public static int add(int n2, int n1) {
+     double sum = n1 + n2;         
+     return sum;
+}
 </code></pre></li>
+<li>构造方法的重载<br>e.g<pre><code>public class User {
+    int id; // id
+    String name; // 账户名
+    String pwd; // 密码
+    public User() {
+    }
+    public User(int id, String name) {
+        super();
+        this.id = id; //this.id表示的是最前面的int id的id，而后面的id是该类里的形参int id
+        this.name = name;
+    }
+    public User(int id, String name, String pwd) {
+        this.id = id;
+        this.name = name;
+        this.pwd = pwd;
+    }
+    public static void main(String[] args) {
+        User u1 = new User();
+        User u2 = new User(101, &quot;小七&quot;);
+        User u3 = new User(100, &quot;fafa&quot;, &quot;123456&quot;);     
+    }
+}
+</code></pre>this的用法     <pre><code>如果方法构造中形参名与属性名相同时，需要使用this关键字区分属性与形参
+this.id 表示属性id，id表示形参id
+</code></pre></li>
+<li>this<br>对象创建的过程<pre><code>分配对象空间，并对对象成员变量进行初始化
+执行属性值的显示初始化
+执行构造方法
+返回对象的地址给相关的变量
+</code></pre>this的本质<pre><code>创建好的对象的地址
+</code></pre>this的用法<pre><code>&lt;1&gt;普通方法中，this总是指向调用该方法的对象
+构造方法中，this总是指向正要初始化的对象
+&lt;2&gt; 使用this关键字调用重载的构造方法，避免相同的初始化代码
+但只能在构造方法中用，并且必须位于构造方法的第一句
+&lt;3&gt; this不能用于static方法中，因为static在方法区，里面没有对象
+</code></pre> e.g<pre><code>public class TestThis {
+    int a, b, c;
+    TestThis() {
+        System.out.println(&quot;正要初始化一个Hello对象&quot;);
+    }
+    TestThis(int a, int b) {
+        // TestThis(); //这样是无法调用构造方法的！
+        this(); // 调用无参的构造方法，并且必须位于第一行！
+        // 这样就区分了成员变量和局部变量
+        this.a = a;
+    }
+    TestThis(int a, int b, int c) {
+        this(a, b); // 调用带参的构造方法必须位于第一行
+        this.c = c;
+        }
+    void sing() {
+    }
+    void eat() {
+        this.sing(); // 调用本类中的sing，也可不用this
+    }
+    public static void main(String[] args) {
+        TestThis hi = new TestThis(2, 3);
+        hi.eat();
+    }
+}
+</code></pre></li>
+<li><p>static关键字   </p>
+<pre><code>    static修饰的成员变量和方法从属于类
+    普通变量和方法从属于对象  
+注意:静态方法里不能调用非静态方法，但非静态方法里可以调用静态方法
+    public class User{
+        int id;
+        String name;
+        public User(int id,String name){
+            this.id=id;
+            this.name=name;
+        }
+        public void login(){
+            printCompany(); //可以在非静态方法里调用静态方法
+        }
+        public static void printCompany(){
+            login(); //调用非静态方法，编译会报错
+        }
+        public static void main(String[] args){
+            User u=new User(1111,fafa);
+            User.printCompany();
+        }
+    }
+
+因为它们一个在堆里一个在静态区里，堆可以找到静态区，静态区找不到堆   
+</code></pre></li>
+<li>静态初始化块(初步介绍)<pre><code>构造方法用于对象的初始化
+静态初始化块用于类的初始化
+</code></pre></li>
+<li>参数传值机制<br>方法中所有参数都是值传递，也就是传递的是值的副本<br>个人理解:<pre><code>把要传输的对象的值和地址都做出了一个副本给接收对象
+但原对象的值和地址都还在，即副本不会影响原件
+</code></pre>这里抛出一个小问题:Java里的变量有没有地址?<br>查了好多地方都找不到答案啊唔，如果有大佬看到跪求解答!</li>
 </ol>
 
       
