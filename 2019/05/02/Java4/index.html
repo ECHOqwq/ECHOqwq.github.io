@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T13:55:47.212Z">
+<meta property="og:updated_time" content="2019-05-02T14:10:58.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——面向对象三大特征">
 <meta name="twitter:description" content="面向对象三大特征:继承、封装、多态  继承子类继承了父类，是父类的扩展e.gpublic class Extends{     public static void main(String[] args){         Student stu = new Student(&amp;quot;fafa&amp;quot;,&amp;quot;计算机专业&amp;quot;);         stu.rest();     }">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：21:55:47" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
+              <time title="创建时间：2019-05-02 19:34:27 / 修改时间：22:10:58" itemprop="dateCreated datePublished" datetime="2019-05-02T19:34:27+08:00">2019-05-02</time>
             
 
             
@@ -565,7 +565,7 @@ public class Test {
         String str;
         User u1 = new User(100,&quot;fafa&quot;,123);
         User u2 = new User(1000,&quot;haha&quot;,123456);
-        System.out.println(u1.equals(u2)); //比较u1和u2的地址，这样有时候不是用户想要比较的内容，所以进行改写
+        System.out.println(u1.equals(u2)); //比较u1和u2的地址，如果这不是用户想比较的内容，就进行改写
     }
 }
 class User{
@@ -593,10 +593,12 @@ class User{
 }
 </code></pre> e.g<pre><code>public class TestEquals { 
     public static void main(String[] args) {
-        Person p1 = new Person(123,&quot;高淇&quot;);
-        Person p2 = new Person(123,&quot;高小七&quot;);     System.out.println(p1==p2);     //false，不是同一个对象System.out.println(p1.equals(p2));  //true，id相同则认为两个对象内容相同
-        String s1 = new String(&quot;尚学堂&quot;);
-        String s2 = new String(&quot;尚学堂&quot;);
+        Person p1 = new Person(1233,&quot;fafa&quot;);
+        Person p2 = new Person(1233,&quot;gaga&quot;);
+        System.out.println(p1==p2);     //false，不是同一个对象
+        System.out.println(p1.equals(p2));  //true，id相同则认为两个对象内容相同
+        String s1 = new String(&quot;fafafa&quot;);
+        String s2 = new String(&quot;fafafa&quot;);
         System.out.println(s1==s2);         //false, 两个字符串不是同一个对象
         System.out.println(s1.equals(s2));  //true,  两个字符串内容相同
     }
