@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧这里就写一些java的基础(还没涉及到面向对象)注:这些都是参考b站的视频总结出来的，详见https://www.bilibili.com/video/av29306544/?p=55  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-01T14:12:09.970Z">
+<meta property="og:updated_time" content="2019-05-02T04:18:06.553Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习">
 <meta name="twitter:description" content="前言:其实感觉java大多规则真的是以C为基础的，所以零零散散总结一点C里自己不怎么强调或者没接触的知识吧这里就写一些java的基础(还没涉及到面向对象)注:这些都是参考b站的视频总结出来的，详见https://www.bilibili.com/video/av29306544/?p=55  Java里的标识符规则采用了驼峰规则，即单词开头的字母大写 里面的变量分为三类：局部变量、成员变量、静态变">
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-05-01 18:50:38 / 修改时间：22:12:09" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
+              <time title="创建时间：2019-05-01 18:50:38" itemprop="dateCreated datePublished" datetime="2019-05-01T18:50:38+08:00">2019-05-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-02 12:18:06" itemprop="dateModified" datetime="2019-05-02T12:18:06+08:00">2019-05-02</time>
               
             
           </span>
@@ -601,72 +613,6 @@ public class TestScanner {
 </code></pre></li>
 <li>语句块<pre><code>语句块(有时叫做复合语句)，是用花括号扩起的任意数量的简单Java语句。块确定了局部变量的作用域。块中的程序代码，作为一个整体，是要被一起执行的。块可以被嵌套在另一个块中，但是不能在两个嵌套的块内声明同名的变量。语句块可以使用外部的变量，而外部不能使用语句块中定义的变量，因为语句块中定义的变量作用域只限于语句块。
 </code></pre></li>
-<li>方法<pre><code>方法就是一段用来完成特定功能的代码片段。
-方法用于定义该类或该类的实例的行为特征和功能实现。 方法是类和对象行为特征的抽象。方法很类似于面向过程中的函数。面向过程中，函数是最基本单位，整个程序由一个个函数调用组成。面向对象中，整个程序的基本单位是类，方法是从属于类和对象的。
-</code></pre> 方法的调用方式：<pre><code>对象名.方法名(实参列表)
-</code></pre> 方法的详细说明<pre><code>&lt;1&gt; 形式参数：在方法声明时用于接收外界传入的数据。
-&lt;2&gt; 实参：调用方法时实际传给方法的数据。
-&lt;3&gt; 返回值：方法在执行完毕后返还给调用它的环境的数据。
-&lt;4&gt; 返回值类型：事先约定的返回值的数据类型，如无返回值，必须显示指定为为void。
-</code></pre> e.g<pre><code>public class Test20 {
-     /** main方法：程序的入口 */
-     public static void main(String[] args) {
-          int num1 = 10;
-          int num2 = 20;
-          //调用求和的方法：将num1与num2的值传给add方法中的n1与n2
-          // 求完和后将结果返回，用sum接收结果
-          int sum = add(num1, num2);
-          System.out.println(&quot;sum = &quot; + sum);//输出：sum = 30
-          //调用打印的方法：该方法没有返回值
-          print();
-          }
-          /** 求和的方法 */
-          public static int add(int n1, int n2) {
-               int sum = n1 + n2;
-               return sum;//使用return返回计算的结果
-          }
-          /** 打印的方法 */
-          public static void print() {
-               System.out.println(&quot;HAHA&quot;);
-          }
-}
-</code></pre></li>
-<li>方法的重载<pre><code>方法的重载是指一个类中可以定义多个方法名相同，但参数不同的方法。
-调用时，会根据不同的参数自动匹配对应的方法。
-</code></pre>   注意：<pre><code>&lt;1&gt; 只有返回值不同，不构成方法的重载
-    int a(String str){}  void a(String str){}
-&lt;2&gt; 只有形参的名称不同，不构成方法的重载
-    int a(String str){}  int a(String s){}
-</code></pre>   总:<pre><code>public static int add(int n1, int n2) {
-     int sum = n1 + n2;
-     return sum;
-}
-// 方法名相同，参数个数不同，构成重载
-public static int add(int n1, int n2, int n3) {
-     int sum = n1 + n2 + n3;
-     return sum;
-}
-// 方法名相同，参数类型不同，构成重载
-public static double add(double n1, int n2) {
-     double sum = n1 + n2;
-     return sum;
-}
-// 方法名相同，参数顺序不同，构成重载
-public static double add(int n1, double n2) {
-     double sum = n1 + n2;
-     return sum;
-}
-//编译错误：只有返回值不同，不构成方法的重载
-public static double add(int n1, int n2) {
-     double sum = n1 + n2;
-     return sum;
-}
-//编译错误：只有参数名称不同，不构成方法的重载
-public static int add(int n2, int n1) {
-     double sum = n1 + n2;         
-     return sum;
-}  
-</code></pre></li>
 </ol>
 
       
@@ -814,7 +760,7 @@ public static int add(int n2, int n1) {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
