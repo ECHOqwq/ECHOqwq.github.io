@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-02T16:44:48.123Z">
+<meta property="og:updated_time" content="2019-05-03T03:48:58.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——构造方法&amp;&amp;普通方法">
 <meta name="twitter:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 00:25:55 / 修改时间：00:44:48" itemprop="dateCreated datePublished" datetime="2019-05-03T00:25:55+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-03 00:25:55 / 修改时间：11:48:58" itemprop="dateCreated datePublished" datetime="2019-05-03T00:25:55+08:00">2019-05-03</time>
             
 
             
@@ -505,7 +505,33 @@
 &lt;7&gt; 构造方法前默认有一句super();，也正因为此构造方法不会被继承
 &lt;8&gt; 接口不允许被实例化，所以接口没有构造方法
 &lt;9&gt; 不能被static、final、synchronized、abstract和native修饰
-</code></pre></li>
+</code></pre> e.g (一个注意点)<pre><code>public class Text{
+    public static void main(String[] args){
+        Person p1 = new Person();
+        p1.age = 18;
+        Person p2 = new Person(19);
+        System.out.println(p1);
+        System.out.println(p2);
+    }
+}
+class Person{
+    int age;
+    public Person(int age){
+        super();
+        this.age=age;
+    }
+    public String toString(){
+        return &quot;Person : age=&quot;+age; 
+    }
+}
+</code></pre> <1> 在System.out.println(p1)时会报错<pre><code>    因为后来声明了一个带参构造函数，系统就不会自动添加无参的构造函数
+    编译器就会提示不存在对应的构造函数
+解决办法:再写一个构造函数
+    public Person(){
+    }
+</code></pre> <2> 重写toString的作用<pre><code>重写toString后输出p1即可输入想要的成员内容
+若不改写就是系统默认的(目前还不懂那一串数字加字母有什么用)
+</code></pre></2></1></li>
 <li>普通方法<pre><code>&lt;1&gt; 无自带super();
 &lt;2&gt; 名字不与类名相同
 &lt;3&gt; 有返回值类型的声明
