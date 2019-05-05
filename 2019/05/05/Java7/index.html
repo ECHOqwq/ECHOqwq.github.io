@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数&amp;lt;1&amp;gt; 生成大于等于0小于等于n的随机数    int num = (int)(Math.random()*n); &amp;lt;2&amp;gt; 生成大于等于m小于m+n的随机数    int num = m+(int)(Math.ran">
+  <meta name="description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数  生成大于等于0小于等于n的随机数int num = (int)(Math.random()*n);   生成大于等于m小于m+n的随机数   int num = m+(int)(Math.random()*n); 经验:要生成大于等于m">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习——random随机数">
 <meta property="og:url" content="http://yoursite.com/2019/05/05/Java7/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数&amp;lt;1&amp;gt; 生成大于等于0小于等于n的随机数    int num = (int)(Math.random()*n); &amp;lt;2&amp;gt; 生成大于等于m小于m+n的随机数    int num = m+(int)(Math.ran">
+<meta property="og:description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数  生成大于等于0小于等于n的随机数int num = (int)(Math.random()*n);   生成大于等于m小于m+n的随机数   int num = m+(int)(Math.random()*n); 经验:要生成大于等于m">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T10:15:28.570Z">
+<meta property="og:updated_time" content="2019-05-05T10:17:11.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——random随机数">
-<meta name="twitter:description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数&amp;lt;1&amp;gt; 生成大于等于0小于等于n的随机数    int num = (int)(Math.random()*n); &amp;lt;2&amp;gt; 生成大于等于m小于m+n的随机数    int num = m+(int)(Math.ran">
+<meta name="twitter:description" content="然后这一篇也很简单地总结一下自己花了一个小时学的随机数  Math类的randomMath.random()方法语句基础上处理可获得多种类型、或任意范围的随机数  生成大于等于0小于等于n的随机数int num = (int)(Math.random()*n);   生成大于等于m小于m+n的随机数   int num = m+(int)(Math.random()*n); 经验:要生成大于等于m">
 
 
 
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-05 18:00:13 / 修改时间：18:15:28" itemprop="dateCreated datePublished" datetime="2019-05-05T18:00:13+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 18:00:13 / 修改时间：18:17:11" itemprop="dateCreated datePublished" datetime="2019-05-05T18:00:13+08:00">2019-05-05</time>
             
 
             
@@ -496,15 +496,12 @@
       
         <p>然后这一篇也很简单地总结一下自己花了一个小时学的随机数</p>
 <ol>
-<li>Math类的random<br>Math.random()方法语句基础上处理可获得多种类型、或任意范围的随机数<pre><code>&lt;1&gt; 生成大于等于0小于等于n的随机数
-   int num = (int)(Math.random()*n);
-&lt;2&gt; 生成大于等于m小于m+n的随机数
-   int num = m+(int)(Math.random()*n);
+<li>Math类的random<br>Math.random()方法语句基础上处理可获得多种类型、或任意范围的随机数<br> <1> 生成大于等于0小于等于n的随机数<pre><code>int num = (int)(Math.random()*n);
+</code></pre> <2> 生成大于等于m小于m+n的随机数<pre><code>   int num = m+(int)(Math.random()*n);
 经验:要生成大于等于m小于n的随机数的方法
    int num = m+(int)(Math.random()*(m-n));
-&lt;3&gt; 生成a~z字符
-   char a = (char)(&apos;a&apos;+Math.random()*(&apos;z&apos;-&apos;a&apos;+1));
-</code></pre></li>
+</code></pre> <3> 生成a~z字符<pre><code>char a = (char)(&apos;a&apos;+Math.random()*(&apos;z&apos;-&apos;a&apos;+1));
+</code></pre></3></2></1></li>
 <li>Random类<br>Random类在java.util.Random里<br>和Scanner一样可以通过实例化一个Random对象来创建一个随机数生成器<br><1> 实例化<pre><code>Random ran = new Random();
 实例化一个ran对象
 </code></pre><2> 产生随机数(同Scanner)<pre><code>int i = ran.nextInt(100);
