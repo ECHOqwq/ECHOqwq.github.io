@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一 里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现 也就是说凡是可以使用父类的地方，都可以使用子类代替 里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象 父类引用指向子类对象是指父类的变量名指向到了子类的实例上 在继承中子类的功能比父类的功能强，因为子类除了继">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-08T14:33:33.842Z">
+<meta property="og:updated_time" content="2019-05-08T14:37:00.001Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——里氏替换原则">
 <meta name="twitter:description" content="里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一 里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现 也就是说凡是可以使用父类的地方，都可以使用子类代替 里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象 父类引用指向子类对象是指父类的变量名指向到了子类的实例上 在继承中子类的功能比父类的功能强，因为子类除了继">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-08 22:29:20 / 修改时间：22:33:33" itemprop="dateCreated datePublished" datetime="2019-05-08T22:29:20+08:00">2019-05-08</time>
+              <time title="创建时间：2019-05-08 22:29:20 / 修改时间：22:37:00" itemprop="dateCreated datePublished" datetime="2019-05-08T22:29:20+08:00">2019-05-08</time>
             
 
             
@@ -494,7 +494,7 @@
       
 
       
-        <p>里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一<br> 里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现<br> 也就是说凡是可以使用父类的地方，都可以使用子类代替<br> 里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象<br> 父类引用指向子类对象是指父类的变量名指向到了子类的实例上<br> 在继承中子类的功能比父类的功能强，因为子类除了继承父类的所有方法外，子类还可以添加自己的方法<br> 如果将类功能的多少用矩形大小框来表示，那么子类就是大框，父类就是小框<br>e.g<br>             public class PetShop{<br>                 public static void main(String[] args) {<br>                     Cat cat = new Cat(“波斯猫”, “大花”);<br>                     Dog dog = new Dog(“牧羊犬”,”大黑”);<br>                     Duck duck = new Duck(“野鸭”,”大鸭”);<br>                     Animal animals[] =new Animal[]{<br>                         cat,<br>                         dog,<br>                         duck<br>                     };<br>                     int index =new  java.util.Random().nextInt(animals.length);<br>                     Animal animal = animals[index]; //11行<br>                     animal.introduce(); //父类引用调用子类对象的introduce()方法<br>                     animal.sound(); //父类引用调用子类对象的sound()方法<br>                }<br>             }<br>             第11行是将父类数组中的一个元素（其实是子类对象）赋值给父类引用animal<br>             这种赋值方式通常说成父类引用指向子类对象<br>             当父类应用指向子类对象时，父类引用所调用的方法是子类的方法<br>             因此第13行父类引用animal调用的是子类的sound()方法</p>
+        <p>里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一<br> 里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现<br> 也就是说凡是可以使用父类的地方，都可以使用子类代替<br> 里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象<br> 父类引用指向子类对象是指父类的变量名指向到了子类的实例上<br> 在继承中子类的功能比父类的功能强，因为子类除了继承父类的所有方法外，子类还可以添加自己的方法<br> 如果将类功能的多少用矩形大小框来表示，那么子类就是大框，父类就是小框<br>e.g<br>               public class PetShop{<br>                   public static void main(String[] args) {<br>                       Cat cat = new Cat(“波斯猫”, “大花”);<br>                       Dog dog = new Dog(“牧羊犬”,”大黑”);<br>                       Duck duck = new Duck(“野鸭”,”大鸭”);<br>                       Animal animals[] =new Animal[]{<br>                           cat,<br>                           dog,<br>                           duck<br>                       };<br>                       int index =new  java.util.Random().nextInt(animals.length);<br>                       Animal animal = animals[index]; //11行<br>                       animal.introduce(); //父类引用调用子类对象的introduce()方法<br>                       animal.sound(); //父类引用调用子类对象的sound()方法<br>                  }<br>               }<br>               第11行是将父类数组中的一个元素（其实是子类对象）赋值给父类引用animal<br>               这种赋值方式通常说成父类引用指向子类对象<br>               当父类应用指向子类对象时，父类引用所调用的方法是子类的方法<br>               因此第13行父类引用animal调用的是子类的sound()方法</p>
 
       
     </div>
