@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类Throwable类是Error类和Exception类的父类Exception类解决由程本身及环境所产生的异常Error类则处理较少发生的内部系统错误Exception类异常可以被捕获并进行相应的处理对于Error类异常，程序员通常无能为力Exception类异常还分为设计时异常和运行时异常所有运行时异常类的父类">
+  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类    Throwable类是Error类和Exception类的父类    Exception类解决由程本身及环境所产生的异常    Error类则处理较少发生的内部系统错误    Exception类异常可以被捕获并进行相应的处理    对于Error类异常，程序员通常无能为力    Exception类异常还">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习——Java异常处理机制">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/Java10/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类Throwable类是Error类和Exception类的父类Exception类解决由程本身及环境所产生的异常Error类则处理较少发生的内部系统错误Exception类异常可以被捕获并进行相应的处理对于Error类异常，程序员通常无能为力Exception类异常还分为设计时异常和运行时异常所有运行时异常类的父类">
+<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类    Throwable类是Error类和Exception类的父类    Exception类解决由程本身及环境所产生的异常    Error类则处理较少发生的内部系统错误    Exception类异常可以被捕获并进行相应的处理    对于Error类异常，程序员通常无能为力    Exception类异常还">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T12:53:07.909Z">
+<meta property="og:updated_time" content="2019-05-13T14:04:44.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——Java异常处理机制">
-<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类Throwable类是Error类和Exception类的父类Exception类解决由程本身及环境所产生的异常Error类则处理较少发生的内部系统错误Exception类异常可以被捕获并进行相应的处理对于Error类异常，程序员通常无能为力Exception类异常还分为设计时异常和运行时异常所有运行时异常类的父类">
+<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类    Throwable类是Error类和Exception类的父类    Exception类解决由程本身及环境所产生的异常    Error类则处理较少发生的内部系统错误    Exception类异常可以被捕获并进行相应的处理    对于Error类异常，程序员通常无能为力    Exception类异常还">
 
 
 
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 20:20:27 / 修改时间：20:53:07" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
+              <time title="创建时间：2019-05-13 20:20:27 / 修改时间：22:04:44" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
             
 
             
@@ -494,7 +494,7 @@
       
 
       
-        <p>首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类<br>Throwable类是Error类和Exception类的父类<br>Exception类解决由程本身及环境所产生的异常<br>Error类则处理较少发生的内部系统错误<br>Exception类异常可以被捕获并进行相应的处理<br>对于Error类异常，程序员通常无能为力<br>Exception类异常还分为设计时异常和运行时异常<br>所有运行时异常类的父类是RuntimeException类<br>设计时异常也称为checked异常<br>运行时异常也称为unchecked异常<br>设计时异常在编写代码时就必须处理<br>运行时异常在编写代码时可以不处理<br>因为运行时异常是在程序运行以后才有可能发生<br>Java处理异常使用5个关键字try、catch、finally、throw、throws</p>
+        <p>首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类<br>    Throwable类是Error类和Exception类的父类<br>    Exception类解决由程本身及环境所产生的异常<br>    Error类则处理较少发生的内部系统错误<br>    Exception类异常可以被捕获并进行相应的处理<br>    对于Error类异常，程序员通常无能为力<br>    Exception类异常还分为设计时异常和运行时异常<br>    所有运行时异常类的父类是RuntimeException类<br>    设计时异常也称为checked异常<br>    运行时异常也称为unchecked异常<br>    设计时异常在编写代码时就必须处理<br>    运行时异常在编写代码时可以不处理<br>    因为运行时异常是在程序运行以后才有可能发生<br>    Java处理异常使用5个关键字try、catch、finally、throw、throws</p>
 <ol>
 <li>总<pre><code>Exception:异常层次结构的根类
 RuntimeException:运行时异常的根类
@@ -505,48 +505,45 @@ NullPointerException:尝试访问null对象的成员时发生的空指针异常
 IOException:IO异常的根类，属于非运行时异常
 FileNotFoundException:文件操作时找不到文件，非运行时异常
 </code></pre></li>
-<li>try…catch…finally结构<pre><code>  try{
-      //此处放可能产生错误的代码
-  }catch(异常类名1 异常对象名1){
-      //此处放处理异常对象1的代码
-  } catch(异常类名2 异常对象名2){
-      //此处放处理异常对象2的代码
-  }finally{
-      //必须执行的代码
-  }
-  注: 把可能异常的程序代码放在try块中
-      程序运行时如果该块无异常，后面的catch不起作用
-      如果出现了异常，将终止try块执行catch块
-      catch块执行完后继续执行catch块
-      finally是可选项
-      如果有finally无论是否异常都会执行finally
-      finally是统一的出口，用来关闭资源、回收内存
-      如果catch块之间有父子关系，应该子在父前
-e.g
-    public class TestError {
-        public static void main(String[] args) {
-            try {
-                int i=1,j=0,res;
-                int array[] =new int[2];
-                System.out.println(&quot;begin&quot;);
-                res = i / j;
-                array[2] = j;
-                System.out.println(&quot;end&quot;);
-            }catch (ArithmeticException e) {
-                System.out.println(&quot;catched ArithmeticException&quot;);
-                e.printStackTrace();
-            }catch(ArrayIndexOutOfBoundsException e){
-                System.out.println(&quot;catched ArrayIndexOutOfBoundsException&quot;);
-                e.printStackTrace();
-            }
-            System.out.println(&quot;over&quot;);
+<li>try…catch…finally结构<pre><code>try{
+    //此处放可能产生错误的代码
+}catch(异常类名1 异常对象名1){
+    //此处放处理异常对象1的代码
+} catch(异常类名2 异常对象名2){
+    //此处放处理异常对象2的代码
+}finally{
+    //必须执行的代码
+}
+</code></pre> 注: 把可能异常的程序代码放在try块中<pre><code>程序运行时如果该块无异常，后面的catch不起作用
+如果出现了异常，将终止try块执行catch块
+catch块执行完后继续执行catch块
+finally是可选项
+如果有finally无论是否异常都会执行finally
+finally是统一的出口，用来关闭资源、回收内存
+如果catch块之间有父子关系，应该子在父前
+</code></pre> e.g<pre><code>public class TestError {
+    public static void main(String[] args) {
+        try {
+            int i=1,j=0,res;
+            int array[] =new int[2];
+            System.out.println(&quot;begin&quot;);
+            res = i / j;
+            array[2] = j;
+            System.out.println(&quot;end&quot;);
+        }catch (ArithmeticException e) {
+            System.out.println(&quot;catched ArithmeticException&quot;);
+            e.printStackTrace();
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println(&quot;catched ArrayIndexOutOfBoundsException&quot;);
+            e.printStackTrace();
         }
+        System.out.println(&quot;over&quot;);
     }
-    输出：begin
-    java.lang.ArithmeticException: / by zero
-            at TestError.main(TestError.java:8)
-    catched ArithmeticException
-    over
+}
+</code></pre> 输出：begin<pre><code>java.lang.ArithmeticException: / by zero
+        at TestError.main(TestError.java:8)
+catched ArithmeticException
+over
 </code></pre></li>
 <li>异常类的方法<br> 异常信息调用Throwable的几个方法进行处理<br> 主要方法：<pre><code>printStackTrace()，getMessage()，getStackTrace()
 </code></pre> (1) printStackTrace()<pre><code>printStackTrace()用于输出有关的异常信息
@@ -560,57 +557,50 @@ e.g
 该信息封装在StackTraceElement对象中
 包括类的全限定名，方法名，文件名，以及行号等
 </code></pre></li>
-<li>抛出异常<br> (1) throw语句    <pre><code>格式:
-     throw new 异常类名(异常描述);
-     其中异常类名为系统异常类名或用户自定义异常类名
-e.g
-     try {
-         int i=1,j=0,res;
-         res = i / j;
-     } catch (ArithmeticException e) {
-         throw new ArithmeticException(&quot;除数不能为零&quot;);
-     }
-     输出:
-     Exception in thread &quot;main&quot; java.lang.ArithmeticException: 除数不能为零
-     at com.senchen.exception.Demo5.main(Demo5.java:9)
-如果一个方法没有捕获可能触发的异常，调用该方法的其它方法应该捕获并处理该异常
+<li>抛出异常<br> (1) throw语句<br> 格式:<pre><code>throw new 异常类名(异常描述);
+其中异常类名为系统异常类名或用户自定义异常类名
+</code></pre> e.g<pre><code>try {
+    int i=1,j=0,res;
+    res = i / j;
+} catch (ArithmeticException e) {
+    throw new ArithmeticException(&quot;除数不能为零&quot;);
+}
+</code></pre> 输出:<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: 除数不能为零
+at com.senchen.exception.Demo5.main(Demo5.java:9)
+</code></pre> 注:<pre><code>如果一个方法没有捕获可能触发的异常，调用该方法的其它方法应该捕获并处理该异常
 为了明确某个方法不能捕获某个异常，而让调用该方法的其它方法捕获异常
 可以在方法声明的时候，使用throws可选项抛出该类异常 
-格式:
-     [修饰符] 返回值类型 方法名(参数列表) throws 异常类型名{
-         方法体
-         } 
-e.g
-     public static void calc() throws ArithmeticException{
-         int i = 1,j=0,res;
-         System.out.println(&quot;calc start&quot;);
-         res = i / j;
-         System.out.println(&quot;calc end&quot;);
-     }  
-     public static void main(String[] args) {
-         try {
-             System.out.println(&quot;main start&quot;);
-             calc();
-             System.out.println(&quot;main end&quot;);
-             } catch (ArithmeticException e) {
-                 System.out.println(&quot;main catched&quot;);
-             }
-             System.out.println(&quot;over&quot;);
-     }
-    输出:
-      main start
-      calc start
-      main catched
-      over
-    注:
-       1.calc方法声明的后面添加了throws ArithmeticException
-         表示calc方法不能处理ArithmeticException异常
-         调用calc方法的其它方法必须捕获ArithmeticException异常
-       2.main方法调用了calc方法
-         由于calc方法声明抛出ArithmeticException异常
-         因此main方法就必须使用try…catch语句捕获ArithmeticException异常
+</code></pre> 格式:<pre><code>[修饰符] 返回值类型 方法名(参数列表) throws 异常类型名{
+    方法体
+    } 
+</code></pre> e.g<pre><code>public static void calc() throws ArithmeticException{
+    int i = 1,j=0,res;
+    System.out.println(&quot;calc start&quot;);
+    res = i / j;
+    System.out.println(&quot;calc end&quot;);
+}  
+public static void main(String[] args) {
+    try {
+        System.out.println(&quot;main start&quot;);
+        calc();
+        System.out.println(&quot;main end&quot;);
+        } catch (ArithmeticException e) {
+            System.out.println(&quot;main catched&quot;);
+        }
+        System.out.println(&quot;over&quot;);
+}
+</code></pre> 输出:<pre><code>main start
+calc start
+main catched
+over
+</code></pre> 注:<pre><code>1.calc方法声明的后面添加了throws ArithmeticException
+  表示calc方法不能处理ArithmeticException异常
+  调用calc方法的其它方法必须捕获ArithmeticException异常
+2.main方法调用了calc方法
+  由于calc方法声明抛出ArithmeticException异常
+  因此main方法就必须使用try…catch语句捕获ArithmeticException异常
 </code></pre></li>
-<li>自定义异常<br> 系统定义的异常不能代表应用程序中所有的异常，有时需要创建用户自定义异常<br> 用户自定义异常一般继承Exception类<br> 但是从Exception继承的自定义异常在应用程序中激发时必须捕获<br> 而用户自定义异常一般是可控的异常，大部分情况下不需要捕获<br> 因此建议用户自定义异常继承自RuntimeException<br> e.g<pre><code>public class InputException extends RuntimeException {
+<li>自定义异常<br>   系统定义的异常不能代表应用程序中所有的异常，有时需要创建用户自定义异常<br>   用户自定义异常一般继承Exception类<br>   但是从Exception继承的自定义异常在应用程序中激发时必须捕获<br>   而用户自定义异常一般是可控的异常，大部分情况下不需要捕获<br>   因此建议用户自定义异常继承自RuntimeException<br> e.g<pre><code>public class InputException extends RuntimeException {
     public InputException() {
         super();
     }
@@ -626,15 +616,13 @@ public static void main(String[] args) {
         throw new InputException(&quot;用户名必须填写，长度不小于6位&quot;);
     }
 }
-输出:
-请输入用户名
+</code></pre> 输出:<pre><code>请输入用户名
 admin
 Exception in thread &quot;main&quot; com.senchen.exception.InputException: 
 用户名必须填写，长度不小于6位
 at com.senchen.exception.Demo7.main(Demo7.java:9)
-注:
-  1. InputException是自定义异常类，继承自RuntimeException
-  2. main方法中对输入的用户名进行验证，如果非法，抛出自定义异常InputException对象
+</code></pre> 注:<pre><code>1. InputException是自定义异常类，继承自RuntimeException
+2. main方法中对输入的用户名进行验证，如果非法，抛出自定义异常InputException对象
 </code></pre></li>
 </ol>
 

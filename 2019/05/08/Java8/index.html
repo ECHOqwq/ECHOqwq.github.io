@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="1.   今天又看了相关的书籍，稍微再自己梳理了一下Java的继承        首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，        并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调        用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方        法，指向新的方法，这时候和父类的原方法就没有关系了        e.g">
+  <meta name="description" content="今天又看了相关的书籍，稍微再自己梳理了一下Java的继承首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习——Java三大特征细化">
 <meta property="og:url" content="http://yoursite.com/2019/05/08/Java8/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="1.   今天又看了相关的书籍，稍微再自己梳理了一下Java的继承        首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，        并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调        用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方        法，指向新的方法，这时候和父类的原方法就没有关系了        e.g">
+<meta property="og:description" content="今天又看了相关的书籍，稍微再自己梳理了一下Java的继承首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T13:55:55.539Z">
+<meta property="og:updated_time" content="2019-05-13T14:01:14.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——Java三大特征细化">
-<meta name="twitter:description" content="1.   今天又看了相关的书籍，稍微再自己梳理了一下Java的继承        首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，        并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调        用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方        法，指向新的方法，这时候和父类的原方法就没有关系了        e.g">
+<meta name="twitter:description" content="今天又看了相关的书籍，稍微再自己梳理了一下Java的继承首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
 
 
 
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-13 21:55:55" itemprop="dateModified" datetime="2019-05-13T21:55:55+08:00">2019-05-13</time>
+                <time title="修改时间：2019-05-13 22:01:14" itemprop="dateModified" datetime="2019-05-13T22:01:14+08:00">2019-05-13</time>
               
             
           </span>
@@ -506,7 +506,134 @@
       
 
       
-        <p>1.<br>  <1> 今天又看了相关的书籍，稍微再自己梳理了一下Java的继承<br>        首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，<br>        并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调<br>        用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方<br>        法，指向新的方法，这时候和父类的原方法就没有关系了<br>        e.g<br>                public class TestExtends {<br>                    public static void main(String[] args) {<br>                        A a = new A();<br>                        B b = new B(200);<br>                        b.printa();<br>                    }<br>                }<br>                class A{<br>                    int x = 2;<br>                    public void printa() {<br>                        System.out.println(x);<br>                    }<br>                }<br>                class B extends A{<br>                    int x = 100;<br>                    public B(int x) {<br>                        this.x = x;<br>                    }<br>                }<br>                该例输出的x是2，因为B类并没有重写A类的printa方法<br>                所以还是原来的那个空间，可以理解成只是把它调用出来使用<br>                所以输出的值还是A类的x值<br>      若把上例的class B的代码修改<br>                class B extends A{<br>                    int x = 100;<br>                    public B(int x){<br>                        this.x =x;<br>                    }<br>                    public void printa(){<br>                        System.out.println(x);<br>                    }<br>                }<br>                即重载了printa方法，这时就不再输出父类的x了<br>      其次，在子类里并不能继承父类的构造方法，利用super其实还是在父类分配的空间里赋值<br>      e.g<br>                public class TestOverload {<br>                    public static void main(String[] args) {<br>                        Dog dogs = new Dog(“萨摩耶”,”汪汪”);<br>                        dogs.Print();<br>                    }<br>                }<br>                class Animals{<br>                    String name = “animals”;<br>                    String breed = “动物”;<br>                    String type = “a”;<br>                    public Animals(String type,String breed,String name) {<br>                        this.type = type;<br>                        this.breed = breed;<br>                        this.name = name;<br>                    }<br>                }<br>                class Dog extends Animals {<br>                    public Dog(String breed, String name) {<br>                        super(“狗”, breed, name);<br>                        // TODO 自动生成的构造函数存根<br>                    }<br>                    void Print(){<br>                        System.out.println(super.name);<br>                    }<br>                }<br>                out:汪汪<br>                为什么不是输出父类的name即animals呢？和上面说的一样，其实是在<br>                父类的空间里赋值，所以其实等于是把父类里的name赋为了汪汪，因此<br>                是有给父类赋值的<br>      e.g<br>                public class TestExtends {<br>                    public static void main(String[] args) {<br>                        B b = new B(200);<br>                        b.printa();<br>                    }<br>                }<br>                class A{<br>                    int x;<br>                    public A(int x) {<br>                        this.x = x;<br>                    }<br>                    public void printa() {<br>                        System.out.println(x);<br>                    }<br>                }<br>                class B extends A{<br>                    int x;<br>                    public B(int x) {<br>                        super(x);<br>                    }<br>                    public void printa() {<br>                        System.out.println(x);<br>                        System.out.println(super.x);<br>                    }<br>                }<br>                out : 0 200<br>                这里子类的构造方法没有this，因此子类的x没有赋值，是初始值0<br>                而调用了父类的构造，因此父类的x被赋了200<br>      e.g<br>                public class TestOverload {<br>                    public static void main(String[] args) {<br>                        Duck ducks = new Duck(“嘎嘎”);<br>                        Animals a = new Animals(“动物”,”生物”,”many”);<br>                        ducks.introduce();<br>                    }<br>                }<br>                class Animals{<br>                    String name = “animals”;<br>                    String breed = “动物”;<br>                    String type = “mam”;<br>                    public Animals(String type,String breed,String name) {<br>                        this.type = type;<br>                        this.breed = breed;<br>                        this.name = name;<br>                    }<br>                    public void introduce() {<br>                        System.out.println(“我是”+name+”,我的品种是”+breed+”,我的名字是”+name);<br>                    }<br>                }<br>                class Duck extends Animals {<br>                    public Duck(String name) {<br>                        super(“鸭鸭”,”未知”,name);<br>                    }<br>                }<br>                这里的introduce之所以可以输出ducks的name、type和breed<br>                是因为它是父类的一个方法，然后子类的super给父类的name、<br>                type和breed赋了值，父类在此输出<br>      所以总结一下我的理解(不懂是不是对的)<br>                java里的子类继承父类其实类似于C里的函数调用函数，不一样的是<br>                它不会开辟新的空间(哪怕是短暂的)，子类调用父类的某个方法，其<br>                实就只在父类里修改，而子类里面其实没有被赋值等操作</1></p>
+        <ol>
+<li><1> 今天又看了相关的书籍，稍微再自己梳理了一下Java的继承<pre><code>首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，
+并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调
+用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方
+法，指向新的方法，这时候和父类的原方法就没有关系了
+e.g
+        public class TestExtends {
+            public static void main(String[] args) {
+                A a = new A();
+                B b = new B(200);
+                b.printa();
+            }
+        }
+        class A{
+            int x = 2;
+            public void printa() {
+                System.out.println(x);
+            }
+        }
+        class B extends A{
+            int x = 100;
+            public B(int x) {
+                this.x = x;
+            }
+        }  
+        该例输出的x是2，因为B类并没有重写A类的printa方法
+        所以还是原来的那个空间，可以理解成只是把它调用出来使用
+        所以输出的值还是A类的x值
+</code></pre>   若把上例的class B的代码修改<pre><code>class B extends A{
+    int x = 100;
+    public B(int x){
+        this.x =x;
+    }
+    public void printa(){
+        System.out.println(x);
+    }
+}
+即重载了printa方法，这时就不再输出父类的x了
+</code></pre>   其次，在子类里并不能继承父类的构造方法，利用super其实还是在父类分配的空间里赋值<br>   e.g<pre><code>public class TestOverload {
+    public static void main(String[] args) {
+        Dog dogs = new Dog(&quot;萨摩耶&quot;,&quot;汪汪&quot;);
+        dogs.Print();
+    }
+}
+class Animals{
+    String name = &quot;animals&quot;;
+    String breed = &quot;动物&quot;;
+    String type = &quot;a&quot;;
+    public Animals(String type,String breed,String name) {
+        this.type = type;
+        this.breed = breed;
+        this.name = name;
+    }
+}
+class Dog extends Animals {
+    public Dog(String breed, String name) {
+        super(&quot;狗&quot;, breed, name);
+        // TODO 自动生成的构造函数存根
+    }
+    void Print(){
+        System.out.println(super.name);    
+    }
+}
+out:汪汪
+为什么不是输出父类的name即animals呢？和上面说的一样，其实是在
+父类的空间里赋值，所以其实等于是把父类里的name赋为了汪汪，因此
+是有给父类赋值的
+</code></pre>   e.g<pre><code>public class TestExtends {
+    public static void main(String[] args) {
+        B b = new B(200);
+        b.printa();
+    }
+}
+class A{
+    int x;
+    public A(int x) {
+        this.x = x;
+    }
+    public void printa() {
+        System.out.println(x);
+    }
+}
+class B extends A{
+    int x;
+    public B(int x) {
+        super(x);
+    }
+    public void printa() {
+        System.out.println(x);
+        System.out.println(super.x);
+    }
+}
+out : 0 200
+这里子类的构造方法没有this，因此子类的x没有赋值，是初始值0
+而调用了父类的构造，因此父类的x被赋了200
+</code></pre>   e.g<pre><code>public class TestOverload {
+    public static void main(String[] args) {
+        Duck ducks = new Duck(&quot;嘎嘎&quot;);
+        Animals a = new Animals(&quot;动物&quot;,&quot;生物&quot;,&quot;many&quot;);
+        ducks.introduce();
+    }
+}
+class Animals{
+    String name = &quot;animals&quot;;
+    String breed = &quot;动物&quot;;
+    String type = &quot;mam&quot;;
+    public Animals(String type,String breed,String name) {
+        this.type = type;
+        this.breed = breed;
+        this.name = name;
+    }
+    public void introduce() {
+        System.out.println(&quot;我是&quot;+name+&quot;,我的品种是&quot;+breed+&quot;,我的名字是&quot;+name);
+    }
+}
+class Duck extends Animals {
+    public Duck(String name) {
+        super(&quot;鸭鸭&quot;,&quot;未知&quot;,name);
+    }
+}
+这里的introduce之所以可以输出ducks的name、type和breed
+是因为它是父类的一个方法，然后子类的super给父类的name、
+type和breed赋了值，父类在此输出
+</code></pre>   所以总结一下我的理解(不懂是不是对的)<pre><code>java里的子类继承父类其实类似于C里的函数调用函数，不一样的是
+它不会开辟新的空间(哪怕是短暂的)，子类调用父类的某个方法，其
+实就只在父类里修改，而子类里面其实没有被赋值等操作
+</code></pre></1></li>
+</ol>
 
       
     </div>
