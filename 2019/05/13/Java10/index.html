@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类 Throwable类是Error类和Exception类的父类 Exception类解决由程本身及环境所产生的异常 Error类则处理较少发生的内部系统错误 Exception类异常可以被捕获并进行相应的处理 对于Error类异常，程序员通常无能为力 子分类 Exception类异常还分为设计时异常">
+  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习——Java异常处理机制">
 <meta property="og:url" content="http://yoursite.com/2019/05/13/Java10/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类 Throwable类是Error类和Exception类的父类 Exception类解决由程本身及环境所产生的异常 Error类则处理较少发生的内部系统错误 Exception类异常可以被捕获并进行相应的处理 对于Error类异常，程序员通常无能为力 子分类 Exception类异常还分为设计时异常">
+<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T14:14:11.027Z">
+<meta property="og:updated_time" content="2019-05-13T14:16:30.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——Java异常处理机制">
-<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类 Throwable类是Error类和Exception类的父类 Exception类解决由程本身及环境所产生的异常 Error类则处理较少发生的内部系统错误 Exception类异常可以被捕获并进行相应的处理 对于Error类异常，程序员通常无能为力 子分类 Exception类异常还分为设计时异常">
+<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
 
 
 
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 20:20:27 / 修改时间：22:14:11" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
+              <time title="创建时间：2019-05-13 20:20:27 / 修改时间：22:16:30" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
             
 
             
@@ -496,7 +496,7 @@
       
         <p>首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类</p>
 <ol>
-<li>总<br> <1>总分类<br> Throwable类是Error类和Exception类的父类<br> Exception类解决由程本身及环境所产生的异常<br> Error类则处理较少发生的内部系统错误<br> Exception类异常可以被捕获并进行相应的处理<br> 对于Error类异常，程序员通常无能为力<br> <2>子分类<br> Exception类异常还分为设计时异常和运行时异常<br> 所有运行时异常类的父类是RuntimeException类<br> 设计时异常也称为checked异常<br> 运行时异常也称为unchecked异常<br> 设计时异常在编写代码时就必须处理<br> 运行时异常在编写代码时可以不处理<br> 因为运行时异常是在程序运行以后才有可能发生<br> <3> 关键字<br> Java处理异常使用5个关键字try、catch、finally、throw、throws</3></2></1></li>
+<li>总<br> <1>总分类<br>   Throwable类是Error类和Exception类的父类<br>   Exception类解决由程本身及环境所产生的异常<br>   Error类则处理较少发生的内部系统错误<br>   Exception类异常可以被捕获并进行相应的处理<br>   对于Error类异常，程序员通常无能为力<br> <2>子分类<br>   Exception类异常还分为设计时异常和运行时异常<br>   所有运行时异常类的父类是RuntimeException类<br>   设计时异常也称为checked异常<br>   运行时异常也称为unchecked异常<br>   设计时异常在编写代码时就必须处理<br>   运行时异常在编写代码时可以不处理<br>   因为运行时异常是在程序运行以后才有可能发生<br> <3> 关键字<br>   Java处理异常使用5个关键字try、catch、finally、throw、throws</3></2></1></li>
 <li>类型<pre><code>Exception:异常层次结构的根类
 RuntimeException:运行时异常的根类
 ArithmeticException:算术运算异常
