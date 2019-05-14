@@ -96,19 +96,18 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="和数组的区别 数组数组有长度、数据类型的限制，操作不方便  集合存储元素个数不受限制、元素类型不受限制的数据存储结构  集合分类 Java中的集合使用Collection接口和Map接口表示 Collection接口下还有两个子接口，分别是List和Set 特点a. Collection 接口存储一组不唯一，无序的对象 b. List接口存储一组不唯一，有序的对象，有序是指有下标 c. Set">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/hello-world/index.html">
+<meta property="og:title" content="Java学习——集合框架collection">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/Java12/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="和数组的区别 数组数组有长度、数据类型的限制，操作不方便  集合存储元素个数不受限制、元素类型不受限制的数据存储结构  集合分类 Java中的集合使用Collection接口和Map接口表示 Collection接口下还有两个子接口，分别是List和Set 特点a. Collection 接口存储一组不唯一，无序的对象 b. List接口存储一组不唯一，有序的对象，有序是指有下标 c. Set">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/04/13/hello-world/2019-title/5.jpg">
-<meta property="og:updated_time" content="2019-04-22T13:55:05.856Z">
+<meta property="og:updated_time" content="2019-05-14T15:12:30.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="twitter:image" content="http://yoursite.com/2019/04/13/hello-world/2019-title/5.jpg">
+<meta name="twitter:title" content="Java学习——集合框架collection">
+<meta name="twitter:description" content="和数组的区别 数组数组有长度、数据类型的限制，操作不方便  集合存储元素个数不受限制、元素类型不受限制的数据存储结构  集合分类 Java中的集合使用Collection接口和Map接口表示 Collection接口下还有两个子接口，分别是List和Set 特点a. Collection 接口存储一组不唯一，无序的对象 b. List接口存储一组不唯一，有序的对象，有序是指有下标 c. Set">
 
 
 
@@ -116,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/04/13/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/Java12/">
 
 
 
@@ -126,7 +125,7 @@
   };
 </script>
 
-  <title>Hello World | 兄控日记</title>
+  <title>Java学习——集合框架collection | 兄控日记</title>
   
 
 
@@ -382,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/Java12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -399,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">Java学习——集合框架collection
 
               
             
@@ -425,28 +424,34 @@
                 
               
 
-              <time title="创建时间：2019-04-13 12:18:02" itemprop="dateCreated datePublished" datetime="2019-04-13T12:18:02+08:00">2019-04-13</time>
+              <time title="创建时间：2019-05-14 22:11:45 / 修改时间：23:12:30" itemprop="dateCreated datePublished" datetime="2019-05-14T22:11:45+08:00">2019-05-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-22 21:55:05" itemprop="dateModified" datetime="2019-04-22T21:55:05+08:00">2019-04-22</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -460,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/13/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/hello-world/" itemprop="commentCount"></span>
+                <a href="/2019/05/14/Java12/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/14/Java12/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -489,15 +494,165 @@
       
 
       
-        <p><img src="/2019/04/13/hello-world/2019-title/5.jpg" alt="这是一张图片"><br>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <ol>
+<li>和数组的区别<br><1> 数组<pre><code>数组有长度、数据类型的限制，操作不方便
+</code></pre><2> 集合<pre><code>存储元素个数不受限制、元素类型不受限制的数据存储结构
+</code></pre></2></1></li>
+<li>集合分类<br><1> Java中的集合使用Collection接口和Map接口表示<br><2> Collection接口下还有两个子接口，分别是List和Set<br><3> 特点<pre><code>a. Collection 接口存储一组不唯一，无序的对象
+b. List接口存储一组不唯一，有序的对象，有序是指有下标
+c. Set 接口存储一组唯一，无序的对象
+d. Map接口存储一组键值对象，提供key到value的映射
+</code></pre></3></2></1></li>
+<li>集合框架的实现类<br><1> 在集合框架的实现类中提供了相应的操作方法<pre><code>集合中的接口及其相关类都位于java.util包中
+如何向集合中添加元素
+如果从集合中获取某一个元素
+如何获得集合中所有的元素
+如何将一个元素从集合中移除
+如何判断集合中是否包含了某个元素
+</code></pre></1></li>
+<li>List接口<br><1> 和数组的区别<pre><code>a. 数组长度在使用前必须确定，一旦确定不能改变
+   而List集合长度可变，无需定义
+b. 数组中必须存放同一类型的数据
+   List集合中可以存放不同类型的数据
+</code></pre><2> 常用方法<pre><code>add(Object obj)    加入元素，返回是否添加成功
+clear()    清除集合中的元素
+contains(Object obj)    查找集合中是否存在传入的元素get(int index)    获取指定位置的元素
+isEmpty()    判断集合是否为空
+remove(int index)    删除制定位置的元素，并返回该元素size()    获取集合大小
+toArray()    将集合转换成一个数组
+</code></pre><3> e.g<pre><code>  import java.util.ArrayList;
+  import java.util.List;
+  class Student{
+      public void study(){
+          System.out.println(&quot;学生在学习&quot;);
+      }
+  }
+  class Teacher{
+      public void teach(){
+          System.out.println(&quot;老师在上课&quot;);
+      }
+  }
+  public class ArrayListDemo1 {
+      public static void main(String[] args) {
+          // 定义集合对象list
+          List list = new ArrayList();
+          // 向集合中添加不同类型的元素
+          Teacher t =new Teacher();
+          Student s =new Student();
+          list.add(&quot;Hello&quot;);
+          list.add(t);
+          list.add(s);
+          // 判断集合中是否包含&quot;Hello&quot;
+          if (list.contains(&quot;Hello&quot;)) {
+              System.out.println(&quot;集合中包含Hello&quot;);
+          } else {
+              System.out.println(&quot;集合中不包含Hello&quot;);
+            }
+            // 显示集合中所有的元素
+          System.out.println(&quot;集合中有以下元素&quot;);
+          for (int i = 0; i &lt; list.size(); i++) {
+              if(list.get(i) instanceof java.lang.String){
+                  System.out.println(list.get(i));
+                  }else if(list.get(i) instanceof Teacher){
+                      Teacher tea =(Teacher) list.get(i);
+                      tea.teach();
+                  }else if(list.get(i) instanceof Student){
+                      Student stu = (Student)list.get(i);
+                      stu.study();
+                  }
+          }
+          // 从集合中移除下标为0的元素
+          list.remove(0);
+          // 显示移除后集合中所有的元素
+          System.out.println(&quot;移除后集合中还有&quot; + list.size() +&quot;个元素&quot;);
+      }
+    }
+输出：
+    集合中包含Hello
+    集合中有以下元素
+    Hello
+    老师在上课
+    学生在学习
+    移除后集合中还有2个元素
+注:
+    在main方法中创建了集合对象list
+    使用add方法向集合中添加了String类型的元素&quot;Hello&quot;，Teacher类型的元素t，Student类型的元素s
+    使用contains()方法判断集合中是否包含&quot;Hello&quot;元素
+    Size()方法用于获取集合中元素的个数
+    get()方法用于获取集合中某一个元素
+    使用remove方法将下标为0的元素移除
+    注意移除后，集合元素下标重写从0排列，即原来下标为1的元素下标变成了0
+</code></pre><4> 里氏替换原则在上例中的应用<pre><code>add方法参数是Object类型
+get方法返回值是Object类型
+由于Object是任何类的父类，依据里氏替换原则，add方法可以添加任何类型的数据到集合中
+此时被添加的数据会自动转换成Object类型
+由于get方法返回的是Object类型，因此需要将从集合中获取的元素强制转换成原来的类型
+</code></pre><5> 缺点<pre><code>类型的转换带来了效率的降低、也容易发生类型转换异常
+</code></pre></5></4></3></2></1></li>
+<li>泛型集合<br><1> 定义<pre><code>泛型是指类型参数化，即数据类型是可以变化的
+</code></pre><2> e.g<pre><code>public static void main(String[] args) {
+    // 定义泛型集合，该集合中只允许存储Person类型的对象
+    List&lt;Person&gt; list = new ArrayList&lt;Person&gt;();
+    // 向集合中添加不同类型的元素
+    Person p1 =new Person();
+    Person p2 =new Person();
+    //向集合中添加元素
+    list.add(p1);//add方法的参数是Person类型
+    list.add(p2); //add方法的参数是Person类型
+    // 显示集合中所有的元素
+    for (int i = 0; i &lt; list.size(); i++) {
+        list.get(i).work();//get方法的返回值是Person类型
+    }
+}
+注:
+   list中只允许存储&lt;&gt;中规定的数据类型
+</code></pre></2></1></li>
+<li>LinkedList类<br><1> 总<pre><code>和ArrayList的使用没有什么区别
+</code></pre><2> 和ArrayList的区别<pre><code>a. ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构 
+b. 对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针 
+c. 对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据
+</code></pre><3> 个人理解<pre><code>ArrayList相当于数组
+LinkedList相当于链表
+</code></pre></3></2></1></li>
+<li>Vector类<br><1> 总<pre><code>同ArrayList
+</code></pre><2> 区别<pre><code>ArrayList和LinkedList是非线程安全的，并且是不同步的
+Vector的所有方法都用了synchronized方法，是线程安全的
+但是vector中的方法组合起来使用不是线程安全的
+</code></pre></2></1></li>
+<li>Set接口<br><1> 和List接口的区别 <pre><code>List集合中存储的数据是可以重复的，有顺序的
+Set集合中存储的数据是没有顺序的，不允许重复的
+</code></pre><2> 常用方法<pre><code>add(Object obj)    加入元素
+clear()    移除Set集合中所有元素
+contains(Object obj)    判断Set集合中是否包含指定元素
+isEmpty()    判断Set集合是否为空
+iterator()    返回Set集合中对元素迭代的迭代器
+remove(Object obj)    从集合中删除元素
+size()    返回集合中的元素数量
+</code></pre><3> e.g<pre><code>// 定义集合对象list
+Set&lt;Person&gt; set = new HashSet&lt;Person&gt;();
+//创建对象
+Person p1 =new Person();
+Person p2 =new Person();
+Person p3 =new Person();
+//向set集合中添加元素
+set.add(p1);
+set.add(p2);
+set.add(p3);
+set.add(p3);//p3在上一行已经添加到set中，再次添加会忽略。
+</code></pre></3></2></1></li>
+<li>Iterator迭代器<br><1> 定义<pre><code>迭代也叫遍历，是指将集合或数组中所有的元素一一访问一遍
+Set集合是没有下标的，因此不能使用for循环遍历
+为此java提供了迭代器Iterator，专门用于集合的遍历
+</code></pre><2> e.g<pre><code>Iterator&lt;Person&gt; iterator = set.iterator();
+while(iterator.hasNext()){
+  Person p = iterator.next();
+  p.work();
+}
+</code></pre>   注:<pre><code>a. Iterator&lt;Person&gt; iterator = set.iterator()表示从set集合中获取迭代器
+b. iterator.hasNext()表示是否还有未迭代完的元素，如果有返回true，否则返回false
+c. iterator.next()表示从集合中迭代出一个集合元素
+</code></pre></2></1></li>
+</ol>
 
       
     </div>
@@ -552,6 +707,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
 
       
       
@@ -561,15 +722,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/05/14/Java11/" rel="next" title="Java学习——内存管理">
+                <i class="fa fa-chevron-left"></i> Java学习——内存管理
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/20/week1-周报/" rel="prev" title="Week1">
-                Week1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -618,17 +779,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -712,23 +864,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
@@ -918,7 +1053,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/04/13/hello-world/'
+    refer: '2019/05/14/Java12/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
