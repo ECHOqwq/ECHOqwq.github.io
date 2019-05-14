@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-14T09:31:34.612Z">
+<meta property="og:updated_time" content="2019-05-14T10:00:55.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——内存管理">
 <meta name="twitter:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-14 16:52:14 / 修改时间：17:31:34" itemprop="dateCreated datePublished" datetime="2019-05-14T16:52:14+08:00">2019-05-14</time>
+              <time title="创建时间：2019-05-14 16:52:14 / 修改时间：18:00:55" itemprop="dateCreated datePublished" datetime="2019-05-14T16:52:14+08:00">2019-05-14</time>
             
 
             
@@ -529,14 +529,89 @@ Java虚拟机会再次向操作系统申请更多的内存供程序使用
 方法区:回收不再被对象引用的类结构所占用的内存
 堆:回收不再被引用的对象数据所占用的内存
 当对象被垃圾回收程序回收时，会调用对象的finalize方法通知开发者该对象即将被回收
-</code></pre><3> Runtime类的使用<pre><code>getRuntime()    获取Runtime对象
+</code></pre></2></1></li>
+<li>垃圾回收机制中Runtime类的使用<br><1> 方法       <pre><code>getRuntime()    获取Runtime对象
 totalMemory()    获取JVM分配给程序的内存数量
 freeMemory()    获取当前可用的内存数量
 maxMemory()    获取Java虚拟机可以申请到的最大内存数量
 gc()    建议Java虚拟机进行垃圾回收
 注:
    gc方法只会建议Java虚拟机进行垃圾回收，但是不保证一定会进行
-e.g
+</code></pre><2> e.g<pre><code>public static void main(String[] args) {
+    showMemory(&quot;程序初始时&quot;);
+    Student []stus = new Student[500000];
+    for (int i = 0; i &lt; stus.length; i++) {
+        stus[i] = new Student();
+        stus[i].name = &quot;Tom&quot;;
+        stus[i].age = 18;
+    }
+    showMemory(&quot;创建数组后&quot;);
+    Runtime.getRuntime().gc();
+    //因为stus数组引用了各个Student对象，所以这时进行垃圾回收并不会回收内存
+    showMemory(&quot;第一次垃圾回收后&quot;);
+    stus = null;
+    //将stus设置为null后，各个Student对象失去了引用，会被标示为垃圾
+    Runtime.getRuntime().gc();
+    showMemory(&quot;垃圾回收后&quot;);
+}
+public static void showMemory(String state) {
+        Runtime rt = Runtime.getRuntime();
+      System.out.println(state + &quot;：分配内存 = &quot; + rt.totalMemory()/1024 + &quot;KB&quot;);
+      System.out.println(state + &quot;：剩余内存 = &quot; + rt.freeMemory()/1024 + &quot;KB&quot;);
+      System.out.println(state + &quot;：内存上限 = &quot; + rt.maxMemory()/1024 + &quot;KB&quot;);
+      System.out.println(&quot;---------------------------------------&quot;);        
+}
+</code></pre></2></1></li>
+<li>字符串<br><1> 字符串池<pre><code>字符串池是在方法去内存中划分一片区域称为“字符串池”
+字符串池用于存储字面量、字符串常量
+相同内容的字符串引用池中的同一个对象
+</code></pre><2> e.g 1<pre><code>public static void main(String[] args) {
+    String a = &quot;Tom&quot;;
+    String b = &quot;Tom&quot;;
+    String c = &quot;Jerry&quot;;
+    String d = &quot;Jerry&quot;;
+}
+有了字符串池，只需要在池中创建2个对象
+令a和b引用值为&quot;Tom&quot;的对象，c和d引用值为&quot;Jerry&quot;的对象
+</code></pre><3> 使用字符串池的情况<pre><code>public static void main(String[] args) {
+    String a = &quot;Tom&quot;;
+    String b = new String(&quot;Tom&quot;);
+    String c = &quot;T&quot; + &quot;o&quot; + &quot;m&quot;;
+    String d = &quot;T&quot;;
+    String e = d + &quot;om&quot;;
+    System.out.println(a==b);    //结果为false
+    System.out.println(a==c);    //结果为true
+    System.out.println(a==d);    //结果为false
+    System.out.println(a==e);    //结果为false
+}
+注:
+   1.使用new关键字则不使用字符串池
+   2.“T”+“o” +“m”为表达式在编译时可以确定表达式的值
+     编译器会用“Tom&quot;替换该表达式，使用字符串池
+   3.表达式中存在变量，无法在在编译时确定表达式的值，不使用字符串池
+</code></pre></3></2></1></li>
+<li>计算程序耗时<br><1> e.g<pre><code>  public static void main(String[] args) {
+      int c = 0;
+      long start = System.currentTimeMillis();
+      for (int i = 0; i &lt; 100000; i++) {
+          c = c + 1;
+      }
+      long end = System.currentTimeMillis();
+      System.out.println(&quot;耗时&quot;+(end-start)+&quot;毫秒&quot;);
+}
+</code></pre><2> 注<pre><code>System.currentTimeMillis()获取以毫秒为单位的当前时刻
+</code></pre></2></1></li>
+<li>StringBuffer类 StringBuilder类<br><1> 工作原理<pre><code>预先在堆中开辟一定的内存空间，进行字符串连接操作时将字符串内容加到内存空间中
+如果内存空间不够用再申请扩大内存空间
+以避免了大量产生新的对象，不断分配内存的情况
+</code></pre><2> 区别<pre><code>StringBuilder类的用法与StringBuffer类完全一样
+内部实现机制稍有改动，增加了对多线程同时访问的支持，实现了“线程安全”
+</code></pre><3> e.g<pre><code>public static void main(String[] args) {
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i &lt; 100000; i++) {
+        sb.append(&quot;1&quot;);
+    }
+}
 </code></pre></3></2></1></li>
 </ol>
 
