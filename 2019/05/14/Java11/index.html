@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="纵有疾风起 人生不言弃">
-<meta property="og:type" content="website">
-<meta property="og:title" content="兄控日记">
-<meta property="og:url" content="http://yoursite.com/tags/Java/index.html">
+  <meta name="description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习——内存管理">
+<meta property="og:url" content="http://yoursite.com/2019/05/14/Java11/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="纵有疾风起 人生不言弃">
+<meta property="og:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-14T09:31:34.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="兄控日记">
-<meta name="twitter:description" content="纵有疾风起 人生不言弃">
+<meta name="twitter:title" content="Java学习——内存管理">
+<meta name="twitter:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/Java/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/14/Java11/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>标签: Java | 兄控日记</title>
+  <title>Java学习——内存管理 | 兄控日记</title>
   
 
 
@@ -171,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     
     <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
@@ -249,7 +251,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -359,327 +361,291 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Java<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/Java11/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="水深真的一米六">
+      <meta itemprop="description" content="纵有疾风起 人生不言弃">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兄控日记">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/05/14/Java11/" itemprop="url">
-            
-              <span itemprop="name">Java学习——内存管理</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Java学习——内存管理
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-14T16:52:14+08:00" content="2019-05-14">
-          05-14
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-14 16:52:14 / 修改时间：17:31:34" itemprop="dateCreated datePublished" datetime="2019-05-14T16:52:14+08:00">2019-05-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/14/Java11/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/14/Java11/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/13/Java10/" itemprop="url">
-            
-              <span itemprop="name">Java学习——Java异常处理机制</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-13T20:20:27+08:00" content="2019-05-13">
-          05-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/08/Java9/" itemprop="url">
-            
-              <span itemprop="name">Java学习——里氏替换原则</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-08T22:29:20+08:00" content="2019-05-08">
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/08/Java8/" itemprop="url">
-            
-              <span itemprop="name">Java学习——Java三大特征细化</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-08T21:20:31+08:00" content="2019-05-08">
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/05/Java7/" itemprop="url">
-            
-              <span itemprop="name">Java学习——random随机数</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-05T18:00:13+08:00" content="2019-05-05">
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/05/Java6/" itemprop="url">
-            
-              <span itemprop="name">Java学习——Scanner类</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-05T16:23:36+08:00" content="2019-05-05">
-          05-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/03/Java5/" itemprop="url">
-            
-              <span itemprop="name">Java学习——构造方法&&普通方法</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-03T00:25:55+08:00" content="2019-05-03">
-          05-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/02/Java4/" itemprop="url">
-            
-              <span itemprop="name">Java学习——面向对象三大特征</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-02T19:34:27+08:00" content="2019-05-02">
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/02/Java3/" itemprop="url">
-            
-              <span itemprop="name">Java学习——Java面向对象基本概念</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-02T11:02:09+08:00" content="2019-05-02">
-          05-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/05/01/Java2/" itemprop="url">
-            
-              <span itemprop="name">Java学习——Java入门知识</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-01T18:50:38+08:00" content="2019-05-01">
-          05-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <ol>
+<li>Java程序、虚拟机、操作系统<br><1> 关系<pre><code>在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间
+并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间
+当程序所需内存空间超出初始内存空间时
+Java虚拟机会再次向操作系统申请更多的内存供程序使用
+如果Java虚拟机已申请的内存达到了规定的最大内存空间
+但程序还需要更多的内存，这时会出现内存溢出的错误
+</code></pre></1></li>
+<li>三个区域<br><1> 定义 <pre><code>Java虚拟机对应的在内存中划分了三个区域“方法区”、“堆区”和“栈区”
+</code></pre><2> 方法区<pre><code>方法区默认最大容量为64M，Java虚拟机会将加载的java类源代码存入方法区
+保存类的结构（属性与方法），类静态成员等内容
+</code></pre><3> 堆<pre><code>堆默认最大容量为64M，堆存存放对象持有的数据，同时保持对原类的引用
+注:对象属性的值保存在堆中，对象调用的方法保存在方法区
+</code></pre><4> 栈<pre><code>栈默认最大容量为1M
+在程序运行时，每当遇到方法调用时，Java虚拟机就会在栈中划分一块内存称为栈帧
+栈帧中的内存供局部变量（包括基本类型与引用类型）使用
+当方法调用结束后，Java虚拟机会收回此栈帧占用的内存
+注:
+   基本类型在栈中存放对应的变量值
+   引用类型则在栈中存放对象的引用（即：保存的是堆中对象的地址）
+</code></pre><5> 注意<pre><code>我们使用“==”运算符判断两个变量是否相等，这对于基本类型的变量来说没有问题
+但是对于引用类型的变量，“==”运算符判断的是变量的引用地址，不是引用的内容
+</code></pre></5></4></3></2></1></li>
+<li>传递<br><1> 分类<pre><code>值传递(基本数据类型)
+引用传递(类、接口、数组)
+</code></pre><2> 区分<pre><code>基本数据类型：该参数采用值传递，Java虚拟机会拷贝参数的值，放入新的栈帧
+引用数据类型：该参数采用引用传递，Java虚拟机会拷贝引用对象在堆中的地址，放入新的栈帧
+引用传递之所以拷贝的是对象的地址而不是对象的数据，是为了提高运行效率，减少内存的浪费
+</code></pre></2></1></li>
+<li>垃圾回收机制<br><1> 定义<pre><code>在Java语言中，程序员需要手工申请内存（一般使用new关键字）
+不用手工编码释放内存，而是由Java虚拟机自动对不再使用的内存进行回收
+</code></pre><2> 栈、堆、方法区<pre><code>栈:栈会在方法调用时划分栈帧，方法调用结束时回收栈帧，不需要垃圾回收
+方法区:回收不再被对象引用的类结构所占用的内存
+堆:回收不再被引用的对象数据所占用的内存
+当对象被垃圾回收程序回收时，会调用对象的finalize方法通知开发者该对象即将被回收
+</code></pre><3> Runtime类的使用<pre><code>getRuntime()    获取Runtime对象
+totalMemory()    获取JVM分配给程序的内存数量
+freeMemory()    获取当前可用的内存数量
+maxMemory()    获取Java虚拟机可以申请到的最大内存数量
+gc()    建议Java虚拟机进行垃圾回收
+注:
+   gc方法只会建议Java虚拟机进行垃圾回收，但是不保证一定会进行
+e.g
+</code></pre></3></2></1></li>
+</ol>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Donate comment here</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/weixin.jpg" alt="水深真的一米六 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/zhifubao.jpg" alt="水深真的一米六 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/13/Java10/" rel="next" title="Java学习——Java异常处理机制">
+                <i class="fa fa-chevron-left"></i> Java学习——Java异常处理机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/Java/page/2/">2</a><a class="extend next" rel="next" href="/tags/Java/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="[object Object]"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -920,6 +886,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -965,6 +935,23 @@
 
 
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/05/14/Java11/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
