@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+  <meta name="description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——构造方法&amp;&amp;普通方法">
-<meta property="og:url" content="http://yoursite.com/2019/05/03/Java5/index.html">
+<meta property="og:title" content="Java学习——集合框架Map">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/Java13/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+<meta property="og:description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T03:48:58.846Z">
+<meta property="og:updated_time" content="2019-05-15T15:11:08.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——构造方法&amp;&amp;普通方法">
-<meta name="twitter:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+<meta name="twitter:title" content="Java学习——集合框架Map">
+<meta name="twitter:description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/03/Java5/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/15/Java13/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——构造方法&&普通方法 | 兄控日记</title>
+  <title>Java学习——集合框架Map | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/Java5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/Java13/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——构造方法&&普通方法
+          <h1 class="post-title" itemprop="name headline">Java学习——集合框架Map
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 00:25:55 / 修改时间：11:48:58" itemprop="dateCreated datePublished" datetime="2019-05-03T00:25:55+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-15 19:37:21 / 修改时间：23:11:08" itemprop="dateCreated datePublished" datetime="2019-05-15T19:37:21+08:00">2019-05-15</time>
             
 
             
@@ -465,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/03/Java5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/Java5/" itemprop="commentCount"></span>
+                <a href="/2019/05/15/Java13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/15/Java13/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -494,50 +494,140 @@
       
 
       
-        <p>因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结</p>
-<ol>
-<li>构造方法:<pre><code>&lt;1&gt; 方法名一定要和类名相同
-&lt;2&gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法
-&lt;3&gt; 在方法中不能使用return语句返回一个值
-&lt;4&gt; 在创建对象时，要调用new，如:book b1=new book();
-&lt;5&gt; 当没有指定构造方法时，系统会自动添加无参的构造方法
-&lt;6&gt; 构造方法的重载：方法名相同，但参数不同的多个方法，调用时会自动根据不同的参数选择相应的方法
-&lt;7&gt; 构造方法前默认有一句super();，也正因为此构造方法不会被继承
-&lt;8&gt; 接口不允许被实例化，所以接口没有构造方法
-&lt;9&gt; 不能被static、final、synchronized、abstract和native修饰
-</code></pre> e.g (一个注意点)<pre><code>public class Text{
-    public static void main(String[] args){
-        Person p1 = new Person();
-        p1.age = 18;
-        Person p2 = new Person(19);
-        System.out.println(p1);
-        System.out.println(p2);
+        <ol>
+<li><p>Map接口<br><1> Map集合和Set、List的区别</1></p>
+<pre><code>List集合存储的是有顺序的，可以存储重复的数据
+Set集合存储的是无序的不允许重复的数据
+Map集合存储的是键值对数据
+</code></pre><p><2> 键值对</2></p>
+<pre><code>Map集合内部有两个集合
+一个集合用于保存Map中的key（键）
+一个集合用于保存Map中的value（值）
+其中key和value可以是任意数据类型数据
+</code></pre><p><3> Map集合中的HashMap类</3></p>
+<pre><code>put(Object key,Object value)    加入元素，返回与此key关联的原有的value，不存在则返回null
+clear()    从集合中移除所有的元素
+containsKey(Object key)    根据key从集合中判断key是否存在
+containsValue(Object value)    根据value从集合中判断value是否存在
+get(Object key)    根据key返回key对应的值
+keySet()    返回Map集合中包含的键集合
+remove(Object key)    从集合中删除key对应的元素，返回与key对应的原有value，不存在则返回null
+size()    返回集合中的元素的数量
+
+注: Map集合中的常用类有Hashtable、HashMap、Properties
+</code></pre><p>e.g </p>
+<pre><code>import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+class Person {
+    private String cardId;//编号
+    private String name;//姓名
+    //构造方法
+    public Person(String cardId, String name) {
+        this.cardId = cardId;
+        this.n ame = name;
     }
-}
-class Person{
-    int age;
-    public Person(int age){
-        super();
-        this.age=age;
+    //getter and setter
+    public String getCardId() {
+        return cardId;
     }
-    public String toString(){
-        return &quot;Person : age=&quot;+age; 
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
     }
-}
-</code></pre> <1> 在System.out.println(p1)时会报错<pre><code>    因为后来声明了一个带参构造函数，系统就不会自动添加无参的构造函数
-    编译器就会提示不存在对应的构造函数
-解决办法:再写一个构造函数
-    public Person(){
+    public String getName() {
+        return name;
     }
-</code></pre> <2> 重写toString的作用<pre><code>重写toString后输出p1即可输入想要的成员内容
-若不改写就是系统默认的(目前还不懂那一串数字加字母有什么用)
-</code></pre></2></1></li>
-<li>普通方法<pre><code>&lt;1&gt; 无自带super();
-&lt;2&gt; 名字不与类名相同
-&lt;3&gt; 有返回值类型的声明
+    public void setName(String name) {
+        this.name = name;
+    }
+ }
+ public class HashMapDemo1 {
+     public static void main(String[] args) {
+         // 定义集合对象map
+         Map&lt;String, Person&gt; map =new HashMap&lt;String, Person&gt;();
+         //创建Person对象
+         Person p1 = new Person(&quot;001&quot;,&quot;史进&quot;);
+         Person p2 = new Person(&quot;002&quot;,&quot;李逵&quot;);
+         Person p3 = new Person(&quot;003&quot;,&quot;吴用&quot;);
+         //向map集合中添加元素
+         map.put(p1.getCardId(), p1);
+         map.put(p2.getCardId(), p2);
+         map.put(p3.getCardId(), p3);
+         // 通过键集判断集合中是否包含&quot;史进&quot;
+         if (map.containsKey(p1.getCardId())) {
+             System.out.println(&quot;通过键集查找到了史进&quot;);
+         } else { 
+             System.out.println(&quot;通过键集没有查找到了史进&quot;);
+         }
+         // 通过值集判断集合中是否包含&quot;史进&quot;
+         if (map.containsValue(p1)) {
+             System.out.println(&quot;通过值集查找到了史进&quot;);
+         } else {
+             System.out.println(&quot;通过值集没有查找到了史进&quot;);
+         }
+         // 从map集合中获取一个元素
+         Person person =  map.get(&quot;001&quot;);
+         System.out.println(&quot;键为001的用户，他的姓名是&quot;+person.getName());
+         //迭代Map集合中所有的好汉
+         System.out.println(&quot;迭代集合中所有的元素&quot;);
+         StringBuffer buffer =new StringBuffer();
+         Set&lt;String&gt; set = map.keySet();
+         Iterator&lt;String&gt; iterator = set.iterator();
+         while(iterator.hasNext()){
+             String key = iterator.next();
+             Person person2 = map.get(key);
+             buffer.append(&quot;键为&quot;);
+             buffer.append(person2.getCardId());
+             buffer.append(&quot;的用户，他的姓名是&quot;);
+             buffer.append(person2.getName());
+             System.out.println(buffer.toString());
+             buffer.delete(0, buffer.length());
+         }
+         // 从集合中移除史进
+         map.remove(p1.getCardId());
+     }
+ }
+</code></pre><p><4> 若出现重复的键</4></p>
+<pre><code>Map&lt;String, Person&gt; map = new HashMap&lt;String, Person&gt;();
+
+// 创建Person对象
+Person p1 = new Person(&quot;001&quot;, &quot;史进&quot;);
+Person p2 = new Person(&quot;002&quot;, &quot;李逵&quot;);
+Person p3 = new Person(&quot;003&quot;, &quot;吴用&quot;);
+
+// 向map集合中添加元素
+map.put(p1.getCardId(), p1);
+map.put(p2.getCardId(), p2);
+map.put(p2.getCardId(), p3);
+
+//输出
+System.out.println(map.get(p2.getCardId()).getName());
+
+out: 吴用
+注: Map集合中的key不能是重复的，如果重复，那么后面添加的映射关系会覆盖前面的映射关系
 </code></pre></li>
+<li>装箱拆箱<br><1> 定义<pre><code>装箱(inboxing)是指将基本类型的数据转换成引用类型的数据
+拆箱(unboxing)就是将引用类型的数据转换为基本类型的数据
+</code></pre><2> e.g<pre><code>    public static void main(String[] args) {
+        int i = 1;          // 定义基本类型的变量i
+        Object obj = null; // 定义引用类型的变量obj
+        obj = i;            // 装箱
+        i = (int) obj;      // 拆箱
+    }
+e.g
+    public static void main(String[] args) {
+        List list = new ArrayList();
+        list.add(25);
+        int age =(int) list.get(0);
+    }
+</code></pre>   注:<pre><code>1. 第4行有装箱操作，因为add(Object value)方法的参数是Object类型
+   即引用类型，赋的值是基本类型中的整型值25
+2. 第5行有拆箱操作，因为get(int index)返回值类型是Object
+   经过强制转换为int类型后赋值给age
+</code></pre></2></1></li>
 </ol>
-<p>暂时就这么多，以后发现了继续总结</p>
 
       
     </div>
@@ -607,8 +697,8 @@ class Person{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/02/Java4/" rel="next" title="Java学习——面向对象三大特征">
-                <i class="fa fa-chevron-left"></i> Java学习——面向对象三大特征
+              <a href="/2019/05/14/Java12/" rel="next" title="Java学习——集合框架collection">
+                <i class="fa fa-chevron-left"></i> Java学习——集合框架collection
               </a>
             
           </div>
@@ -617,8 +707,8 @@ class Person{
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/05/Java6/" rel="prev" title="Java学习——Scanner类">
-                Java学习——Scanner类 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/15/Java14/" rel="prev" title="Java学习——集合框架总结">
+                Java学习——集合框架总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -942,7 +1032,7 @@ class Person{
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/03/Java5/'
+    refer: '2019/05/15/Java13/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];

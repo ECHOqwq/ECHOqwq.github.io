@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+  <meta name="description" content="分类 集合框架分为Collection和Map类   Collection又分为Set类和List类 其中List: ArrayList、LinkedList、Vector、Stack     Set: HashSet、TreeSet、Subtopic Map：Hashtable、HashMap、Propertise  区别 ArrayList与LinkedList、Vector的区别a. Ar">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——构造方法&amp;&amp;普通方法">
-<meta property="og:url" content="http://yoursite.com/2019/05/03/Java5/index.html">
+<meta property="og:title" content="Java学习——集合框架总结">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/Java14/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+<meta property="og:description" content="分类 集合框架分为Collection和Map类   Collection又分为Set类和List类 其中List: ArrayList、LinkedList、Vector、Stack     Set: HashSet、TreeSet、Subtopic Map：Hashtable、HashMap、Propertise  区别 ArrayList与LinkedList、Vector的区别a. Ar">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-03T03:48:58.846Z">
+<meta property="og:updated_time" content="2019-05-15T15:20:13.191Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——构造方法&amp;&amp;普通方法">
-<meta name="twitter:description" content="因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结  构造方法:&amp;lt;1&amp;gt; 方法名一定要和类名相同 &amp;lt;2&amp;gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法 &amp;lt;3&amp;gt; 在方法中不能使用return语句返回一个值 &amp;lt;4&amp;gt; 在创建对象时，要调用new，如:book b1=new book(); &amp;lt;5&amp;gt; 当没有指定构造方">
+<meta name="twitter:title" content="Java学习——集合框架总结">
+<meta name="twitter:description" content="分类 集合框架分为Collection和Map类   Collection又分为Set类和List类 其中List: ArrayList、LinkedList、Vector、Stack     Set: HashSet、TreeSet、Subtopic Map：Hashtable、HashMap、Propertise  区别 ArrayList与LinkedList、Vector的区别a. Ar">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/03/Java5/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/15/Java14/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——构造方法&&普通方法 | 兄控日记</title>
+  <title>Java学习——集合框架总结 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/Java5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/Java14/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——构造方法&&普通方法
+          <h1 class="post-title" itemprop="name headline">Java学习——集合框架总结
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-03 00:25:55 / 修改时间：11:48:58" itemprop="dateCreated datePublished" datetime="2019-05-03T00:25:55+08:00">2019-05-03</time>
+              <time title="创建时间：2019-05-15 23:11:22 / 修改时间：23:20:13" itemprop="dateCreated datePublished" datetime="2019-05-15T23:11:22+08:00">2019-05-15</time>
             
 
             
@@ -465,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/03/Java5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/Java5/" itemprop="commentCount"></span>
+                <a href="/2019/05/15/Java14/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/15/Java14/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -494,50 +494,34 @@
       
 
       
-        <p>因为自己学着学着就老弄混一些概念，所以这边做一个小小的总结</p>
-<ol>
-<li>构造方法:<pre><code>&lt;1&gt; 方法名一定要和类名相同
-&lt;2&gt; 在方法名的前面没有返回值类型的声明，但它可以用return;退出该方法
-&lt;3&gt; 在方法中不能使用return语句返回一个值
-&lt;4&gt; 在创建对象时，要调用new，如:book b1=new book();
-&lt;5&gt; 当没有指定构造方法时，系统会自动添加无参的构造方法
-&lt;6&gt; 构造方法的重载：方法名相同，但参数不同的多个方法，调用时会自动根据不同的参数选择相应的方法
-&lt;7&gt; 构造方法前默认有一句super();，也正因为此构造方法不会被继承
-&lt;8&gt; 接口不允许被实例化，所以接口没有构造方法
-&lt;9&gt; 不能被static、final、synchronized、abstract和native修饰
-</code></pre> e.g (一个注意点)<pre><code>public class Text{
-    public static void main(String[] args){
-        Person p1 = new Person();
-        p1.age = 18;
-        Person p2 = new Person(19);
-        System.out.println(p1);
-        System.out.println(p2);
-    }
-}
-class Person{
-    int age;
-    public Person(int age){
-        super();
-        this.age=age;
-    }
-    public String toString(){
-        return &quot;Person : age=&quot;+age; 
-    }
-}
-</code></pre> <1> 在System.out.println(p1)时会报错<pre><code>    因为后来声明了一个带参构造函数，系统就不会自动添加无参的构造函数
-    编译器就会提示不存在对应的构造函数
-解决办法:再写一个构造函数
-    public Person(){
-    }
-</code></pre> <2> 重写toString的作用<pre><code>重写toString后输出p1即可输入想要的成员内容
-若不改写就是系统默认的(目前还不懂那一串数字加字母有什么用)
+        <ol>
+<li>分类<br><1> <pre><code>集合框架分为Collection和Map类 
+</code></pre><2> <pre><code>Collection又分为Set类和List类
+其中List: ArrayList、LinkedList、Vector、Stack
+    Set: HashSet、TreeSet、Subtopic
+</code></pre><3><pre><code>Map：Hashtable、HashMap、Propertise
+</code></pre></3></2></1></li>
+<li>区别<br><1> ArrayList与LinkedList、Vector的区别<pre><code>a. ArrayList与LinkedList均设计为非线程安全
+   ArrayList内部采用数组实现
+   LinkedList内部采用链表结构实现
+   Vector是线程安全的，内部采用数组实现
+b. ArrayList大量添加元素，数组空间不足时，依然需要通过新建数组、内存复制的方式来增加容量，效率较低
+   当进行对数组进行插入、删除操作时，又会进行循环移位操作，效率也较低
+   只有使用get()方法进行随机查找（按下标查找）时，使用数组效率很高
+c. LinkedList采用链表保存元素，在添加元素时只需要进行一次简单的内存分配即可，效率较高
+   进行插入、删除操作时，只需对链表中相邻的元素进行修改即可，效率也很高
+   但进行按下标查询时，需要对链表进行遍历，效率较低
+d. 可以总结出ArrayList在进行数据的新增、插入、删除时效率较低
+   按下标对数据进行查找时效率较高
+   LinkedList正好相反
+e. 一般来说ArrayList保存经常进行查询操作的集合
+   LinkedList适用于保存经常进行修改操作的集合
+</code></pre><2> HashMap和Hashtable的区别<pre><code>a. Hashtable是线程安全的，HashMap是非线程安全的
+   所有HashMap比Hashtable的性能更高。
+b. Hashtable不允许使用使用null值作为key或value
+   但是HashMap是可以的
 </code></pre></2></1></li>
-<li>普通方法<pre><code>&lt;1&gt; 无自带super();
-&lt;2&gt; 名字不与类名相同
-&lt;3&gt; 有返回值类型的声明
-</code></pre></li>
 </ol>
-<p>暂时就这么多，以后发现了继续总结</p>
 
       
     </div>
@@ -607,8 +591,8 @@ class Person{
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/02/Java4/" rel="next" title="Java学习——面向对象三大特征">
-                <i class="fa fa-chevron-left"></i> Java学习——面向对象三大特征
+              <a href="/2019/05/15/Java13/" rel="next" title="Java学习——集合框架Map">
+                <i class="fa fa-chevron-left"></i> Java学习——集合框架Map
               </a>
             
           </div>
@@ -616,10 +600,6 @@ class Person{
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/05/Java6/" rel="prev" title="Java学习——Scanner类">
-                Java学习——Scanner类 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -942,7 +922,7 @@ class Person{
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/03/Java5/'
+    refer: '2019/05/15/Java14/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
