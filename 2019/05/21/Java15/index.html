@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
+  <meta name="description" content="日期类 java.util.Date类构造方法：Date()                按照当前系统时间构造一个Date对象          Date(long date)       按照给定的时间毫秒值构造一个 Date 对象 主要方法: after(Date when)    测试当前对象表示的时间是否在指定时间之后。          before(Date when)  测试当前">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——Java三大特征细化">
-<meta property="og:url" content="http://yoursite.com/2019/05/08/Java8/index.html">
+<meta property="og:title" content="Java学习——java.util工具包">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/Java15/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
+<meta property="og:description" content="日期类 java.util.Date类构造方法：Date()                按照当前系统时间构造一个Date对象          Date(long date)       按照给定的时间毫秒值构造一个 Date 对象 主要方法: after(Date when)    测试当前对象表示的时间是否在指定时间之后。          before(Date when)  测试当前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-13T14:07:25.224Z">
+<meta property="og:updated_time" content="2019-05-21T08:42:09.119Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——Java三大特征细化">
-<meta name="twitter:description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
+<meta name="twitter:title" content="Java学习——java.util工具包">
+<meta name="twitter:description" content="日期类 java.util.Date类构造方法：Date()                按照当前系统时间构造一个Date对象          Date(long date)       按照给定的时间毫秒值构造一个 Date 对象 主要方法: after(Date when)    测试当前对象表示的时间是否在指定时间之后。          before(Date when)  测试当前">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/08/Java8/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/Java15/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——Java三大特征细化 | 兄控日记</title>
+  <title>Java学习——java.util工具包 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Java8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/Java15/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——Java三大特征细化
+          <h1 class="post-title" itemprop="name headline">Java学习——java.util工具包
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-05-08 21:20:31" itemprop="dateCreated datePublished" datetime="2019-05-08T21:20:31+08:00">2019-05-08</time>
+              <time title="创建时间：2019-05-21 16:07:39 / 修改时间：16:42:09" itemprop="dateCreated datePublished" datetime="2019-05-21T16:07:39+08:00">2019-05-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-13 22:07:25" itemprop="dateModified" datetime="2019-05-13T22:07:25+08:00">2019-05-13</time>
               
             
           </span>
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/08/Java8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/Java8/" itemprop="commentCount"></span>
+                <a href="/2019/05/21/Java15/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/21/Java15/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,133 +495,120 @@
 
       
         <ol>
-<li>继承<br><1> 定义<pre><code>今天又看了相关的书籍，稍微再自己梳理了一下Java的继承
-首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，
-并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调
-用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方
-法，指向新的方法，这时候和父类的原方法就没有关系了
-e.g
-        public class TestExtends {
-            public static void main(String[] args) {
-                A a = new A();
-                B b = new B(200);
-                b.printa();
-            }
-        }
-        class A{
-            int x = 2;
-            public void printa() {
-                System.out.println(x);
-            }
-        }
-        class B extends A{
-            int x = 100;
-            public B(int x) {
-                this.x = x;
-            }
-        }  
-        该例输出的x是2，因为B类并没有重写A类的printa方法
-        所以还是原来的那个空间，可以理解成只是把它调用出来使用
-        所以输出的值还是A类的x值
-</code></pre>   若把上例的class B的代码修改<pre><code>class B extends A{
-    int x = 100;
-    public B(int x){
-        this.x =x;
-    }
-    public void printa(){
-        System.out.println(x);
-    }
+<li>日期类<br><1> java.util.Date类<pre><code>构造方法：Date()                按照当前系统时间构造一个Date对象
+         Date(long date)       按照给定的时间毫秒值构造一个 Date 对象
+主要方法: after(Date when)    测试当前对象表示的时间是否在指定时间之后。
+         before(Date when)  测试当前对象表示的时间是否在指定时间之后
+         getTime()           返回当前对象对应的时间毫秒值
+         setTime(long time) 设置时间
+</code></pre><2> java.util.Calendar类<pre><code>主要方法: AM              指示从午夜到中午之前这段时间的 AM_PM 字段值
+         DATE            get 和 set 的字段，指示一个月中的某天
+         DAY_OF_MONTH    get 和 set 的字段，指示一个月中的某天
+         DAY_OF_WEEK        get 和 set 的字段，指示一个星期中的某天
+         DAY_OF_YEAR        get 和 set 的字段，指示当前年中的天数
+         HOUR            get 和 set 的字段，指示上午或下午的小时
+         HOUR_OF_DAY        get 和 set 的字段，指示一天中的小时
+         MINUTE            get 和 set 的字段，指示一小时中的分钟
+         MONTH            指示月份的 get 和 set 的字段
+         PM                指示从中午到午夜之前这段时间的 AM_PM 字段值
+         SECOND            get 和 set 的字段，指示一分钟中的秒
+         WEEK_OF_MONTH    get 和 set 的字段，指示当前月中的星期数
+         WEEK_OF_YEAR    get 和 set 的字段，指示当前年中的星期数
+         YEAR    表示年的 get 和 set 的字段
+</code></pre><3> e.g 1<pre><code>public static void main(String[] args) {
+    Calendar calendar = Calendar.getInstance();
+    int year = calendar.get(Calendar.YEAR);
+    int month = calendar.get(Calendar.MONTH);
+    int day = calendar.get(Calendar.DATE);
+    int hours = calendar.get(Calendar.HOUR);
+    int minutes = calendar.get(Calendar.MINUTE);
+    int second = calendar.get(Calendar.SECOND);
+    StringBuffer buffer =new StringBuffer();
+    buffer.append(&quot;现在时间是&quot;).append(year).append(&quot;年&quot;).append(month+1).append(&quot;月&quot;).append(day).append(&quot;日&quot;).append(hours).append(&quot;:&quot;).append(minutes).append(&quot;:&quot;).append(second).append(&quot;秒&quot;);
+    System.out.printl n(buffer.toString());
 }
-即重载了printa方法，这时就不再输出父类的x了
-</code></pre>   其次，在子类里并不能继承父类的构造方法，利用super其实还是在父类分配的空间里赋值<br>   e.g<pre><code>public class TestOverload {
-    public static void main(String[] args) {
-        Dog dogs = new Dog(&quot;萨摩耶&quot;,&quot;汪汪&quot;);
-        dogs.Print();
-    }
+</code></pre><4> e.g 2<pre><code>public static void main(String[] args) {
+    java.util.Date date =new java.util.Date();
+    System.out.println(date);
 }
-class Animals{
-    String name = &quot;animals&quot;;
-    String breed = &quot;动物&quot;;
-    String type = &quot;a&quot;;
-    public Animals(String type,String breed,String name) {
-        this.type = type;
-        this.breed = breed;
-        this.name = name;
-    }
+</code></pre></4></3></2></1></li>
+<li><p>格式化<br><1> 定义</1></p>
+<pre><code>格式化是指将日期或数字按照指定的格式显示的过程
+</code></pre><p><2> 日期格式化</2></p>
+<pre><code>java在java.text包中提供了SimpleDateFormat类用于格式化日期
+该类根据格式符将日期转换成指定的格式
+常用格式符:
+    G    年代标志符
+    y    年
+    M    月d    日
+    h    时，12小时制
+    H    时，24小时制
+    m    分
+    s    秒
+    S    毫秒
+    E    星期
+    D    一年中的第几天
+    w    一年中第几个星期
+    W    一月中第几个星期
+    a    上午/下午
+    z    时区
+</code></pre><p><3> e.g: 将当前时间格式化成yyyy-MM-dd HH:mm:ss:SSS格式</3></p>
+<pre><code>public static void main(String[] args) {
+    java.util.Date date =new java.util.Date();
+    java.text.SimpleDateFormat sdf =new java.text.SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss:SSS&quot;);System.out.println(sdf.format(date));
 }
-class Dog extends Animals {
-    public Dog(String breed, String name) {
-        super(&quot;狗&quot;, breed, name);
-        // TODO 自动生成的构造函数存根
-    }
-    void Print(){
-        System.out.println(super.name);    
-    }
+</code></pre><p><4> 数字格式化</4></p>
+<pre><code>java提供了java.util.Locale类，来表示不同国家和地区
+Locale.CHINA    中国地区
+Locale.US    美国地区
+Locale.FRANCE    法国地区
+Locale.CANADA    加拿大地区
+
+NumberFormat 是所有数值格式的抽象基类，提供格式化和解析数值的接口
+getInstance()            获取常规数值格式
+getNumberInstance()        获取常规数值格式
+getIntegerInstance()    获取整数数值格式
+getCurrencyInstance ()    获取货币数值格式，格式化后的数据前面会有一个货币符号，比如：“￥”
+getPercentInstance()    获取显示百分比的格式，比如：小数 0.53 将显示为 53%
+</code></pre><p><5> e.g</5></p>
+<pre><code>public static void main(String[] args) {
+    double mynum1 = 230456789;
+    double mynum2 = 0.23;
+    NumberFormat nf1 = NumberFormat.getInstance(Locale.CHINA);
+    NumberFormat nf2 = NumberFormat.getCurrencyInstance(Locale.CHINA);
+    NumberFormat nf3 = NumberFormat.getCurrencyInstance(Locale.US);
+    NumberFormat nf4 = NumberFormat.getPercentInstance();
+    System.out.println(nf1.format(mynum1));
+    System.out.println(nf2.format(mynum1));
+    System.out.println(nf3.format(mynum1));
+    System.out.println(nf4.format(mynum2));
 }
-out:汪汪
-为什么不是输出父类的name即animals呢？和上面说的一样，其实是在
-父类的空间里赋值，所以其实等于是把父类里的name赋为了汪汪，因此
-是有给父类赋值的
-</code></pre>   e.g<pre><code>public class TestExtends {
-    public static void main(String[] args) {
-        B b = new B(200);
-        b.printa();
-    }
+</code></pre></li>
+<li>Math类<br> <1> 总<pre><code>java.lang.Math类中，包含用于执行基本数学运算的方法，如指数、对数、平方根和三角函数
+所有方法和常量全部都是静态的
+</code></pre> <2> 主要方法<pre><code>abs(T a)        返回 long 值的绝对值
+acos(double a)    返回一个值的反余弦；返回的角度范围在 0.0 到 pi 之间
+atan(double a)    返回一个值的反正切；返回的角度范围在 -pi/2 到 pi/2 之间
+ceil(double a)    返回最小的（最接近负无穷大）double 值，该值大于等于参数，并等于某个整数
+cos(double a)    返回角的三角余弦
+floor(double a)    返回最大的（最接近正无穷大）double 值，该值小于等于参数，并等于某个整数
+log(double a)    返回 double 值的自然对数（底数是 e）
+log10(double a)    返回 double 值的底数为 10 的对数
+max(T a, T b)    返回两个 double 值中较大的一个
+min(T a, T b)    返回两个 long 值中较小的一个
+pow(T a, T b)    返回第一个参数的第二个参数次幂的值
+random()        返回带正号的 double 值，该值大于等于 0.0 且小于 1.0
+round(float a)    返回最接近参数的 int
+sin(double a)    返回角的三角正弦
+sqrt(double a)    返回正确舍入的 double 值的正平方根
+tan(double a)    返回角的三角正切
+</code></pre></2></1></li>
+<li>Arrays工具类<br> sort()方法排序<br> public static void main(String[] args) {<pre><code>int scores[] =new int []{67,58,81,79,80};
+Arrays.sort(scores);
+for (int i = 0; i &lt; scores.length; i++) {
+    System.out.println(scores[i]);
 }
-class A{
-    int x;
-    public A(int x) {
-        this.x = x;
-    }
-    public void printa() {
-        System.out.println(x);
-    }
-}
-class B extends A{
-    int x;
-    public B(int x) {
-        super(x);
-    }
-    public void printa() {
-        System.out.println(x);
-        System.out.println(super.x);
-    }
-}
-out : 0 200
-这里子类的构造方法没有this，因此子类的x没有赋值，是初始值0
-而调用了父类的构造，因此父类的x被赋了200
-</code></pre>   e.g<pre><code>public class TestOverload {
-    public static void main(String[] args) {
-        Duck ducks = new Duck(&quot;嘎嘎&quot;);
-        Animals a = new Animals(&quot;动物&quot;,&quot;生物&quot;,&quot;many&quot;);
-        ducks.introduce();
-    }
-}
-class Animals{
-    String name = &quot;animals&quot;;
-    String breed = &quot;动物&quot;;
-    String type = &quot;mam&quot;;
-    public Animals(String type,String breed,String name) {
-        this.type = type;
-        this.breed = breed;
-        this.name = name;
-    }
-    public void introduce() {
-        System.out.println(&quot;我是&quot;+name+&quot;,我的品种是&quot;+breed+&quot;,我的名字是&quot;+name);
-    }
-}
-class Duck extends Animals {
-    public Duck(String name) {
-        super(&quot;鸭鸭&quot;,&quot;未知&quot;,name);
-    }
-}
-这里的introduce之所以可以输出ducks的name、type和breed
-是因为它是父类的一个方法，然后子类的super给父类的name、
-type和breed赋了值，父类在此输出
-</code></pre>   所以总结一下我的理解(不懂是不是对的)<pre><code>java里的子类继承父类其实类似于C里的函数调用函数，不一样的是
-它不会开辟新的空间(哪怕是短暂的)，子类调用父类的某个方法，其
-实就只在父类里修改，而子类里面其实没有被赋值等操作
-</code></pre></1></li>
+</code></pre> }</li>
 </ol>
 
       
@@ -704,8 +679,8 @@ type和breed赋了值，父类在此输出
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/05/Java7/" rel="next" title="Java学习——random随机数">
-                <i class="fa fa-chevron-left"></i> Java学习——random随机数
+              <a href="/2019/05/15/Java14/" rel="next" title="Java学习——集合框架总结">
+                <i class="fa fa-chevron-left"></i> Java学习——集合框架总结
               </a>
             
           </div>
@@ -713,10 +688,6 @@ type和breed赋了值，父类在此输出
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/08/Java9/" rel="prev" title="Java学习——里氏替换原则">
-                Java学习——里氏替换原则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1039,7 +1010,7 @@ type和breed赋了值，父类在此输出
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/08/Java8/'
+    refer: '2019/05/21/Java15/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
