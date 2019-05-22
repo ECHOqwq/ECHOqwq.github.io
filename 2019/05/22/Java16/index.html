@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
+  <meta name="description" content="File类 File类的对象表示磁盘、目录、文件 常用方法canRead                文件是否可读 canWrite                文件是否可写 delete                删除文件或目录 exists                文件或目录是否存在 getAbsolutePath        获取绝对路径 getFreeSpace">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——集合框架Map">
-<meta property="og:url" content="http://yoursite.com/2019/05/15/Java13/index.html">
+<meta property="og:title" content="Java学习——文件">
+<meta property="og:url" content="http://yoursite.com/2019/05/22/Java16/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
+<meta property="og:description" content="File类 File类的对象表示磁盘、目录、文件 常用方法canRead                文件是否可读 canWrite                文件是否可写 delete                删除文件或目录 exists                文件或目录是否存在 getAbsolutePath        获取绝对路径 getFreeSpace">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-15T15:11:08.607Z">
+<meta property="og:updated_time" content="2019-05-22T14:56:32.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——集合框架Map">
-<meta name="twitter:description" content="Map接口 Map集合和Set、List的区别 List集合存储的是有顺序的，可以存储重复的数据 Set集合存储的是无序的不允许重复的数据 Map集合存储的是键值对数据  键值对 Map集合内部有两个集合 一个集合用于保存Map中的key（键） 一个集合用于保存Map中的value（值） 其中key和value可以是任意数据类型数据  Map集合中的HashMap类 put(Object key">
+<meta name="twitter:title" content="Java学习——文件">
+<meta name="twitter:description" content="File类 File类的对象表示磁盘、目录、文件 常用方法canRead                文件是否可读 canWrite                文件是否可写 delete                删除文件或目录 exists                文件或目录是否存在 getAbsolutePath        获取绝对路径 getFreeSpace">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/15/Java13/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/22/Java16/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——集合框架Map | 兄控日记</title>
+  <title>Java学习——文件 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/Java13/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/Java16/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——集合框架Map
+          <h1 class="post-title" itemprop="name headline">Java学习——文件
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-15 19:37:21 / 修改时间：23:11:08" itemprop="dateCreated datePublished" datetime="2019-05-15T19:37:21+08:00">2019-05-15</time>
+              <time title="创建时间：2019-05-22 19:21:01 / 修改时间：22:56:32" itemprop="dateCreated datePublished" datetime="2019-05-22T19:21:01+08:00">2019-05-22</time>
             
 
             
@@ -465,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/15/Java13/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/15/Java13/" itemprop="commentCount"></span>
+                <a href="/2019/05/22/Java16/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/22/Java16/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -495,138 +495,106 @@
 
       
         <ol>
-<li><p>Map接口<br><1> Map集合和Set、List的区别</1></p>
-<pre><code>List集合存储的是有顺序的，可以存储重复的数据
-Set集合存储的是无序的不允许重复的数据
-Map集合存储的是键值对数据
-</code></pre><p><2> 键值对</2></p>
-<pre><code>Map集合内部有两个集合
-一个集合用于保存Map中的key（键）
-一个集合用于保存Map中的value（值）
-其中key和value可以是任意数据类型数据
-</code></pre><p><3> Map集合中的HashMap类</3></p>
-<pre><code>put(Object key,Object value)    加入元素，返回与此key关联的原有的value，不存在则返回null
-clear()    从集合中移除所有的元素
-containsKey(Object key)    根据key从集合中判断key是否存在
-containsValue(Object value)    根据value从集合中判断value是否存在
-get(Object key)    根据key返回key对应的值
-keySet()    返回Map集合中包含的键集合
-remove(Object key)    从集合中删除key对应的元素，返回与key对应的原有value，不存在则返回null
-size()    返回集合中的元素的数量
-
-注: Map集合中的常用类有Hashtable、HashMap、Properties
-</code></pre><p>e.g </p>
-<pre><code>import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
-class Person {
-    private String cardId;//编号
-    private String name;//姓名
-    //构造方法
-    public Person(String cardId, String name) {
-        this.cardId = cardId;
-        this.n ame = name;
-    }
-    //getter and setter
-    public String getCardId() {
-        return cardId;
-    }
-    public void setCardId(String cardId) {
-        this.cardId = cardId;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+<li>File类<br><1> File类的对象表示磁盘、目录、文件<br><2> 常用方法<pre><code>canRead                文件是否可读
+canWrite                文件是否可写
+delete                删除文件或目录
+exists                文件或目录是否存在
+getAbsolutePath        获取绝对路径
+getFreeSpace            获取分区的剩余空间
+getTotalSpace        获取分区的总空间
+getUsableSpace        获取分区的已用空间
+getName                获取文件或目录的名称
+isDirectory            是否为目录
+isFile                是否为文件
+isHidden                是否为隐藏文件或目录
+lastModified            获取文件最后修改时间
+length                获取文件长度
+listFiles            获取目录的子目录、文件
+listRoots            获取所有磁盘分区
+mkdir                创建目录
+mkdirs                创建多级目录
+</code></pre><3> e.g<pre><code>// 获取当前文件系统的所有磁盘分区
+ File[] disks = File.listRoots();
+ System.out.println(&quot;系统磁盘分区情况：&quot;);
+ for (int i = 0; i &lt; disks.length; i++) {
+     File disk = disks[i];
+     System.out.println(disk.getAbsolutePath() + &quot;盘\t总空间:&quot;
+             + disk.getTotalSpace() / 1024 / 1024 / 1024 + &quot;G\t剩余空间&quot;
+             + disk.getFreeSpace() / 1024 / 1024 / 1024 + &quot;G&quot;);
  }
- public class HashMapDemo1 {
-     public static void main(String[] args) {
-         // 定义集合对象map
-         Map&lt;String, Person&gt; map =new HashMap&lt;String, Person&gt;();
-         //创建Person对象
-         Person p1 = new Person(&quot;001&quot;,&quot;史进&quot;);
-         Person p2 = new Person(&quot;002&quot;,&quot;李逵&quot;);
-         Person p3 = new Person(&quot;003&quot;,&quot;吴用&quot;);
-         //向map集合中添加元素
-         map.put(p1.getCardId(), p1);
-         map.put(p2.getCardId(), p2);
-         map.put(p3.getCardId(), p3);
-         // 通过键集判断集合中是否包含&quot;史进&quot;
-         if (map.containsKey(p1.getCardId())) {
-             System.out.println(&quot;通过键集查找到了史进&quot;);
-         } else { 
-             System.out.println(&quot;通过键集没有查找到了史进&quot;);
+</code></pre></3></2></1></li>
+<li>流<br><1> 分类<pre><code>字节流和字符流
+</code></pre><2> 文本文件和二进制文件<pre><code>二进制文件，指文件无字符编码格式，均由字节（Byte）组成，图片文件、word文档等均为二进制文件
+文本文件是一种特殊的二进制文件，也由字节组成，但需要通过特定的字符编码格式读取或写入，否则会出现乱码
+后缀名为txt的文件就是典型的文本文件
+</code></pre><3> 字节流和字符流<pre><code>字节流读取二进制文件
+字符流读取文本文件
+</code></pre></3></2></1></li>
+<li>字节流<br><1> 字节输入流(FileInputStream) <pre><code>步骤:
+     打开文件-&gt;按字节读取文件-&gt;关闭文件
+注:
+     a. 打开文件通过向FileInputStream的构造函数传入文件名或File对象完成
+        如果文件不存在会抛出FileNotFoundException异常    
+     b. 按字节读取文件内容通过FileInputStream实例的read方法实现
+        read方法按顺序读取文件中的字节，返回int型，返回值在-1~255之间
+        如果返回-1说明已读到文件尾，当读取发生错误时read方法会抛出IOException异常
+     c. 关闭文件通过FileInputStream实例的close方法实现
+        关闭时遇到错误会抛出IOException异常
+</code></pre><2> 字节缓冲输入流<pre><code>e.g
+     File file = new File(&quot;C:/1.txt&quot;);
+     try {
+         FileInputStream fis = new FileInputStream(file);
+         BufferedInputStream bis = new BufferedInputStream(fis);
+         long startTime = System.currentTimeMillis();
+         int i;
+         while ((i=bis.read())!=-1) {
+         //为保证测试的准确，去掉打印输出
          }
-         // 通过值集判断集合中是否包含&quot;史进&quot;
-         if (map.containsValue(p1)) {
-             System.out.println(&quot;通过值集查找到了史进&quot;);
-         } else {
-             System.out.println(&quot;通过值集没有查找到了史进&quot;);
+         long endTime = System.currentTimeMillis();
+         System.out.println(&quot;总用时：&quot; + (endTime - startTime));
+         bis.close();
+         } catch (FileNotFoundException e) {
+             System.out.println(&quot;文件未找到！&quot;);
+         } catch (IOException e) {
+             System.out.println(&quot;文件操作时发生异常！&quot;);
          }
-         // 从map集合中获取一个元素
-         Person person =  map.get(&quot;001&quot;);
-         System.out.println(&quot;键为001的用户，他的姓名是&quot;+person.getName());
-         //迭代Map集合中所有的好汉
-         System.out.println(&quot;迭代集合中所有的元素&quot;);
-         StringBuffer buffer =new StringBuffer();
-         Set&lt;String&gt; set = map.keySet();
-         Iterator&lt;String&gt; iterator = set.iterator();
-         while(iterator.hasNext()){
-             String key = iterator.next();
-             Person person2 = map.get(key);
-             buffer.append(&quot;键为&quot;);
-             buffer.append(person2.getCardId());
-             buffer.append(&quot;的用户，他的姓名是&quot;);
-             buffer.append(person2.getName());
-             System.out.println(buffer.toString());
-             buffer.delete(0, buffer.length());
-         }
-         // 从集合中移除史进
-         map.remove(p1.getCardId());
+注:
+     ①缓存输入流不能独立使用，需要通过文件输入流进行构建
+     ②应使用缓存输入流实例读取文件，如继续使用fis（文件输入流实例），则绕过了缓存，性能不会得到提升
+     ③关闭文件时只需要关闭缓存输入流实例即可
+</code></pre><3> 字节输出流(FileOutputStream)<pre><code>e.g
+     File file = new File(&quot;C:/1.txt&quot;);
+     try {
+         FileOutputStream fos = new FileOutputStream(file);
+         //65,66,67分别为A,B,C的ASCII码
+         fos.write(65);
+         fos.write(66);
+         fos.write(67);
+         fos.close();
+     } catch (IOException e) {
+     System.out.println(&quot;文件操作时发生异常！&quot;);
      }
- }
-</code></pre><p><4> 若出现重复的键</4></p>
-<pre><code>Map&lt;String, Person&gt; map = new HashMap&lt;String, Person&gt;();
-
-// 创建Person对象
-Person p1 = new Person(&quot;001&quot;, &quot;史进&quot;);
-Person p2 = new Person(&quot;002&quot;, &quot;李逵&quot;);
-Person p3 = new Person(&quot;003&quot;, &quot;吴用&quot;);
-
-// 向map集合中添加元素
-map.put(p1.getCardId(), p1);
-map.put(p2.getCardId(), p2);
-map.put(p2.getCardId(), p3);
-
-//输出
-System.out.println(map.get(p2.getCardId()).getName());
-
-out: 吴用
-注: Map集合中的key不能是重复的，如果重复，那么后面添加的映射关系会覆盖前面的映射关系
-</code></pre></li>
-<li>装箱拆箱<br><1> 定义<pre><code>装箱(inboxing)是指将基本类型的数据转换成引用类型的数据
-拆箱(unboxing)就是将引用类型的数据转换为基本类型的数据
-</code></pre><2> e.g<pre><code>    public static void main(String[] args) {
-        int i = 1;          // 定义基本类型的变量i
-        Object obj = null; // 定义引用类型的变量obj
-        obj = i;            // 装箱
-        i = (int) obj;      // 拆箱
-    }
-e.g
-    public static void main(String[] args) {
-        List list = new ArrayList();
-        list.add(25);
-        int age =(int) list.get(0);
-    }
-</code></pre>   注:<pre><code>1. 第4行有装箱操作，因为add(Object value)方法的参数是Object类型
-   即引用类型，赋的值是基本类型中的整型值25
-2. 第5行有拆箱操作，因为get(int index)返回值类型是Object
-   经过强制转换为int类型后赋值给age
-</code></pre></2></1></li>
+注:
+     在使用文件输出流时，如果目标文件不存在，会创建该文件;如果目标文件存在会覆盖该文件的内容
+     如果当目标文件存在时不想覆盖原内容，而是进行追加输出
+     可以按如下方式构架FileOutputStream实例：
+     FileOutputStream fos = new FileOutputStream(file, true);
+</code></pre><4> 缓存输出流(BufferedOutputStream)<pre><code>e.g
+     File file = new File(&quot;C:/1.txt&quot;);
+     try {
+         FileOutputStream fos = new FileOutputStream(file);
+         BufferedOutputStream bos = new BufferedOutputStream(fos);
+         bos.write(65);
+         bos.write(66);
+         bos.write(67);
+         //flush方法用于强制将缓存中内容输出
+         bos.flush();
+         bos.close();
+     } catch (IOException e) {
+       System.out.println(&quot;文件操作时发生异常！&quot;);
+     }
+</code></pre></4></3></2></1></li>
+<li>字符流<br><1> 字符流会对文件内容编码，所以不能用于读取二进制文件      </1></li>
 </ol>
 
       
@@ -697,8 +665,8 @@ e.g
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/14/Java12/" rel="next" title="Java学习——集合框架collection">
-                <i class="fa fa-chevron-left"></i> Java学习——集合框架collection
+              <a href="/2019/05/21/Java15/" rel="next" title="Java学习——java.util工具包">
+                <i class="fa fa-chevron-left"></i> Java学习——java.util工具包
               </a>
             
           </div>
@@ -706,10 +674,6 @@ e.g
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/15/Java14/" rel="prev" title="Java学习——集合框架总结">
-                Java学习——集合框架总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1032,7 +996,7 @@ e.g
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/15/Java13/'
+    refer: '2019/05/22/Java16/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
