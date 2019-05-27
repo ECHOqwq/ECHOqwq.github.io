@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
-<meta name="keywords" content="Java基础">
+  <meta name="description" content="WEB容器 简介Web(World Wide Web)容器(Container)是一种服务程序 在服务器一个端口就有一个提供相应服务的程序 而这个程序就是处理从客户端发出的请求，并向客户端作出响应  涵盖的框架技术JSP、Servlet  容器Apache公司的Tomcat容器 IBM公司的WebSphere容器 Oracle公司的Weblogic容器  C/S和B/S结构 C/S结构C/S（C">
+<meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——Java三大特征细化">
-<meta property="og:url" content="http://yoursite.com/2019/05/08/Java8/index.html">
+<meta property="og:title" content="Java学习——JSP简介">
+<meta property="og:url" content="http://yoursite.com/2019/05/26/Java17/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
+<meta property="og:description" content="WEB容器 简介Web(World Wide Web)容器(Container)是一种服务程序 在服务器一个端口就有一个提供相应服务的程序 而这个程序就是处理从客户端发出的请求，并向客户端作出响应  涵盖的框架技术JSP、Servlet  容器Apache公司的Tomcat容器 IBM公司的WebSphere容器 Oracle公司的Weblogic容器  C/S和B/S结构 C/S结构C/S（C">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:12:34.002Z">
+<meta property="og:updated_time" content="2019-05-27T01:41:46.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——Java三大特征细化">
-<meta name="twitter:description" content="继承 定义今天又看了相关的书籍，稍微再自己梳理了一下Java的继承 首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时， 并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调 用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方 法，指向新的方法，这时候和父类的原方法就没有关系了 e.g         public class TestExtends {">
+<meta name="twitter:title" content="Java学习——JSP简介">
+<meta name="twitter:description" content="WEB容器 简介Web(World Wide Web)容器(Container)是一种服务程序 在服务器一个端口就有一个提供相应服务的程序 而这个程序就是处理从客户端发出的请求，并向客户端作出响应  涵盖的框架技术JSP、Servlet  容器Apache公司的Tomcat容器 IBM公司的WebSphere容器 Oracle公司的Weblogic容器  C/S和B/S结构 C/S结构C/S（C">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/08/Java8/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/26/Java17/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——Java三大特征细化 | 兄控日记</title>
+  <title>Java学习——JSP简介 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Java8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/26/Java17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——Java三大特征细化
+          <h1 class="post-title" itemprop="name headline">Java学习——JSP简介
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-08 21:20:31" itemprop="dateCreated datePublished" datetime="2019-05-08T21:20:31+08:00">2019-05-08</time>
+              <time title="创建时间：2019-05-26 15:54:09" itemprop="dateCreated datePublished" datetime="2019-05-26T15:54:09+08:00">2019-05-26</time>
             
 
             
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-27 09:12:34" itemprop="dateModified" datetime="2019-05-27T09:12:34+08:00">2019-05-27</time>
+                <time title="修改时间：2019-05-27 09:41:46" itemprop="dateModified" datetime="2019-05-27T09:41:46+08:00">2019-05-27</time>
               
             
           </span>
@@ -477,8 +477,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/08/Java8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/Java8/" itemprop="commentCount"></span>
+                <a href="/2019/05/26/Java17/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/26/Java17/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,133 +507,31 @@
 
       
         <ol>
-<li>继承<br><1> 定义<pre><code>今天又看了相关的书籍，稍微再自己梳理了一下Java的继承
-首先，子类和父类是继承关系，当子类继承父类的成员变量和方法时，
-并不是再开辟一块空间，而是指向父类的该变量/方法，而如果子类调
-用父类的方法并对方法进行重载，则会重新开辟一块内存空间放新的方
-法，指向新的方法，这时候和父类的原方法就没有关系了
-e.g
-        public class TestExtends {
-            public static void main(String[] args) {
-                A a = new A();
-                B b = new B(200);
-                b.printa();
-            }
-        }
-        class A{
-            int x = 2;
-            public void printa() {
-                System.out.println(x);
-            }
-        }
-        class B extends A{
-            int x = 100;
-            public B(int x) {
-                this.x = x;
-            }
-        }  
-        该例输出的x是2，因为B类并没有重写A类的printa方法
-        所以还是原来的那个空间，可以理解成只是把它调用出来使用
-        所以输出的值还是A类的x值
-</code></pre>   若把上例的class B的代码修改<pre><code>class B extends A{
-    int x = 100;
-    public B(int x){
-        this.x =x;
-    }
-    public void printa(){
-        System.out.println(x);
-    }
-}
-即重载了printa方法，这时就不再输出父类的x了
-</code></pre>   其次，在子类里并不能继承父类的构造方法，利用super其实还是在父类分配的空间里赋值<br>   e.g<pre><code>public class TestOverload {
-    public static void main(String[] args) {
-        Dog dogs = new Dog(&quot;萨摩耶&quot;,&quot;汪汪&quot;);
-        dogs.Print();
-    }
-}
-class Animals{
-    String name = &quot;animals&quot;;
-    String breed = &quot;动物&quot;;
-    String type = &quot;a&quot;;
-    public Animals(String type,String breed,String name) {
-        this.type = type;
-        this.breed = breed;
-        this.name = name;
-    }
-}
-class Dog extends Animals {
-    public Dog(String breed, String name) {
-        super(&quot;狗&quot;, breed, name);
-        // TODO 自动生成的构造函数存根
-    }
-    void Print(){
-        System.out.println(super.name);    
-    }
-}
-out:汪汪
-为什么不是输出父类的name即animals呢？和上面说的一样，其实是在
-父类的空间里赋值，所以其实等于是把父类里的name赋为了汪汪，因此
-是有给父类赋值的
-</code></pre>   e.g<pre><code>public class TestExtends {
-    public static void main(String[] args) {
-        B b = new B(200);
-        b.printa();
-    }
-}
-class A{
-    int x;
-    public A(int x) {
-        this.x = x;
-    }
-    public void printa() {
-        System.out.println(x);
-    }
-}
-class B extends A{
-    int x;
-    public B(int x) {
-        super(x);
-    }
-    public void printa() {
-        System.out.println(x);
-        System.out.println(super.x);
-    }
-}
-out : 0 200
-这里子类的构造方法没有this，因此子类的x没有赋值，是初始值0
-而调用了父类的构造，因此父类的x被赋了200
-</code></pre>   e.g<pre><code>public class TestOverload {
-    public static void main(String[] args) {
-        Duck ducks = new Duck(&quot;嘎嘎&quot;);
-        Animals a = new Animals(&quot;动物&quot;,&quot;生物&quot;,&quot;many&quot;);
-        ducks.introduce();
-    }
-}
-class Animals{
-    String name = &quot;animals&quot;;
-    String breed = &quot;动物&quot;;
-    String type = &quot;mam&quot;;
-    public Animals(String type,String breed,String name) {
-        this.type = type;
-        this.breed = breed;
-        this.name = name;
-    }
-    public void introduce() {
-        System.out.println(&quot;我是&quot;+name+&quot;,我的品种是&quot;+breed+&quot;,我的名字是&quot;+name);
-    }
-}
-class Duck extends Animals {
-    public Duck(String name) {
-        super(&quot;鸭鸭&quot;,&quot;未知&quot;,name);
-    }
-}
-这里的introduce之所以可以输出ducks的name、type和breed
-是因为它是父类的一个方法，然后子类的super给父类的name、
-type和breed赋了值，父类在此输出
-</code></pre>   所以总结一下我的理解(不懂是不是对的)<pre><code>java里的子类继承父类其实类似于C里的函数调用函数，不一样的是
-它不会开辟新的空间(哪怕是短暂的)，子类调用父类的某个方法，其
-实就只在父类里修改，而子类里面其实没有被赋值等操作
-</code></pre></1></li>
+<li>WEB容器<br><1> 简介<pre><code>Web(World Wide Web)容器(Container)是一种服务程序
+在服务器一个端口就有一个提供相应服务的程序
+而这个程序就是处理从客户端发出的请求，并向客户端作出响应
+</code></pre><2> 涵盖的框架技术<pre><code>JSP、Servlet
+</code></pre><3> 容器<pre><code>Apache公司的Tomcat容器
+IBM公司的WebSphere容器
+Oracle公司的Weblogic容器
+</code></pre></3></2></1></li>
+<li>C/S和B/S结构<br><1> C/S结构<pre><code>C/S（Client/Server）结构，即客户机和服务器结构
+它会将任务合理分配到Client端和Server端来实现
+但它是胖客户端架构，作为客户端的部分需要承受很大的压力
+C/S需要安装客户端，比如QQ
+</code></pre><2> B/S结构<pre><code>B/S（Browser/Server）结构即浏览器和服务器结构
+用户工作界面是通过www浏览器来实现
+B/S结构可以看作是瘦客户端，只是把显示的较少的逻辑交给了Web浏览器
+事务逻辑数据处理在放在了Server端
+B/S结构的系统无须特别安装，只要Web浏览器即可，比如浏览的网站
+</code></pre><3> 区别<pre><code>a. B/S无需安装，客户端不需要安装有浏览器即可
+b. B/S具有分布性特点，可以随时随地进行查询、浏览等业务处理
+c. B/S升级维护便捷，无需升级多个客户端，升级服务器即可
+d. C/S客户端需要安装专用的客户端软件
+e. C/S维护升级成本高，进行一次维护升级，需要所有客户端的程序进行重新安装
+</code></pre><4> 注：JSP采用的是B/S结构</4></3></2></1></li>
+<li>HTTP协议<br><1> 概念<br>   Http是超文本传输协议（Http，HyperText Transfer Protocol)<br>   是一个基于请求与响应模式的、无状态的、应用层的协议<br>   它的作用是从www服务器传输超文本到本地浏览器，浏览器再解析超文本<br>   将解析后的超文本呈现成网页，供用户浏览<br><2> 过程<br>   由Http客户端发起一个请求，请求到一个服务器指定的端口（默认是80端口）的TCP连接<br>   Http服务器则在那个端口监听客户端发送过来的请求<br>   一旦收到请求，服务器向客户端发回一个状态行，比如”HTTP/1.1 200 OK”<br>   和响应的消息，消息的消息体可能是请求的文件、错误消息、或者其它一些信息<br><3> URL<br>   URL：(Uniform Resource Locator 的缩写，统一资源定位符<br>   <a href="http://www.it.cn:80/course/index.jsp?id=1" target="_blank" rel="noopener">http://www.it.cn:80/course/index.jsp?id=1</a><br>   协议://服务器名称:端口号/路径/文件名?查询</3></2></1></li>
+<li>JSP简介<br><1> 简介<br>   JSP就是将java代码写在HTML页面中<br>   而Java代码需要写在以“&lt;%”开头，以“%&gt;”结尾的区域内<br><2> 指令<br>   JSP指令用来设置整个JSP页面相关的属性<br>   在JSP中指令分为page、include和taglib三种指令<br><3> page指令<br>   设置JSP页面的全局属性<br>   &lt;%@ page 属性= “值” 属性=”值” ….%&gt;</3></2></1></li>
 </ol>
 
       
@@ -691,7 +589,7 @@ type和breed赋了值，父类在此输出
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+            <a href="/tags/Java-JSP/" rel="tag"><i class="fa fa-tag"></i> Java-JSP</a>
           
         </div>
       
@@ -704,8 +602,8 @@ type和breed赋了值，父类在此输出
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/05/Java7/" rel="next" title="Java学习——random随机数">
-                <i class="fa fa-chevron-left"></i> Java学习——random随机数
+              <a href="/2019/05/22/Java16/" rel="next" title="Java学习——文件">
+                <i class="fa fa-chevron-left"></i> Java学习——文件
               </a>
             
           </div>
@@ -713,10 +611,6 @@ type和breed赋了值，父类在此输出
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/08/Java9/" rel="prev" title="Java学习——里氏替换原则">
-                Java学习——里氏替换原则 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1041,7 +935,7 @@ type和breed赋了值，父类在此输出
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/08/Java8/'
+    refer: '2019/05/26/Java17/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
