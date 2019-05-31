@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="纵有疾风起 人生不言弃">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+  <meta name="description" content="1.头文件的使用   graphics.h2.绘制图形窗口   (1)initgraph();   (2)closegraph();3.图形窗口额外的东西   (1)坐标系统      横着是x轴，由左至右增大；竖着是y轴，从上到下增大   (2)窗口的颜色设置      a.背景颜色         setbkcolor(颜色)      b.颜色的知识点         颜色宏:大写英文颜色单">
+<meta name="keywords" content="Game">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用easyx进行游戏开发基础">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/game01/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="纵有疾风起 人生不言弃">
+<meta property="og:description" content="1.头文件的使用   graphics.h2.绘制图形窗口   (1)initgraph();   (2)closegraph();3.图形窗口额外的东西   (1)坐标系统      横着是x轴，由左至右增大；竖着是y轴，从上到下增大   (2)窗口的颜色设置      a.背景颜色         setbkcolor(颜色)      b.颜色的知识点         颜色宏:大写英文颜色单">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-22T09:59:26.501Z">
+<meta property="og:updated_time" content="2019-05-31T05:03:52.035Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="纵有疾风起 人生不言弃">
+<meta name="twitter:title" content="利用easyx进行游戏开发基础">
+<meta name="twitter:description" content="1.头文件的使用   graphics.h2.绘制图形窗口   (1)initgraph();   (2)closegraph();3.图形窗口额外的东西   (1)坐标系统      横着是x轴，由左至右增大；竖着是y轴，从上到下增大   (2)窗口的颜色设置      a.背景颜色         setbkcolor(颜色)      b.颜色的知识点         颜色宏:大写英文颜色单">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/categories/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/game01/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>categories | 兄控日记</title>
+  <title>利用easyx进行游戏开发基础 | 兄控日记</title>
   
 
 
@@ -267,7 +268,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -360,105 +361,247 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/game01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="水深真的一米六">
+      <meta itemprop="description" content="纵有疾风起 人生不言弃">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兄控日记">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">categories
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h1 class="post-title" itemprop="name headline">利用easyx进行游戏开发基础
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 3 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Game/">Game</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/周报/">周报</a><span class="category-list-count">4</span></li></ul>
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-31 12:58:41 / 修改时间：13:03:52" itemprop="dateCreated datePublished" datetime="2019-05-31T12:58:41+08:00">2019-05-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Game/" itemprop="url" rel="index"><span itemprop="name">Game</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/31/game01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/31/game01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>1.头文件的使用<br>   graphics.h<br>2.绘制图形窗口<br>   (1)initgraph();<br>   (2)closegraph();<br>3.图形窗口额外的东西<br>   (1)坐标系统<br>      横着是x轴，由左至右增大；竖着是y轴，从上到下增大<br>   (2)窗口的颜色设置<br>      a.背景颜色<br>         setbkcolor(颜色)<br>      b.颜色的知识点<br>         颜色宏:大写英文颜色单词 BLACK BLUE YELLOW GREEN<br>         RGB 配置颜色 三原色配置 RGB(196,15,196)<br>           注:可去画图中查看所需颜色对应的三原色配置<br>      c.第一次设置背景颜色需要刷新(cleardevice())<br>   (3)窗口文字输出<br>      a.字符串<br>        outtextxy(int x,int y,”字符串”); //多字节<br>      b.数字类输出<br>        用sprintf函数把数字转化成字符串<br>        e.g<br>            int i = 1, j = 2;<br>            char a[20] = “”;<br>            sprintf(a,”%d,%d”,i,j);<br>            outtextxy(0,0,a);<br>   (4)窗口绘制函数<br>      a.画线 line(int x,int y,int xx,int yy); //两点的坐标<br>      b.画非填充矩形 rectangle (int x,int y,int xx,int yy);//左上角右下角坐标<br>      c.画填充矩形 fillrectangle(int x,int y,int xx,int yy);<br>      d.填充颜色设置 setfillcolor(颜色)<br>4.鼠标操作<br>   (1) 知道鼠标操作反馈给计算机的是一个值<br>   (2) 鼠标变量存储鼠标反馈的值<br>       MOUSEMSG 类型的变量去存储<br>   (3) 获取反馈 GetMouseMsg();<br>   (4) 分类处理 针对 uMsg 分类处理<br>   综合框架<br>       MOUSEMSG m;      //声明一个鼠标变量<br>       while(1)<br>       {<br>           m=GetMouseMsg(); //获取鼠标消息<br>           switch (m.uMsg)<br>           {<br>               case WM_LBUTTONDOWN:<br>                 ……;<br>                 break;<br>               case WM_RBUTTONDOWN;<br>                 break;<br>               case WM_MOUSEMOVE:<br>                 break;<br>            }<br>       }<br>5.贴图函数<br>   (1)图片存储到IMAGE类型变量<br>      IMAGE img;<br>   (2)图片用变量存储<br>      loadimage(&amp;img,”路径”);<br>   (3)显示图片<br>      putimage(int x,int y,&amp;img);<br>   (4)图片问题的处理<br>      a.图片太大，窗口容不下:窗口配合图片的尺寸<br>      b.缩放图片大小适应窗口: loadimage(&amp;img,”x.jpg”,窗口宽，窗口高);<br>      c.initgraph(img.getwidth();img.getheight());<br>      d.多个图片的时候去掉背景的问题<br>        背景图:黑底食物<br>        掩码图:白底黑洞<br>        SRCAND方式 贴掩码图<br>        SRCPAINT方式 贴背景<br>        先贴掩码图再贴背景图</p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Donate comment here</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/weixin.jpg" alt="水深真的一米六 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/zhifubao.jpg" alt="水深真的一米六 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Game/" rel="tag"><i class="fa fa-tag"></i> Game</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/27/Java18/" rel="next" title="Java学习——内置对象request">
+                <i class="fa fa-chevron-left"></i> Java学习——内置对象request
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="[object Object]"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -754,6 +897,23 @@
 
 
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/05/31/game01/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
