@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T13:22:07.789Z">
+<meta property="og:updated_time" content="2019-06-04T08:50:42.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——内置对象request">
 <meta name="twitter:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-05-27 21:12:56 / 修改时间：21:22:07" itemprop="dateCreated datePublished" datetime="2019-05-27T21:12:56+08:00">2019-05-27</time>
+              <time title="创建时间：2019-05-27 21:12:56" itemprop="dateCreated datePublished" datetime="2019-05-27T21:12:56+08:00">2019-05-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-04 16:50:42" itemprop="dateModified" datetime="2019-06-04T16:50:42+08:00">2019-06-04</time>
               
             
           </span>
@@ -510,7 +522,41 @@ id是表单在浏览器端的唯一表示，通常由CSS和JavaScript使用id
 name是表单的名称
 method属性表示客户端浏览器向服务器的请求方式，其值可以是get和post
 action属性表示表单的数据提交到哪里，通常是接收表单数据的URL。
-</code></pre><4> method属性中post和get的区别</4></3></2></1></li>
+</code></pre><4> method属性中post和get的区别<pre><code>提交方式不同
+传输数据的大小不同
+安全性：post安全性比get高
+例：
+通过GET提交数据，用户名和密码将明文出现在URL上
+因为登录页面有可能被浏览器缓存，其他人查看浏览器的历史记录
+那么别人就可以拿到你的账号和密码了
+</code></pre></4></3></2></1></li>
+<li>HTTP请求报文<br> <1> 定义<pre><code>浏览器向服务器发出请求时，浏览器向服务器提交的数据以及一些附加的信息
+HTTP请求报文由三个部分组成
+分别是：状态行、消息报头、请求正文
+</code></pre> <2> 例<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot; pageEncoding=&quot;utf-8&quot;%&gt;
+&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;doadd.jsp?id=1&quot;&gt;
+&lt;p&gt;姓名：&lt;input type=&quot;text&quot; name=&quot;trueName&quot; id=&quot;trueName&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;年龄：&lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; id=&quot; submit &quot; value=&quot;提交&quot;/&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+运行后可在浏览器页面使用开发人员工具(F12)查看HTTP报文
+</code></pre> <3> 包含<pre><code>a.General
+    General中包含请求地址、请求方式、服务器响应状态、服务器地址
+b.Request Headers
+    Request Headers称为请求头，在请求头附加了一些其它信息，如Cookie、Content-Type、User-Agent、Accept-Language等
+c.Query String Parameters
+    Query String Parameters称为查询字符串参数，查询字符串参数是指浏览器地址栏中的URL中?后面传递的参数
+    上例的action=&quot;doadd.jsp?id=1&quot;中的id=1就是查询字符串参数
+    Get方式提交的数据以查询字符串参数方式提交到服务器
+d.Form Data
+     Form Data是指表单中提交的数据
+     上例中Form Data数据包含trueName=admin, age=21
+     post提交的数据以Form Data方式提交到服务器
+</code></pre> <4> 请求过程</4></3></2></1></li>
 </ol>
 
       
