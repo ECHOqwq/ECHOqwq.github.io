@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-04T08:50:42.198Z">
+<meta property="og:updated_time" content="2019-06-07T05:59:37.379Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习——内置对象request">
 <meta name="twitter:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-04 16:50:42" itemprop="dateModified" datetime="2019-06-04T16:50:42+08:00">2019-06-04</time>
+                <time title="修改时间：2019-06-07 13:59:37" itemprop="dateModified" datetime="2019-06-07T13:59:37+08:00">2019-06-07</time>
               
             
           </span>
@@ -556,7 +556,38 @@ d.Form Data
      Form Data是指表单中提交的数据
      上例中Form Data数据包含trueName=admin, age=21
      post提交的数据以Form Data方式提交到服务器
-</code></pre> <4> 请求过程</4></3></2></1></li>
+</code></pre> <4> 请求过程<pre><code>a.建立TCP连接 (Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，即著名的TCP/IP协议族)
+b.Web浏览器向Web服务器发送请求命令(前提：TCP连接需建立)
+c.Web浏览器发送请求头信息
+d.Web服务器应答
+e.Web服务器发送响应头信息
+f.Web服务器向浏览器发送数据
+g.Web服务器关闭TCP连接
+</code></pre></4></3></2></1></li>
+<li>内置对象request<br> <1> 定义<pre><code>它是javax.servlet.http.HttpServletRequest类的对象，用于让服务器获取客户端提交的数据
+</code></pre> <2> 方法<pre><code>HttpSession getSession()    获得Session对象
+Cookie getCookies()    获得cookies
+Object getAttribute(String key)    根据key获取在request存储范围中的值
+void setAttribute(String key,Object obj)     向request范围中存储键值对
+String getParameter(String name)    根据name获取表单域或URL的参数值
+String[] getParameterValues(String name)    根据name获取同名表单域的值
+void setCharacterEncoding(String encoding)    设置request的字符编码格式
+RequestDispatcher getRequestDispatcher()    获取请求转发对象
+String getProtocol()    返回请求用的协议类型及版本号
+String getScheme()    返回请求用的计划名,如:http及ftp等
+String getServerName()    返回接受请求的服务器主机名
+int getServerPort()    返回服务器接受此请求所用的端口号
+String getRemoteAddr()    返回发送此请求的客户端IP地址
+String  getRemoteHost()    返回发送此请求的客户端主机名
+StringgetRealPath(String path)    返回一虚拟路径的真实路径
+String request.getContextPath()    返回上下文路径  
+</code></pre> <3> 注<pre><code>因为它是内置对象，所以使用时不用实例化
+</code></pre></3></2></1></li>
+<li>内置对象out<br> <1> 定义<pre><code>用于向客户端浏览器输出数据，它是javax.servlet.jsp.JspWriter类的对象
+</code></pre> <2> 方法<pre><code>print(Object)    向客户端浏览器输出数据
+void flush()    清空流
+void close()    关闭输出流    
+</code></pre></2></1></li>
 </ol>
 
       
