@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
-<meta name="keywords" content="Java-JSP">
+  <meta name="description" content="四大作用域 总述Web交互的最基本单位为HTTP请求 每个用户从进入网站到离开网站这段过程称为一个HTTP会话，一个会话中可以有多次HTTP请求和响应 一个服务器的运行过程中会有多个用户访问，就是多个HTTP会话  作用域application    服务器启动到停止这段时间 session    HTTP会话开始到结束这段时间 request    HTTP请求开始到结束这段时间 pageCo">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——内置对象request">
-<meta property="og:url" content="http://yoursite.com/2019/05/27/Java18/index.html">
+<meta property="og:title" content="Java学习——页面跳转">
+<meta property="og:url" content="http://yoursite.com/2019/06/07/Java21/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
+<meta property="og:description" content="四大作用域 总述Web交互的最基本单位为HTTP请求 每个用户从进入网站到离开网站这段过程称为一个HTTP会话，一个会话中可以有多次HTTP请求和响应 一个服务器的运行过程中会有多个用户访问，就是多个HTTP会话  作用域application    服务器启动到停止这段时间 session    HTTP会话开始到结束这段时间 request    HTTP请求开始到结束这段时间 pageCo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-07T06:48:22.276Z">
+<meta property="og:updated_time" content="2019-06-07T13:56:15.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——内置对象request">
-<meta name="twitter:description" content="总述 JAVAEE开发模式:基于请求与响应的运营模式  请求和响应    请求是指客户端浏览器向服务器发出请求 响应是指服务器反馈给客户端的页面  发送请求    在客户端浏览器发出请求时，经常需要向服务器端发送数据 被发送的数据通常是以表单提交的方式提交到服务器的  研究对象研究客户端浏览器如何向服务器发送数据  HTML表单 定义表单是实现客户端输入数据的HTML标签  e.g&amp;lt;for">
+<meta name="twitter:title" content="Java学习——页面跳转">
+<meta name="twitter:description" content="四大作用域 总述Web交互的最基本单位为HTTP请求 每个用户从进入网站到离开网站这段过程称为一个HTTP会话，一个会话中可以有多次HTTP请求和响应 一个服务器的运行过程中会有多个用户访问，就是多个HTTP会话  作用域application    服务器启动到停止这段时间 session    HTTP会话开始到结束这段时间 request    HTTP请求开始到结束这段时间 pageCo">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/27/Java18/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/07/Java21/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——内置对象request | 兄控日记</title>
+  <title>Java学习——页面跳转 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/27/Java18/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/07/Java21/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——内置对象request
+          <h1 class="post-title" itemprop="name headline">Java学习——页面跳转
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-05-27 21:12:56" itemprop="dateCreated datePublished" datetime="2019-05-27T21:12:56+08:00">2019-05-27</time>
+              <time title="创建时间：2019-06-07 21:38:33 / 修改时间：21:56:15" itemprop="dateCreated datePublished" datetime="2019-06-07T21:38:33+08:00">2019-06-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-07 14:48:22" itemprop="dateModified" datetime="2019-06-07T14:48:22+08:00">2019-06-07</time>
               
             
           </span>
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/27/Java18/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/27/Java18/" itemprop="commentCount"></span>
+                <a href="/2019/06/07/Java21/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/07/Java21/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,87 +495,75 @@
 
       
         <ol>
-<li>总述<br><1> JAVAEE开发模式:<pre><code>基于请求与响应的运营模式
-</code></pre><2> 请求和响应    <pre><code>请求是指客户端浏览器向服务器发出请求
-响应是指服务器反馈给客户端的页面
-</code></pre><3> 发送请求    <pre><code>在客户端浏览器发出请求时，经常需要向服务器端发送数据
-被发送的数据通常是以表单提交的方式提交到服务器的
-</code></pre><4> 研究对象<pre><code>研究客户端浏览器如何向服务器发送数据
-</code></pre></4></3></2></1></li>
-<li>HTML表单<br><1> 定义<pre><code>表单是实现客户端输入数据的HTML标签
-</code></pre><2> e.g<pre><code>&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;controller.do&quot;&gt;
-&lt;/form&gt;
-</code></pre><3> 注<pre><code>form是表单标签
-id是表单在浏览器端的唯一表示，通常由CSS和JavaScript使用id
-name是表单的名称
-method属性表示客户端浏览器向服务器的请求方式，其值可以是get和post
-action属性表示表单的数据提交到哪里，通常是接收表单数据的URL。
-</code></pre><4> method属性中post和get的区别<pre><code>提交方式不同
-传输数据的大小不同
-安全性：post安全性比get高
-例：
-通过GET提交数据，用户名和密码将明文出现在URL上
-因为登录页面有可能被浏览器缓存，其他人查看浏览器的历史记录
-那么别人就可以拿到你的账号和密码了
-</code></pre></4></3></2></1></li>
-<li>HTTP请求报文<br> <1> 定义<pre><code>浏览器向服务器发出请求时，浏览器向服务器提交的数据以及一些附加的信息
-HTTP请求报文由三个部分组成
-分别是：状态行、消息报头、请求正文
-</code></pre> <2> 例<pre><code>&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot; pageEncoding=&quot;utf-8&quot;%&gt;
-&lt;!doctype html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;/head&gt;
-&lt;body&gt;
-&lt;form id=&quot;form1&quot; name=&quot;form1&quot; method=&quot;post&quot; action=&quot;doadd.jsp?id=1&quot;&gt;
-&lt;p&gt;姓名：&lt;input type=&quot;text&quot; name=&quot;trueName&quot; id=&quot;trueName&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;年龄：&lt;input type=&quot;text&quot; name=&quot;age&quot; id=&quot;age&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; id=&quot; submit &quot; value=&quot;提交&quot;/&gt;&lt;/p&gt;
-&lt;/form&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-运行后可在浏览器页面使用开发人员工具(F12)查看HTTP报文
-</code></pre> <3> 包含<pre><code>a.General
-    General中包含请求地址、请求方式、服务器响应状态、服务器地址
-b.Request Headers
-    Request Headers称为请求头，在请求头附加了一些其它信息，如Cookie、Content-Type、User-Agent、Accept-Language等
-c.Query String Parameters
-    Query String Parameters称为查询字符串参数，查询字符串参数是指浏览器地址栏中的URL中?后面传递的参数
-    上例的action=&quot;doadd.jsp?id=1&quot;中的id=1就是查询字符串参数
-    Get方式提交的数据以查询字符串参数方式提交到服务器
-d.Form Data
-     Form Data是指表单中提交的数据
-     上例中Form Data数据包含trueName=admin, age=21
-     post提交的数据以Form Data方式提交到服务器
-</code></pre> <4> 请求过程<pre><code>a.建立TCP连接 (Web浏览器首先要通过网络与Web服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，即著名的TCP/IP协议族)
-b.Web浏览器向Web服务器发送请求命令(前提：TCP连接需建立)
-c.Web浏览器发送请求头信息
-d.Web服务器应答
-e.Web服务器发送响应头信息
-f.Web服务器向浏览器发送数据
-g.Web服务器关闭TCP连接
-</code></pre></4></3></2></1></li>
-<li>内置对象request<br> <1> 定义<pre><code>它是javax.servlet.http.HttpServletRequest类的对象，用于让服务器获取客户端提交的数据
-</code></pre> <2> 方法<pre><code>HttpSession getSession()    获得Session对象
-Cookie getCookies()    获得cookies
-Object getAttribute(String key)    根据key获取在request存储范围中的值
-void setAttribute(String key,Object obj)     向request范围中存储键值对
-String getParameter(String name)    根据name获取表单域或URL的参数值
-String[] getParameterValues(String name)    根据name获取同名表单域的值
-void setCharacterEncoding(String encoding)    设置request的字符编码格式
-RequestDispatcher getRequestDispatcher()    获取请求转发对象
-String getProtocol()    返回请求用的协议类型及版本号
-String getScheme()    返回请求用的计划名,如:http及ftp等
-String getServerName()    返回接受请求的服务器主机名
-int getServerPort()    返回服务器接受此请求所用的端口号
-String getRemoteAddr()    返回发送此请求的客户端IP地址
-String  getRemoteHost()    返回发送此请求的客户端主机名
-StringgetRealPath(String path)    返回一虚拟路径的真实路径
-String request.getContextPath()    返回上下文路径  
-</code></pre> <3> 注<pre><code>因为它是内置对象，所以使用时不用实例化
+<li>四大作用域<br><1> 总述<pre><code>Web交互的最基本单位为HTTP请求
+每个用户从进入网站到离开网站这段过程称为一个HTTP会话，一个会话中可以有多次HTTP请求和响应
+一个服务器的运行过程中会有多个用户访问，就是多个HTTP会话
+</code></pre><2> 作用域<pre><code>application    服务器启动到停止这段时间
+session    HTTP会话开始到结束这段时间
+request    HTTP请求开始到结束这段时间
+pageContext    当前页面从打开到关闭这段时间
+</code></pre><3> 具体<pre><code>a. 存储在pageContext作用域中的数据，仅限于在用户请求的当前页面中被获取
+   离开当前JSP页面，则pageContext中的所有属性值就会丢失
+b. 存储在request作用域中的数据，在请求开始到结束这段时间内的任何页面中都可以被获取
+c. 存储在session作用域中的数据，在会话开始到结束这段时间内的任何页面中都可以被获取
+   会话失效，则session中的数据也随之丢失
+d. 存储在application作用域中的数据，在服务器启动到停止这段时间内的任务页面中都可以被获取
 </code></pre></3></2></1></li>
-<li>内置对象out<br> <1> 定义<pre><code>用于向客户端浏览器输出数据，它是javax.servlet.jsp.JspWriter类的对象
-</code></pre> <2> 方法<pre><code>print(Object)    向客户端浏览器输出数据
-void flush()    清空流
-void close()    关闭输出流    
+<li>页面跳转<br><1> 分类<pre><code>包括重定向和请求转发
+</code></pre><2> 请求转发<pre><code>请求转发需要通过RequestDispatcher对象完成
+我们可以通过request内置对象获得RequestDispatcher对象：
+    RequestDispatcher rd = request.getRequestDispatcher(&quot;页面路径&quot;);
+在获得RequestDispatcher对象后，调用其forward方法来完成跳转
+forward方法需要两个参数，一个是request对象另外一个是response对象
+    rd.forward(request,response);
+</code></pre><3> 请求转发和重定向的区别<pre><code>a.请求转发是服务器行为，重定向是客户端行为
+b.请求转发使用HttpServletResponse.sendRedirect()方法，重定向使用RequestDispatcher.forward()方法
+c.请求转发只能将请求转发给同一个Web项目中的其它页面
+  重定向不仅可以重定向到当前项目的其他页面，还可以重定向到另一个站点上的页面
+d.重定向是两次请求，请求转发是一次请求
+  重定向是前一个请求结束了，一个新的请求发出了
+  请求转发仍然是同一个请求，由最后一个转发页面向浏览器响应页面
+e.请求转发的转发者与接收转发者之间共享相同的request对象和response对象，他们属于同一个访问请求和响应过程
+  重定向的调用者与被调用者使用各自的request和response对象，属于两个独立的访问请求和响应过程
+f.重定向地址栏URL会变化，请求转发URL地址栏不会变化
+</code></pre><4> 举例理解<pre><code>重定向：
+       你先去了A局，A局的人说：“这个事情不归我们管，去B局”，然后，你就从A退了出来，自己乘车去了B局
+转发：
+       你先去了A局，A局看了以后，知道这个事情其实应该B局来管
+       但是他没有让你自己去B局，而是让你等一会儿，他到后面办公室联系了B局的人，让他们办好后，给你送了过来
+</code></pre></4></3></2></1></li>
+<li>九大内置对象<br><1> 总<pre><code>request、response、session、out、exception、page、pageContext、application和config
+request    javax.servlet.http.HttpServletRequest类
+response    javax.servlet.http.HttpServletResponse类
+out    javax.servlet.jsp.JspWriter类
+session    javax.servlet.http.HttpSession类
+exception    java.lang.Throwable类
+page    java.lang.Object类
+pageContext    javax.servlet.jsp.PageContext类
+config    javax.servlet.ServletConfig接口
+</code></pre></1></li>
+<li>Page内置对象<br> <1> 定义<pre><code>指当前JSP页面本身
+Object page = this;
+</code></pre> <2> 方法<pre><code>getClass()    返回当时Object的类
+hashCode()    返回此时Object的哈希代码
+toString()    将此时的Object类转换成字符串
+equals(Object ob)    比较此对象是否与指定的对象相等
+copy(Object ob)    将此对象复制到指定的对象中
+clone()    对此对象进行克隆
 </code></pre></2></1></li>
+<li>pageContext内置对象<br> <1> 用途<pre><code>该对象代表该JSP页面上下文，使用该对象可以访问页面中的共享数据
+</code></pre> <2> 方法<pre><code>getOut()    返回当前客户端响应被使用的JspWriter流(out)
+getSession()    返回当前页中的HttpSession对象(session)
+getPage()    返回当前页的Object对象(page)
+getRequest()    返回当前页的ServletRequest对象(request)
+getResponse()    返回当前页的ServletResponse对象(response)
+getServletConfig()    返回当前页的ServletConfig对象(config)
+getServletContext()    返回当前页的ServletContext对象(application)
+setAttribute(key,value)    设置属性及属性值
+getAttribute(key)    在指定范围内取属性的值
+</code></pre></2></1></li>
+<li>config内置对象<br> <1> 用途<pre><code>config对象代表当前JSP配置信息      
+</code></pre></1></li>
 </ol>
 
       
@@ -645,7 +621,7 @@ void close()    关闭输出流
       
         <div class="post-tags">
           
-            <a href="/tags/Java-JSP/" rel="tag"><i class="fa fa-tag"></i> Java-JSP</a>
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
@@ -658,8 +634,8 @@ void close()    关闭输出流
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/26/Java17/" rel="next" title="Java学习——JSP简介">
-                <i class="fa fa-chevron-left"></i> Java学习——JSP简介
+              <a href="/2019/06/07/Java20/" rel="next" title="Java学习——会话跟踪技术">
+                <i class="fa fa-chevron-left"></i> Java学习——会话跟踪技术
               </a>
             
           </div>
@@ -667,10 +643,6 @@ void close()    关闭输出流
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/31/game01/" rel="prev" title="利用easyx进行游戏开发基础">
-                利用easyx进行游戏开发基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1001,7 +973,7 @@ void close()    关闭输出流
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/27/Java18/'
+    refer: '2019/06/07/Java21/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
