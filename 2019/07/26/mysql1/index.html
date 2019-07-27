@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="简介窗口界面 数据库导航窗口可以查看当前数据库管理系统中所有的数据库 当前正在使用的数据库等信息  询问窗口SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句 每一条独立的SQL语句都以英文分号结束 完整的SQL语句可以在点击执行按钮进行执行  执行结果窗口在这个窗口中，主要显示SQL语句执行的信息 包括执行条数、执行的时间、查询的数据等等信息  常用快捷键  Ctrl+M   创建一个新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-26T14:21:38.100Z">
+<meta property="og:updated_time" content="2019-07-27T08:56:32.363Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql1">
 <meta name="twitter:description" content="简介窗口界面 数据库导航窗口可以查看当前数据库管理系统中所有的数据库 当前正在使用的数据库等信息  询问窗口SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句 每一条独立的SQL语句都以英文分号结束 完整的SQL语句可以在点击执行按钮进行执行  执行结果窗口在这个窗口中，主要显示SQL语句执行的信息 包括执行条数、执行的时间、查询的数据等等信息  常用快捷键  Ctrl+M   创建一个新">
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-07-26 21:58:49 / 修改时间：22:21:38" itemprop="dateCreated datePublished" datetime="2019-07-26T21:58:49+08:00">2019-07-26</time>
+              <time title="创建时间：2019-07-26 21:58:49" itemprop="dateCreated datePublished" datetime="2019-07-26T21:58:49+08:00">2019-07-26</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-27 16:56:32" itemprop="dateModified" datetime="2019-07-27T16:56:32+08:00">2019-07-27</time>
               
             
           </span>
@@ -551,7 +563,111 @@ e.g
 e.g
   DROP DATABASE company_info;
 </code></pre></4></3></2></1></li>
-<li>创建数据表[TABLE]<1> </1></li>
+<li><p>创建数据表[TABLE]<br><1> MySQL常见数据类型</1></p>
+<pre><code>SMALLINT    小的整数
+MEDIUMINT    中等大小的整数
+INT/ INTEGER    普通大小的整数
+BIGINT    大整数
+FLOAT    小(单精度)浮点数
+DOUBLE    普通大小(双精度)浮点数
+DATE    日期
+DATETIME    日期和时间的组合
+TIMESTAMP    时间戳
+TIME    时间
+YEAR    两位或四位格式的年
+CHAR(M)    固定长度字符串，当保存时在右侧填充空格以达到指定的长度
+VARCHAR(M)    变长字符串
+</code></pre><p><2> 用途</2></p>
+<pre><code>存储各种各样的数据于一个表中
+</code></pre><p><3> 创建数据表</3></p>
+<pre><code>CREATE TABLE tab_name (
+     col_name(字段名称) datetype(数据类型),
+     ……
+);
+e.g
+ #创建部门表
+ CREATE TABLEdept(
+ Deptno INT,
+ Dname VARCHAR(14),
+ Loc VARCHAR(13)
+ );
+
+ # 创建员工表
+ CREATE TABLE emp(
+ empNo INT,
+ ename VARCHAR(10),
+ job VARCHAR(10),
+ mgr INT,
+ hirdate DATETIME,
+ sal DOUBLE,
+ comm DOUBLE,
+ deptno INT
+ );
+</code></pre><p><4> 删除数据表</4></p>
+<pre><code>DROP TABLE tab_name;
+e.g
+   DROP TABLE emp;
+</code></pre></li>
+<li>数据表的基本操作<br><1> 增加数据<pre><code>1. # 使用INSERT语句给表中所有字段添加值
+     INSERT INTO tab_name
+     VALUES(col_value1, col_value2, ...);
+2. # 使用INSERT语句，给表中指定的列添加值
+     INSERT INTO tab_name(col1, col2, col3, ...)
+     VALUES(col1_value, col2_value, col3_value,...);
+3. # 给dept表中添加数据
+     INSERT INTO dept 
+     VALUES(10, &apos;人事部&apos;, &apos;北京&apos;);
+     INSERT INTO dept(deptno,dname, loc) 
+     VALUES(20,&apos;软件部&apos;, &apos;深圳&apos;);
+4. # 给emp表中添加数据
+     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
+     VALUES(1001, &apos;宋江&apos;, &apos;董事长&apos;, null ,&apos;2001-1-1&apos;, 6000, 10000, 10);
+     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
+     VALUES(10011, &apos;卢俊义&apos;, &apos;董事助理&apos;, 1001,&apos;2003-1-1&apos;, 3000, 1000, 10);
+     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
+     VALUES(10012, &apos;吴用&apos;, &apos;董事助理&apos;, 1001,&apos;2001-1-1&apos;, 4000, 4000, 10);
+     INSERT INTOemp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
+     VALUES(2001, &apos;林冲&apos;, &apos;项目经理&apos;, 1001,&apos;2003-3-1&apos;, 6000, 5000, 20);
+</code></pre><2> 修改数据<pre><code># 修改表tab_name中符合条件condition的字段col_name的值为col_value
+UPDATE tab_name SET col_name=col_value,...WHERE condition;
+e.g 
+   #修改emp表中员工李逵的奖金，从1000升为3000
+    UPDATE emp SET comm = 3000 WHERE ename=&apos;李逵&apos;;
+</code></pre><3> 删除数据<pre><code>#删除数据表中符合条件的数据
+DELETE FROM tab_name WHERE condition;
+e.g 
+   # 删除员工表中李逵的信息
+    DELETE FROM emp WHERE ename=&apos;李逵&apos;;
+</code></pre><4> 查找数据<pre><code>#查看tab_name表中所有列
+SELECT * FROM tab_name;
+e.g  
+   #查看员工表emp中所有信息
+    SELECT * FROM emp;
+   #查看部门表dept中所有信息
+    SELECT * FROM dept;
+</code></pre></4></3></2></1></li>
+<li>使用cmd进行数据库的备份与恢复<br><1> 备份<pre><code>#数据库备份语法结构
+    Mysqldump –hxxx.xxx.xxx.xxx –uusername –ppassword db_name &gt; dir/file.sql
+注:
+   在命令行窗口，执行使用mysqldump命令
+   -h指定数据库所在服务器的ip地址
+   -u指定登录数据库的用户名
+   -p指定登录数据库的密码，并指定要备份的数据库名称db_name
+   使用输出目标操作符&gt;指定输出的文件具体路径dir/file.sql
+</code></pre><2> 还原<pre><code>#数据库还原语法结构
+    mysql–hxxx.xxx.xxx.xxx –uusername –ppassword db_name &lt; back.sql
+注:
+    使用mysql命令，将指定的备份文件back.sql还原到ip为xxx.xxx.xxx.xxx的数据库中
+    数据库登录账号username，数据库登录密码password
+</code></pre></2></1></li>
+<li>使用SQLYog进行数据库的备份与恢复<br><1> 备份<pre><code>1. 右键点击要备份的数据库，在弹出的菜单中，选择【备份/导出】--&gt;【备份数据库、转储到SQL...】
+2. 弹出的对话框中，选择备份【结构和数据】，勾选要备份的对象
+   然后选择备份到的文件，如M:\back.sql；点击确定即可
+</code></pre><2> 还原<pre><code>使用SQLYog登陆数据库 
+在SQLYog中以还原的数据库名称来创建新的数据库，然后右键点击该数据库，选择【导入】--&gt;【执行SQL脚本】
+在弹出的导入对话框中，选择要还原的数据文件所在的位置，点击执行
+还原完成后，检查数据库数据还原是否正常即可
+</code></pre></2></1></li>
 </ol>
 
       
