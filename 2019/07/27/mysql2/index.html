@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
-<meta name="keywords" content="Java基础">
+  <meta name="description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——内存管理">
-<meta property="og:url" content="http://yoursite.com/2019/05/14/Java11/index.html">
+<meta property="og:title" content="Mysql——约束">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/mysql2/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
+<meta property="og:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:13:09.422Z">
+<meta property="og:updated_time" content="2019-07-27T10:35:42.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——内存管理">
-<meta name="twitter:description" content="Java程序、虚拟机、操作系统 关系在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间 并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间 当程序所需内存空间超出初始内存空间时 Java虚拟机会再次向操作系统申请更多的内存供程序使用 如果Java虚拟机已申请的内存达到了规定的最大内存空间 但程序还需要更多的内存，这时会出现内存溢出的错误  三个区域 定义 Java虚拟机对">
+<meta name="twitter:title" content="Mysql——约束">
+<meta name="twitter:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/14/Java11/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/mysql2/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——内存管理 | 兄控日记</title>
+  <title>Mysql——约束 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/14/Java11/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/mysql2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——内存管理
+          <h1 class="post-title" itemprop="name headline">Mysql——约束
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-05-14 16:52:14" itemprop="dateCreated datePublished" datetime="2019-05-14T16:52:14+08:00">2019-05-14</time>
+              <time title="创建时间：2019-07-27 17:57:08 / 修改时间：18:35:42" itemprop="dateCreated datePublished" datetime="2019-07-27T17:57:08+08:00">2019-07-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-27 09:13:09" itemprop="dateModified" datetime="2019-05-27T09:13:09+08:00">2019-05-27</time>
               
             
           </span>
@@ -458,7 +446,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/14/Java11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/14/Java11/" itemprop="commentCount"></span>
+                <a href="/2019/07/27/mysql2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/27/mysql2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,124 +495,113 @@
 
       
         <ol>
-<li>Java程序、虚拟机、操作系统<br><1> 关系<pre><code>在准备执行程序时由Java虚拟机向操作系统请求一定的内存空间
-并分配给所执行的程序，这时所请求的内存空间大小称之为初始内存空间
-当程序所需内存空间超出初始内存空间时
-Java虚拟机会再次向操作系统申请更多的内存供程序使用
-如果Java虚拟机已申请的内存达到了规定的最大内存空间
-但程序还需要更多的内存，这时会出现内存溢出的错误
-</code></pre></1></li>
-<li>三个区域<br><1> 定义 <pre><code>Java虚拟机对应的在内存中划分了三个区域“方法区”、“堆区”和“栈区”
-</code></pre><2> 方法区<pre><code>方法区默认最大容量为64M，Java虚拟机会将加载的java类源代码存入方法区
-保存类的结构（属性与方法），类静态成员等内容
-</code></pre><3> 堆<pre><code>堆默认最大容量为64M，堆存存放对象持有的数据，同时保持对原类的引用
-注:对象属性的值保存在堆中，对象调用的方法保存在方法区
-</code></pre><4> 栈<pre><code>栈默认最大容量为1M
-在程序运行时，每当遇到方法调用时，Java虚拟机就会在栈中划分一块内存称为栈帧
-栈帧中的内存供局部变量（包括基本类型与引用类型）使用
-当方法调用结束后，Java虚拟机会收回此栈帧占用的内存
-注:
-   基本类型在栈中存放对应的变量值
-   引用类型则在栈中存放对象的引用（即：保存的是堆中对象的地址）
-</code></pre><5> 注意<pre><code>我们使用“==”运算符判断两个变量是否相等，这对于基本类型的变量来说没有问题
-但是对于引用类型的变量，“==”运算符判断的是变量的引用地址，不是引用的内容
-</code></pre></5></4></3></2></1></li>
-<li>传递<br><1> 分类<pre><code>值传递(基本数据类型)
-引用传递(类、接口、数组)
-</code></pre><2> 区分<pre><code>基本数据类型：该参数采用值传递，Java虚拟机会拷贝参数的值，放入新的栈帧
-引用数据类型：该参数采用引用传递，Java虚拟机会拷贝引用对象在堆中的地址，放入新的栈帧
-引用传递之所以拷贝的是对象的地址而不是对象的数据，是为了提高运行效率，减少内存的浪费
-</code></pre></2></1></li>
-<li>垃圾回收机制<br><1> 定义<pre><code>在Java语言中，程序员需要手工申请内存（一般使用new关键字）
-不用手工编码释放内存，而是由Java虚拟机自动对不再使用的内存进行回收
-</code></pre><2> 栈、堆、方法区<pre><code>栈:栈会在方法调用时划分栈帧，方法调用结束时回收栈帧，不需要垃圾回收
-方法区:回收不再被对象引用的类结构所占用的内存
-堆:回收不再被引用的对象数据所占用的内存
-当对象被垃圾回收程序回收时，会调用对象的finalize方法通知开发者该对象即将被回收
-</code></pre></2></1></li>
-<li>垃圾回收机制中Runtime类的使用<br><1> 方法       <pre><code>getRuntime()    获取Runtime对象
-totalMemory()    获取JVM分配给程序的内存数量
-freeMemory()    获取当前可用的内存数量
-maxMemory()    获取Java虚拟机可以申请到的最大内存数量
-gc()    建议Java虚拟机进行垃圾回收
-注:
-   gc方法只会建议Java虚拟机进行垃圾回收，但是不保证一定会进行
-</code></pre><2> e.g<pre><code>public static void main(String[] args) {
-    showMemory(&quot;程序初始时&quot;);
-    Student []stus = new Student[500000];
-    for (int i = 0; i &lt; stus.length; i++) {
-        stus[i] = new Student();
-        stus[i].name = &quot;Tom&quot;;
-        stus[i].age = 18;
-    }
-    showMemory(&quot;创建数组后&quot;);
-    Runtime.getRuntime().gc();
-    //因为stus数组引用了各个Student对象，所以这时进行垃圾回收并不会回收内存
-    showMemory(&quot;第一次垃圾回收后&quot;);
-    stus = null;
-    //将stus设置为null后，各个Student对象失去了引用，会被标示为垃圾
-    Runtime.getRuntime().gc();
-    showMemory(&quot;垃圾回收后&quot;);
-}
-public static void showMemory(String state) {
-        Runtime rt = Runtime.getRuntime();
-      System.out.println(state + &quot;：分配内存 = &quot; + rt.totalMemory()/1024 + &quot;KB&quot;);
-      System.out.println(state + &quot;：剩余内存 = &quot; + rt.freeMemory()/1024 + &quot;KB&quot;);
-      System.out.println(state + &quot;：内存上限 = &quot; + rt.maxMemory()/1024 + &quot;KB&quot;);
-      System.out.println(&quot;---------------------------------------&quot;);        
-}
-</code></pre></2></1></li>
-<li>字符串<br><1> 字符串池<pre><code>字符串池是在方法去内存中划分一片区域称为“字符串池”
-字符串池用于存储字面量、字符串常量
-相同内容的字符串引用池中的同一个对象
-</code></pre><2> e.g 1<pre><code>public static void main(String[] args) {
-    String a = &quot;Tom&quot;;
-    String b = &quot;Tom&quot;;
-    String c = &quot;Jerry&quot;;
-    String d = &quot;Jerry&quot;;
-}
-有了字符串池，只需要在池中创建2个对象
-令a和b引用值为&quot;Tom&quot;的对象，c和d引用值为&quot;Jerry&quot;的对象
-</code></pre><3> 使用字符串池的情况<pre><code>public static void main(String[] args) {
-    String a = &quot;Tom&quot;;
-    String b = new String(&quot;Tom&quot;);
-    String c = &quot;T&quot; + &quot;o&quot; + &quot;m&quot;;
-    String d = &quot;T&quot;;
-    String e = d + &quot;om&quot;;
-    System.out.println(a==b);    //结果为false
-    System.out.println(a==c);    //结果为true
-    System.out.println(a==d);    //结果为false
-    System.out.println(a==e);    //结果为false
-}
-注:
-   1.使用new关键字则不使用字符串池
-   2.“T”+“o” +“m”为表达式在编译时可以确定表达式的值
-     编译器会用“Tom&quot;替换该表达式，使用字符串池
-   3.表达式中存在变量，无法在在编译时确定表达式的值，不使用字符串池
-</code></pre></3></2></1></li>
-<li>计算程序耗时<br><1> e.g<pre><code>  public static void main(String[] args) {
-      int c = 0;
-      long start = System.currentTimeMillis();
-      for (int i = 0; i &lt; 100000; i++) {
-          c = c + 1;
-      }
-      long end = System.currentTimeMillis();
-      System.out.println(&quot;耗时&quot;+(end-start)+&quot;毫秒&quot;);
-}
-</code></pre><2> 注<pre><code>System.currentTimeMillis()获取以毫秒为单位的当前时刻
-</code></pre></2></1></li>
-<li>StringBuffer类 StringBuilder类<br><1> 工作原理<pre><code>预先在堆中开辟一定的内存空间，进行字符串连接操作时将字符串内容加到内存空间中
-如果内存空间不够用再申请扩大内存空间
-以避免了大量产生新的对象，不断分配内存的情况
-</code></pre><2> 区别<pre><code>StringBuilder类的用法与StringBuffer类完全一样
-内部实现机制稍有改动，增加了对多线程同时访问的支持，实现了“线程安全”
-</code></pre><3> e.g<pre><code>public static void main(String[] args) {
-    StringBuffer sb = new StringBuffer();
-    for (int i = 0; i &lt; 100000; i++) {
-        sb.append(&quot;1&quot;);
-    }
-}
-</code></pre></3></2></1></li>
+<li>数据表增加主键约束<pre><code>&lt;1&gt; 引入
+    在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据
+    垃圾数据太多会影响到数据库的一些性能
+&lt;2&gt; 主键
+    会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的
+    仅仅是用来表示当前的记录是唯一的
+    这个字段，就称为这张表的主键
+    表中经常有一个列或多列的组合，其值能唯一地标识表中的每一行
+&lt;3&gt; 主键的创建
+    当创建或更改表时可通过定义 PRIMARY KEY 约束来创建主键
+    一个表只能有一个 PRIMARY KEY 约束
+    而且 PRIMARY KEY 约束中的列不能接受null值
+&lt;4&gt; 自动增长
+    设计完一张表的主键列之后，在MySQL中最常规的做法就是让这一列自动按照自然顺序增长
+    避免人为操作引起的主键列数据冲突的问题
+    自动增长需要在该列上，添加auto_increment来实现
+&lt;5&gt; e.g 
+    # 创建员工表
+     CREATE TABLE emp(
+     empNo INT PRIMARY KEY AUTO_INCREMENT,
+     enameVARCHAR(10),
+     jobVARCHAR(10),
+     mgrINT,
+     hirdateDATETIME,
+     salDOUBLE,
+     commDOUBLE,
+     deptnoINT
+     );      
+     注:
+        创建emp表，定义了empNo的数据类型是整数
+        primary key关键词定义empNo为主键
+        auto_increment定义empNo中的数据自动增长
+&lt;6&gt; 另一种方法
+     # 给dept表增加主键约束
+         ALTER TABLE dept 
+         ADD CONSTRAINT  PRIMARY  KEY(deptno); 
+     注:
+         使用Alter table关键词修改dept表，给这张表的deptno字段增加主键约束
+&lt;7&gt; 总
+     更建议在创建表的同时添加主键约束
+</code></pre></li>
+<li>数据表增加唯一约束<pre><code>&lt;1&gt; 语法
+         ALTER TABLE tab_name
+         ADD CONSTRAINT UNIQUE(col_name);
+&lt;2&gt; 注:
+         使用Alter table关键词，修改tab_name数据表
+         使用add constraint unique关键词给指定列col_name增加一个唯一约束
+&lt;3&gt; e.g  
+         ALTER TABLE dept
+         ADD CONSTRAINT UNIQUE(dname);
+         之后dept表中的dname就不允许出现重复数据
+</code></pre></li>
+<li>数据表增加默认约束<pre><code>&lt;1&gt; 默认值
+         数据表的数据是通过程序或者人工添加进去的，添加过程中需要指定添加列字段等信息
+         如果某些列没有指定值，在添加时数据库会自动使用默认值进行填充
+         默认值可以指定，在数据库设计中称之为默认约束
+&lt;2&gt; e.g
+         # 创建员工表；员工工资默认为起始工资2000
+         CREATE TABLEemp(
+         empNo INT PRIMARY KEY AUTO_INCREMENT,
+         ename VARCHAR(10),
+         job VARCHAR(10),
+         mgr INT,
+         sal DOUBLE DEFAULT2000,
+         );
+         使用default关键字，给工资字段sal指定默认值2000
+&lt;3&gt; 在已经存在的表上添加默认约束
+         # 给已经存在的表tab_name增加默认约束
+         ALTERTABLEtab_name
+         CHANGE COLUMN old_col_name new_col_name new_datatype DEFAULT500;
+</code></pre></li>
+<li>数据表增加外键约束<pre><code>&lt;1&gt; 外键
+         不同表之间可能存在各种各样的关系
+         最简单的是使用某个字段关联两张表
+         这个字段就是外键
+         如果一个表中的某个字段指向另一个表中的主键，这个字段就称为外键
+         被指向的表称为主表或者父表，负责指向的表称为从表或者子表
+         从表中的外键必须引用主表中的主键，外键的值可以为null
+&lt;2&gt; 语法
+         #给从表tab_name的col_name字段增加外键约束，引用主表re_col_name列
+         ALTER TABLE tab_name
+         ADD CONSTRAINT FOREIGN KEY fk_name (col_name)
+         REFERENCES re_tab_name(re_col_name);
+         注:
+            给tab_name表的col_name字段增加一个名称为fk_name的外键
+            外键约束引用了主表re_tab_name的re_col_name字段
+&lt;3&gt; e.g 
+         ALTER TABLE emp
+         ADD CONSTRAINT FOREIGN KEY fk_deptno (deptno)
+         REFERENCES dept(deptno);
+         给emp表的deptno字段添加一个名称为fk_deptno的外键约束，引用主表dept的deptno字段
+</code></pre></li>
+<li>数据表增加检查约束<pre><code>&lt;1&gt; 检查约束
+         在一些数据库设计时，已经将这样的需求考虑在内，在数据表中的某个字段上可以添加检查约束
+         所谓检查约束，就是定义数据表中的某个字段中只能出现符合提前预定好条件的值
+         条件之外的值是不允许添加的
+&lt;2&gt; 语法
+         #给一张表tab_name的col_name增加一个名称为chk_name的检查约束
+         ALTER TABLE tab_name
+         ADD CONSTRAINT chk_name
+         CHECK (col_name-condition);
+         给表tab_name的col_name字段增加一个名称为chk_name的检查约束
+         约束条件为(col_name-condition)
+&lt;3&gt; 提示
+         MySQL中暂时不支持检查约束
+         对于数据库中数据的检查，建议在程序中进行，而不是在数据库层面检查
+</code></pre></li>
 </ol>
 
       
@@ -682,7 +659,7 @@ public static void showMemory(String state) {
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
           
         </div>
       
@@ -695,8 +672,8 @@ public static void showMemory(String state) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/13/Java10/" rel="next" title="Java学习——Java异常处理机制">
-                <i class="fa fa-chevron-left"></i> Java学习——Java异常处理机制
+              <a href="/2019/07/26/mysql1/" rel="next" title="Mysql——数据库、数据表">
+                <i class="fa fa-chevron-left"></i> Mysql——数据库、数据表
               </a>
             
           </div>
@@ -704,10 +681,6 @@ public static void showMemory(String state) {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/Java12/" rel="prev" title="Java学习——集合框架collection">
-                Java学习——集合框架collection <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1042,7 +1015,7 @@ public static void showMemory(String state) {
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/14/Java11/'
+    refer: '2019/07/27/mysql2/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
