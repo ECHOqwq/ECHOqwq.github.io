@@ -99,14 +99,14 @@
   <meta name="description" content="单行函数   区分单行函数&amp;amp;多行函数单行函数对于每一行的数据计算后得到一行输出结果 多行函数是多行数据参与运算后得到一行输出结果                       字符函数大小写转换函数:     # 大小写转换函数，UPPER转换目标字符串全部大写，LOWER转换目标字符串全部小写     SELECT UPPER(&amp;apos;AbcDef&amp;apos;), LOWER(&amp;ap">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql-函数">
-<meta property="og:url" content="http://yoursite.com/2019/07/28/Mysql-函数/index.html">
+<meta property="og:title" content="Mysql-函数、事务">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/Mysql-函数、事务/index.html">
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="单行函数   区分单行函数&amp;amp;多行函数单行函数对于每一行的数据计算后得到一行输出结果 多行函数是多行数据参与运算后得到一行输出结果                       字符函数大小写转换函数:     # 大小写转换函数，UPPER转换目标字符串全部大写，LOWER转换目标字符串全部小写     SELECT UPPER(&amp;apos;AbcDef&amp;apos;), LOWER(&amp;ap">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-28T14:50:50.093Z">
+<meta property="og:updated_time" content="2019-07-28T15:02:33.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql-函数">
+<meta name="twitter:title" content="Mysql-函数、事务">
 <meta name="twitter:description" content="单行函数   区分单行函数&amp;amp;多行函数单行函数对于每一行的数据计算后得到一行输出结果 多行函数是多行数据参与运算后得到一行输出结果                       字符函数大小写转换函数:     # 大小写转换函数，UPPER转换目标字符串全部大写，LOWER转换目标字符串全部小写     SELECT UPPER(&amp;apos;AbcDef&amp;apos;), LOWER(&amp;ap">
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/28/Mysql-函数/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/28/Mysql-函数、事务/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Mysql-函数 | 兄控日记</title>
+  <title>Mysql-函数、事务 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/Mysql-函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/Mysql-函数、事务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mysql-函数
+          <h1 class="post-title" itemprop="name headline">Mysql-函数、事务
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-07-28 22:48:14 / 修改时间：22:50:50" itemprop="dateCreated datePublished" datetime="2019-07-28T22:48:14+08:00">2019-07-28</time>
+              <time title="创建时间：2019-07-28 22:48:14 / 修改时间：23:02:33" itemprop="dateCreated datePublished" datetime="2019-07-28T22:48:14+08:00">2019-07-28</time>
             
 
             
@@ -465,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/28/Mysql-函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/Mysql-函数/" itemprop="commentCount"></span>
+                <a href="/2019/07/28/Mysql-函数、事务/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/Mysql-函数、事务/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -554,6 +554,51 @@ NOW()：获取当前日期+时间函数
         SELECT DATEDIFF(&apos;2015-12-11&apos;,&apos;2015-1-12&apos;);
         out: 333
 </code></pre></4></3></2></1></li>
+<li>事务<br>  <1> 定义<pre><code>事务是作为单个逻辑工作单元执行一系列操作
+即把若干条SQL语句在放在同一个单元模块中，形成一个不可分割的工作单元
+如果事务成功提交，则该事务中所有的操作更改均会提交
+如果事务遇到异常取消或者回滚，则所有操作均失败
+</code></pre>  <2> ACID属性<pre><code>原子性(Atomicity)：事务是一个独立的单元
+                一个事务中的若干语句是不可分的（原子的）
+                也就是说，事务中的所有语句必须作为一个整体提交或者回滚
+                如果事务中的任何操作失败，则整个事务将失败
+一致性(Consistency)：当事务结束时，数据必须处于一致状态
+                在Oracle数据库中，事务结束时，所有的内部数据结构和数据都必须是正确的
+持久性(Durability)：事务结束之后，对于系统的影响是永久的
+                也就是说，事务一旦提交，数据库表中的数据将被更新
+                即便系统出现故障重新启动，数据库中更新的数据也不会丢失
+隔离性(Isolation)：对数据进行操作的若干并发事务之间彼此隔离
+                也就是说，事务是独立的，一个事务内的操作不会依赖和影响其它事务
+</code></pre>  <3> 问题(在并发事务中，如果多个事务同时访问某一资源)<pre><code>脏读取（Dirty Reads）：一个事务更新了某数据但没有能够及时提交，而此时另一个事务读取了该数据，然后使用了该数据
+不可重复读取（Non-repeatable Reads）：一个事务对同一行数据重复读取两次，但是却得到了不同的结果
+                例如，在两次读取数据的中间，有另外一个事务对该数据进行了修改，并提交。
+更新丢失（Lost updates）：不可重复读取的特例
+                有两个并发事务同时读取同一行数据，然后其中一个对它进行修改提交，而另一个也进行了修改提交
+                这就会造成第一次写操作失效
+幻像读（Phantom Reads）：事务在操作过程中进行两次查询
+                第二次查询的结果包含了第一次查询中未出现的数据
+                这是因为在两次查询过程中有另外一个事务插入数据造成的
+</code></pre>  <4> 解决办法<pre><code>需要对并发事务中共享的资源（比如表中的某行数据）进行锁定
+一个事务锁定资源之后，该资源可以根据不同的锁类型确定是否允许被别的事务读写
+</code></pre>  <5> 锁<pre><code>按照锁定资源的访问级别划分，锁分为共享锁和排他锁
+共享锁锁定的资源，其他的事务也可以访问
+排他锁锁定的资源只能被当前事务访问，直到该事务结束
+锁定的资源在读写中，又细分为：共享读锁、共享写锁、排他读锁和排他写锁
+在标准SQL规范中，定义了4个事务隔离级，不同的隔离级别对事务的处理不同
+未提交读取（Read Uncommitted）：允许脏读取，但不允许更新丢失
+                            如果一个事务已经开始写数据，另外一个数据则不允许同时进行写操作，但允许其他事务读操作
+                            该隔离级别可以通过“共享读锁”和“排他写锁”实现
+提交读取（Read Committed）：允许不可重复读取，但不允许脏读取，这可以通过 “共享读锁”和“排他写锁”实现
+                        读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其它事务访问该行
+可重复读取（Repeatable Read）：禁止不可重复读取和脏读，但是有时可能出现幻影数据，这可以通过“共享读锁”和“排他写锁”实现
+                        读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务访问
+序列化（Serializable）：提供严格的事务隔离
+                    它要求事务序列化执行，事务只能一个接着一个地执行，但不能并发执行
+                    如果仅仅通过“行级锁”是无法实现事务序列化的，必须通过其他机制保证新插入的数据不会被刚执行查询操作的事务访问到
+</code></pre>  <6> 锁的使用建议<pre><code>隔离级别越高，越能保证数据的完整性和一致性，但是对并发性能的影响也越大
+对于多数应用程序，可以优先考虑把数据库系统的隔离级别设为Read Committed
+它能够避免脏读取，但是而且具有较好的并发性
+</code></pre></6></5></4></3></2></1></li>
 </ol>
 
       
@@ -967,7 +1012,7 @@ NOW()：获取当前日期+时间函数
   
     <script>
   window.livereOptions = {
-    refer: '2019/07/28/Mysql-函数/'
+    refer: '2019/07/28/Mysql-函数、事务/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
