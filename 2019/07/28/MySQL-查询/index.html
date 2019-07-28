@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="里氏替换原则 定义   里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一   里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现   也就是说凡是可以使用父类的地方，都可以使用子类代替   里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象   父类引用指向子类对象是指父类的变量名指向到了子类的实例上   在">
-<meta name="keywords" content="Java基础">
+  <meta name="description" content="基本查询   查看所有列 SELECT * FROM tab_name;    查看指定列 查询表tab_name表中的指定列col_name1,col_name2... SELECT col_name1 , col_name2, ... FROM tab_name;    去掉重复值 #使用DISTINCT将指定列的重复值剔除，来保证重复的值只查询出现一次 SELECT DISTINCT co">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——里氏替换原则">
-<meta property="og:url" content="http://yoursite.com/2019/05/08/Java9/index.html">
+<meta property="og:title" content="MySQL-查询">
+<meta property="og:url" content="http://yoursite.com/2019/07/28/MySQL-查询/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="里氏替换原则 定义   里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一   里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现   也就是说凡是可以使用父类的地方，都可以使用子类代替   里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象   父类引用指向子类对象是指父类的变量名指向到了子类的实例上   在">
+<meta property="og:description" content="基本查询   查看所有列 SELECT * FROM tab_name;    查看指定列 查询表tab_name表中的指定列col_name1,col_name2... SELECT col_name1 , col_name2, ... FROM tab_name;    去掉重复值 #使用DISTINCT将指定列的重复值剔除，来保证重复的值只查询出现一次 SELECT DISTINCT co">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:13:04.105Z">
+<meta property="og:updated_time" content="2019-07-28T14:46:58.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——里氏替换原则">
-<meta name="twitter:description" content="里氏替换原则 定义   里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一   里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现   也就是说凡是可以使用父类的地方，都可以使用子类代替   里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象   父类引用指向子类对象是指父类的变量名指向到了子类的实例上   在">
+<meta name="twitter:title" content="MySQL-查询">
+<meta name="twitter:description" content="基本查询   查看所有列 SELECT * FROM tab_name;    查看指定列 查询表tab_name表中的指定列col_name1,col_name2... SELECT col_name1 , col_name2, ... FROM tab_name;    去掉重复值 #使用DISTINCT将指定列的重复值剔除，来保证重复的值只查询出现一次 SELECT DISTINCT co">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/08/Java9/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/28/MySQL-查询/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——里氏替换原则 | 兄控日记</title>
+  <title>MySQL-查询 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/08/Java9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/MySQL-查询/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——里氏替换原则
+          <h1 class="post-title" itemprop="name headline">MySQL-查询
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-05-08 22:29:20" itemprop="dateCreated datePublished" datetime="2019-05-08T22:29:20+08:00">2019-05-08</time>
+              <time title="创建时间：2019-07-28 19:13:49 / 修改时间：22:46:58" itemprop="dateCreated datePublished" datetime="2019-07-28T19:13:49+08:00">2019-07-28</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-27 09:13:04" itemprop="dateModified" datetime="2019-05-27T09:13:04+08:00">2019-05-27</time>
               
             
           </span>
@@ -458,7 +446,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/08/Java9/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/08/Java9/" itemprop="commentCount"></span>
+                <a href="/2019/07/28/MySQL-查询/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/MySQL-查询/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,27 +495,259 @@
 
       
         <ol>
-<li>里氏替换原则<br><1> 定义<br>   里氏替换原则(Liskov Substitution Principle LSP)面向对象设计的基本原则之一<br>   里氏替换原则中说，任何基类可以出现的地方，子类一定可以出现<br>   也就是说凡是可以使用父类的地方，都可以使用子类代替<br>   里氏替换原则实际上就是父类引用（引用类型的变量也称为引用）指向子类对象<br>   父类引用指向子类对象是指父类的变量名指向到了子类的实例上<br>   在继承中子类的功能比父类的功能强，因为子类除了继承父类的所有方法外，子类还可以添加自己的方法<br>   如果将类功能的多少用矩形大小框来表示，那么子类就是大框，父类就是小框<br><2> e.g<pre><code>public class PetShop{
-    public static void main(String[] args) {
-        Cat cat = new Cat(&quot;波斯猫&quot;, &quot;大花&quot;); 
-        Dog dog = new Dog(&quot;牧羊犬&quot;,&quot;大黑&quot;); 
-        Duck duck = new Duck(&quot;野鸭&quot;,&quot;大鸭&quot;);
-        Animal animals[] =new Animal[]{
-            cat,
-            dog,
-            duck
-        };
-        int index =new  java.util.Random().nextInt(animals.length);
-        Animal animal = animals[index]; //11行
-        animal.introduce(); //父类引用调用子类对象的introduce()方法
-        animal.sound(); //父类引用调用子类对象的sound()方法
-   }
-}
-第11行是将父类数组中的一个元素（其实是子类对象）赋值给父类引用animal
-这种赋值方式通常说成父类引用指向子类对象
-当父类应用指向子类对象时，父类引用所调用的方法是子类的方法
-因此第13行父类引用animal调用的是子类的sound()方法
+<li><p>基本查询<br>  <1> 查看所有列</1></p>
+<pre><code>SELECT * FROM tab_name;
+</code></pre><p>  <2> 查看指定列</2></p>
+<pre><code>查询表tab_name表中的指定列col_name1,col_name2...
+SELECT col_name1 , col_name2, ... FROM tab_name;
+</code></pre><p>  <3> 去掉重复值</3></p>
+<pre><code>#使用DISTINCT将指定列的重复值剔除，来保证重复的值只查询出现一次
+SELECT DISTINCT col_name FROM tab_name;
+</code></pre><p>  <4> 查询语句中使用算术表达式</4></p>
+<pre><code>#在sql中使用算数表达式
+SELECT math_operation FROM tab_name;
+e.g 
+    # 计算员工奖金增加500后的奖金结果
+    SELECT ename , comm + 500 FROM emp;
+</code></pre><p>  <5> 查询语句中使用列的别名</5></p>
+<pre><code>#使用别名查询
+SELECT col_name AS alias_name, col_name2 alias_name2... FROM tab_name;
+e.g 
+    # 计算员工奖金增加500后的奖金结果
+    SELECT ename AS &apos;姓名&apos;, comm + 500 &apos;预期奖金&apos; FROM emp;
+</code></pre></li>
+<li><p>限制查询<br>  <1> where子句中使用简单比较操作符</1></p>
+<pre><code>#使用简单比较操作符
+SELECT * FROM tab_name WHERE col_name &gt;value;
+e.g
+    #查询公司中薪水大于2000的所有员工
+    SELECT * FROM emp WHERE sal &gt;2000;
+</code></pre><p>  <2> where子句中使用BETWEEN…AND</2></p>
+<pre><code>#使用BETWEEN...AND
+SELECT * FROM tab_name WHERE col_name BETWEEN start_value AND end_value;
+e.g
+    # 查询公司中奖金在1000~5000之间的所有员工
+    SELECT * FROM emp WHERE comm BETWEEN 1000 AND 5000;
+</code></pre><p>  <3> where子句中使用IN</3></p>
+<pre><code># 查询tab_name表中col_name为value1,value2,value3...的记录
+SELECT * FROMtab_name
+WHERE col_name IN(value1, value2, value3 ...);
+e.g
+    # 查询公司中职位为项目经理，项目组长、项目助理和程序员的员工
+    SELECT * FROM emp
+        WHERE job IN(&apos;项目经理&apos;,&apos;项目组长&apos;,&apos;项目助理&apos;,&apos;程序员&apos;);
+</code></pre><p>  <4> where子句中使用LIKE</4></p>
+<pre><code>#模糊查询
+SELECT * FROM  tab_name WHERE col_name LIKE ‘%key%’;
+e.g
+    # 查询公司中所有助理
+    SELECT * FROM emp WHERE job LIKE &apos;%助理&apos;;
+</code></pre><p>  <5> where子句中使用IS NULL符</5></p>
+<pre><code>#判断某列为空
+SELECT * FROM tab_name WHERE col_name IS NULL;
+e.g
+    # 查询公司中姓名为空的不合法数据
+    SELECT * FROM emp WHERE ename IS NULL;
+</code></pre><p>  <6> where子句中使用AND</6></p>
+<pre><code># AND条件并列查询
+SELECT * FROM tab_name WHERE condition1 AND condition2;
+e.g 
+    # 查询公司中入职时间大于10年并且工资低于6000的员工
+    SELECT * FROM emp WHERE hirdate &lt; date_add(now() , interval -10 year) 
+        AND sal &lt; 6000;    
+</code></pre><p>  <7> where子句中使用OR</7></p>
+<pre><code>#使用OR进行多条件或查询
+SELECT * FROM tab_name WHERE condition1 OR condition2;
+e.g
+    # 查询公司中姓名为NULL或者为空的员工
+    SELECT * FROM emp WHERE ename IS NULL OR ename = &apos;&apos;;
+</code></pre><p>  <8> where子句中使用NOT</8></p>
+<pre><code># 使用NOT关键词
+SELECT * FROM tab_name WHERE col_name IS NOT NULL;
+e.g
+    # 查询公司中所有工资和奖金不为NULL的员工
+    SELECT * FROM emp WHERE sal IS NOT NULL AND comm IS NOT NULL;
+</code></pre><p>  <9> 优先级</9></p>
+<pre><code>比较运算符&gt;NOT &gt; AND &gt; OR
+</code></pre></li>
+<li>查询结果排序<br>  <1> 降序排列<pre><code># 按照指定列col_name的降序排列查询结果
+SELECT * FROM tab_name ORDER BY col_name DESC;
+e.g
+    # 按照薪水的降序排列查询结果
+    SELECT * FROM emp ORDER BY sal DESC;
+</code></pre>  <2> 升序排列<pre><code>#按照指定列的升序排列查询结果
+SELECT * FROM tab_name ORDER BY col_name ASC;
+e.g
+    # 公司要求按照奖金升序查看员工信息
+    SELECT * FROM emp ORDER BY comm ASC;
+</code></pre>  <3> 多列排序<pre><code># 指定多列的排序查询
+SELECT * FROM tab_name ORDER BY col_name1 ASC/DESC, col_name2 ASC/DESC, ...;
+e.g
+    # 按照公司员工的入职时间顺序排列，相同入职时间的按照工资降序排列
+    SELECT * FROM emp ORDER BY hirdate ASC , sal DESC;
+</code></pre></3></2></1></li>
+<li>聚合函数查询<br>  <1> COUNT函数(用来计算查询的总数 )<pre><code># 查询公司所有员工
+SELECT COUNT(*) FROM emp;
+</code></pre>  <2> AVG、SUM函数<pre><code># 查询公司所有员工平均薪水和总薪水
+SELECT AVG(sal), SUM(sal) FROM emp;
+</code></pre>  <3> MAX、MIN函数<pre><code># 查看公司中员工的最高薪水和最低薪水
+SELECT MAX(sal), MIN(sal) FROM emp;
+</code></pre></3></2></1></li>
+<li>分组查询<br>  <1> GROUP…BY短语<pre><code># GROUP BY 分组函数语法
+SELECT&lt;*, column [alias],...&gt;
+FROM tab_name
+[WHERE conditions]
+[GROUP BY group_expression]
+[HAVING group_condition]
+[ORDER BY column [ASC|DESC]]
+e.g
+    # 查询公司中每个部分的平均薪水
+    SELECT deptno, AVG(sal) FROM emp GROUP BY deptno;
+</code></pre>  <2> HAVING子句<pre><code>#查询公司中每个部门的平均工资大于4000的部门
+SELECT deptno, AVG(sal) FROM emp
+    GROUP BY deptno HAVING AVG(sal) &gt; 4000;
 </code></pre></2></1></li>
+<li>连接查询<br>  <1> 笛卡尔积<pre><code>多行表在查询时，如果定义了无效连接或者漏写了连接条件，就会产生笛卡尔乘积现象
+所谓笛卡尔乘积就是每个表的每一行都和其他表的每一行组合
+假设两张表的总行数分别是X行和Y行，笛卡尔乘积就会返回X*Y行记录
+</code></pre>  <2> e.g<pre><code>#笛卡尔乘积现象
+注:emp表中有10条数据，dept表中有3条
+   SELECT COUNT(*)FROM emp,dept;
+   out:30
+</code></pre>  <3> 小链接<pre><code>给表一个别名
+e.g
+    SELECT COUNT(*) FROM emp e,dept d WHERE e.deptno=d.deptno;
+注:
+    在连接查询时，使用[表的全名.字段名称]这样的表示方式显得臃肿也不方便
+    可以给表定义别名，然后使用[别名.字段]来简化连接查询
+</code></pre>  <4> 等值连接<pre><code>#使用等值连接查询两张表的数据
+SELECT t1.col_name1, t2.col_name2
+FROM table1t1 , table2 t2
+WHERE  t1.col_name1 = t2.col_name2;
+e.g
+    # 使用等值连接查询销售部所有员工信息
+    SELECT * FROM emp e, dept d WHERE e.deptno = d.deptno AND d.dname=&apos;销售部&apos;;
+</code></pre>  <5> 自连接<pre><code>#自连接查询语法
+SELECT * FROM tab_name a , tab_name b
+WHERE a.col_name1 = b.col_name2, ...
+e.g
+    # 查询公司员工和所属上级的信息
+    SELECT e1.empno,e1.ename,e2.empno,e2.ename
+        FROM emp e1, emp e2 
+        WHERE e1.mgr = e2.empNo;
+</code></pre>  <6> 内连接和外连接<pre><code>#各种连接查询的语法结构
+SELECT * FROM table1 t1
+[INNER|LEFT|RIGHT]JOIN table2 t2
+ON t1.col_name = t2.col_name;
+注:
+   前面提到的等值连接和自连接也是属于内连接范畴的查询方式
+   语法中的INNER是属于内连接查询的，LEFT|RIGHT都属于外连接查询
+区别
+   内连接查询返回所有满足连接条件的记录
+   外连接查询是内连接查询的扩展
+   除了那些满足条件的数据，还可以返回不满足条件的的连接符指定的表的数据记录
+内连接查询:
+    SELECT d.deptno,d.dname,e.empno,e.ename FROM emp e
+    INNER JOIN dept d
+    ON e.deptno = d.deptno
+    ORDER BY d.deptno;
+    注:
+       在内连接查询时，返回的结果都是符合连接条件的查询数据
+       这样的前提下，查询到的数据就会不满足需求要求
+       编号40的后勤部是没有员工的，但是不能因为没有员工就不列出后勤部这个部门
+左外连接查询:
+    # 查询公司员工和所属上级的信息
+    SELECT d.deptno,d.dname,e.empno,e.ename FROM dept d
+        LEFT JOIN emp e
+        ON d.deptno = e.deptno
+        ORDER BY d.deptno;
+    注:
+       左外连接查询，查询时除了返回满足连接条件的数据
+       也返回LEFT指定的左边的表的不满足连接的数据
+       如编号40的后勤部数据
+右外连接查询:
+    即把上面LEFT改为RIGHT
+</code></pre></6></5></4></3></2></1></li>
+<li>子查询<br>  <1> 引入<pre><code>WHERE查询条件中的限制条件不是一个确定的值，而是来自另外一个查询的结果
+比如公司要查询比员工吴用工资高的员工
+这样的话首先要获取吴用的工资，然后用这个工资来做条件查询其他的员工
+</code></pre>  <2> 子查询<pre><code>为了给主查询语句提供数据而首先执行的查询语句称为子查询
+</code></pre>  <3> 单行子查询<pre><code># 查询软件部门下的所有员工信息
+SELECT * FROM emp e
+WHERE e.deptno = (SELECT d.deptno FROM dept d WHERE d.dname=&apos;软件部&apos;);
+</code></pre>  <4> 多行子查询IN<pre><code># 使用IN操作符——查询公司所有的员工都分布在哪些部门
+SELECT * FROM dept d
+    WHERE d.deptno IN (SELECT e.deptno FROMemp e);
+</code></pre>  <5> 多行子查询ANY<pre><code># 找出工资最高的人(比任意人都高)
+SELECT * FROM emp e1
+    WHERE e1.sal &gt;ANY(SELECT e2.sal FROM emp e2);
+</code></pre>  <6> 多行子查询ALL<pre><code># 查询公司中比所有的助理工资高但不是助理的员工
+SELECT * FROM emp e1
+    WHERE e1.sal &gt;ALL(SELECT e2.sal FROM emp e2 
+            WHERE e2.job LIKE &apos;%助理&apos;);
+</code></pre>  <7> 多列子查询<pre><code># 查询公司中和员工张青相同薪水和奖金的员工
+SELECT * FROM emp e1 
+    WHERE (e1.sal,e1.comm) = (SELECT e2.sal,e2.comm FROM emp e2 WHERE e2.ename=&apos;张青&apos;);
+</code></pre></7></6></5></4></3></2></1></li>
+<li>单行函数<br>  <1> 区分单行函数&amp;多行函数<pre><code>单行函数对于每一行的数据计算后得到一行输出结果
+多行函数是多行数据参与运算后得到一行输出结果                   
+</code></pre>  <2> 字符函数<pre><code>大小写转换函数:
+    # 大小写转换函数，UPPER转换目标字符串全部大写，LOWER转换目标字符串全部小写
+    SELECT UPPER(&apos;AbcDef&apos;), LOWER(&apos;AbcDef&apos;);
+字符串连接函数CONCAT:
+    # 字符串连接函数，CONCAT连接括号中任意多个字符串
+    SELECT CONCAT(&apos;TE XUN&apos;,&apos; SQL&apos;);
+获取子字符串函数SUBSTR：
+    # 获取子字符串函数,SUBSTR函数将目标字符串从指定位置进行截取
+    SELECT SUBSTR(&apos;java web sniper&apos;, 10);
+获取字符串长度函数LENGTH:
+    # 获取字符串长度函数，LENGTH函数返回目标字符串的长度
+    SELECT LENGTH(&apos;java web sniper&apos;);
+获取子字符串在父字符串中的位置函数INSTR:
+    # 获取字符串位置函数，INSTR函数在源字符串中查询指定字符串，并返回查询到的位置
+    SELECT INSTR(&apos;java web sniper&apos;, &apos;web&apos;);
+截取字符串函数LTRIM、RTRIM、TRIM:
+    # LTRIM、RTRIM、TRIM截掉目标字符串左边空格、右边空格，两边空格
+    SELECT LTRIM(&apos; java web&apos;),RTRIM(&apos;java web &apos;),TRIM(&apos; java web &apos;);
+替换函数REPLACE:
+    # 在字符串hello java web中查询指定的字符串web，并替换成目标字符串sql
+    SELECTREPLACE(&apos;hello java web!&apos;,&apos;web&apos;,&apos;sql&apos;);
+</code></pre>  <3> 数学函数<pre><code>四舍五入函数ROUND、数字截取函数TRUNCATE
+    ROUND(x,[y])：对指定的值x进行四舍五入的操作，可以指定保留的数值位数y
+    TRUNCATE(x,y)：对指定的值x进行截取的操作，可以指定保留的数值位数y、
+    e.g  SELECT ROUND(5.63,1);   out:5.6
+取整函数CEIL、FLOOR
+    CEIL(x)：返回不小于指定的值x的最小整数
+    FLOOR(x)：返回不大于指定的值x的最大整数
+    e.g  SELECT CEIL(4.56);    out:5
+ABS、MOD、SIGN、POWER、SQRT
+    ABS(x)：取绝对值函数
+    MOD(x,y)：取x除以y的余数函数
+    SIGN(x)：取x的符号函数（负数、0、正数）
+    POWER(x,y)：取x的y次幂函数
+    SQRT(x)：取x的二次方根函数
+    e.g SELECT ABS(-12);    out:12
+</code></pre>  <4> 日期函数<pre><code>CURRENT_TIMESTAMP()：获取当前时间戳函数
+CURRENT_DATE()：获取当前日期函数
+CURRENT_TIME()：获取当前时间函数
+NOW()：获取当前日期+时间函数
+#获取当前时间
+    SELECT CURRENT_TIMESTAMP(), CURRENT_DATE(), CURRENT_TIME, NOW();
+日期增加函数
+    #增加日期函数的使用
+        SELECT ADDDATE(&apos;2015-6-4&apos;, INTERVAL 1 YEAR);
+        out: 2016-06-04
+    #增加时间函数的使用
+        SELECT ADDTIME(&apos;12:00:00&apos;,&apos;1:1:1&apos;);
+        out: 13:01:01
+    # 获取指定日期的月份的最后一天
+        SELECT LAST_DAY(&apos;2015-2-1&apos;);
+        out:2015-02-28
+日期比较函数
+    # 比较日期函数
+        SELECT DATEDIFF(&apos;2015-12-11&apos;,&apos;2015-1-12&apos;);
+        out: 333
+</code></pre></4></3></2></1></li>
 </ol>
 
       
@@ -585,7 +805,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
           
         </div>
       
@@ -598,8 +818,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/08/Java8/" rel="next" title="Java学习——Java三大特征细化">
-                <i class="fa fa-chevron-left"></i> Java学习——Java三大特征细化
+              <a href="/2019/07/27/mysql2/" rel="next" title="Mysql——约束">
+                <i class="fa fa-chevron-left"></i> Mysql——约束
               </a>
             
           </div>
@@ -607,10 +827,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/11/week4-周报/" rel="prev" title="Week4">
-                Week4 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -945,7 +1161,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/08/Java9/'
+    refer: '2019/07/28/MySQL-查询/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
