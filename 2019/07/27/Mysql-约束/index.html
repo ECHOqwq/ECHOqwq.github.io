@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="简介窗口界面 数据库导航窗口可以查看当前数据库管理系统中所有的数据库 当前正在使用的数据库等信息  询问窗口SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句 每一条独立的SQL语句都以英文分号结束 完整的SQL语句可以在点击执行按钮进行执行  执行结果窗口在这个窗口中，主要显示SQL语句执行的信息 包括执行条数、执行的时间、查询的数据等等信息  常用快捷键  Ctrl+M   创建一个新">
+  <meta name="description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql——数据库、数据表">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/Mysql-数据库、数据表/index.html">
+<meta property="og:title" content="Mysql——约束">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/Mysql-约束/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="简介窗口界面 数据库导航窗口可以查看当前数据库管理系统中所有的数据库 当前正在使用的数据库等信息  询问窗口SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句 每一条独立的SQL语句都以英文分号结束 完整的SQL语句可以在点击执行按钮进行执行  执行结果窗口在这个窗口中，主要显示SQL语句执行的信息 包括执行条数、执行的时间、查询的数据等等信息  常用快捷键  Ctrl+M   创建一个新">
+<meta property="og:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T10:36:07.450Z">
+<meta property="og:updated_time" content="2019-07-27T10:35:42.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql——数据库、数据表">
-<meta name="twitter:description" content="简介窗口界面 数据库导航窗口可以查看当前数据库管理系统中所有的数据库 当前正在使用的数据库等信息  询问窗口SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句 每一条独立的SQL语句都以英文分号结束 完整的SQL语句可以在点击执行按钮进行执行  执行结果窗口在这个窗口中，主要显示SQL语句执行的信息 包括执行条数、执行的时间、查询的数据等等信息  常用快捷键  Ctrl+M   创建一个新">
+<meta name="twitter:title" content="Mysql——约束">
+<meta name="twitter:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/Mysql-数据库、数据表/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/27/Mysql-约束/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Mysql——数据库、数据表 | 兄控日记</title>
+  <title>Mysql——约束 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/Mysql-数据库、数据表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/Mysql-约束/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mysql——数据库、数据表
+          <h1 class="post-title" itemprop="name headline">Mysql——约束
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-07-26 21:58:49" itemprop="dateCreated datePublished" datetime="2019-07-26T21:58:49+08:00">2019-07-26</time>
+              <time title="创建时间：2019-07-27 17:57:08 / 修改时间：18:35:42" itemprop="dateCreated datePublished" datetime="2019-07-27T17:57:08+08:00">2019-07-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-27 18:36:07" itemprop="dateModified" datetime="2019-07-27T18:36:07+08:00">2019-07-27</time>
               
             
           </span>
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/26/Mysql-数据库、数据表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/Mysql-数据库、数据表/" itemprop="commentCount"></span>
+                <a href="/2019/07/27/Mysql-约束/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/27/Mysql-约束/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -507,167 +495,113 @@
 
       
         <ol>
-<li>简介窗口界面<br><1> 数据库导航窗口<pre><code>可以查看当前数据库管理系统中所有的数据库
-当前正在使用的数据库等信息
-</code></pre><2> 询问窗口<pre><code>SQL语句的编辑窗口，在询问窗口中可以定义各种SQL语句
-每一条独立的SQL语句都以英文分号结束
-完整的SQL语句可以在点击执行按钮进行执行
-</code></pre><3> 执行结果窗口<pre><code>在这个窗口中，主要显示SQL语句执行的信息
-包括执行条数、执行的时间、查询的数据等等信息
-</code></pre></3></2></1></li>
-<li>常用快捷键<br><1>  Ctrl+M   创建一个新的连接<pre><code>Ctrl+N   使用当前设置新建连接
-Ctrl+F4   断开当前连接
-Ctrl+T   新建查询编辑器
-Ctrl+Y   重做
-Ctrl+Z   撤销  
-Ctrl+O   在 SQL 窗口打开一个 SQL 文档
-F8   执行当前查询并编辑结果集
-F9   执行当前查询(默认)
-Ctrl+F9   执行选定查询(默认)
-Shift+F9     执行全部查询(默认)
-Ctrl+D   创建数据库
-F6   更改数据库/数据表的结构/索引/视图/存储过程/函数/触发器/事件
-F2   重命名数据表/视图/触发器/事件
-Ctrl+U   添加用户
-Ctrl+Alt+U   编辑用户
-Ctrl+Shift+W  管理用户权限
-</code></pre></1></li>
-<li>MySQL服务启动与关闭<br><1> 启动<pre><code>win+R-&gt;启动cmd-&gt;输入net start mysql回车
-</code></pre><2> 停止<pre><code>同上启动cmd-&gt;输入net stop mysql
-</code></pre></2></1></li>
-<li>SQL (结构化查询语言)<br><1> 用途<pre><code>用于数据存取、数据更新及数据库管理等操作
-以此对数据库的表进行增删改查的操作
-</code></pre><2> 流程<pre><code>在MySQL开发中
-客户端把SQL语句发送给服务器
-服务器对SQL语句进行编译、执行
-把执行的结果返回给客户端
-</code></pre><3> 组成<pre><code>1. 数据定义语言（DDL）
-   包括CREATE（创建）命令、ALTER（修改）命令、DROP（删除）命令等
-2. 数据操纵语言（DML）
-   包括INSERT（插入）命令、UPDATE（更新）命令、DELETE（删除）命令、SELECT … FOR UPDATE（查询）
-3. 数据查询语言（DQL）
-   包括基本查询语句、Order By子句、Group By子句等
-4. 事务控制语言（TCL）
-   包括COMMIT（提交）命令、SAVEPOINT（保存点）命令、ROLLBACK（回滚）命令。
-5. 数据控制语言（DCL）
-   GRANT（授权）命令、REVOKE（撤销）命令
-</code></pre></3></2></1></li>
-<li>创建数据库[DATABASE]<br><1> 注释<pre><code>以#开头
-</code></pre><2> 创建数据库<pre><code>e.g
-  CREATE DATABASE company_info;
-注:执行快捷键Ctrl+F9
-</code></pre><3> 使用数据库<pre><code>USE db_name;
-e.g
-  USE company_info;
-</code></pre><4> 删除数据库<pre><code>DROP DATABASE db_name;
-e.g
-  DROP DATABASE company_info;
-</code></pre></4></3></2></1></li>
-<li><p>创建数据表[TABLE]<br><1> MySQL常见数据类型</1></p>
-<pre><code>SMALLINT    小的整数
-MEDIUMINT    中等大小的整数
-INT/ INTEGER    普通大小的整数
-BIGINT    大整数
-FLOAT    小(单精度)浮点数
-DOUBLE    普通大小(双精度)浮点数
-DATE    日期
-DATETIME    日期和时间的组合
-TIMESTAMP    时间戳
-TIME    时间
-YEAR    两位或四位格式的年
-CHAR(M)    固定长度字符串，当保存时在右侧填充空格以达到指定的长度
-VARCHAR(M)    变长字符串
-</code></pre><p><2> 用途</2></p>
-<pre><code>存储各种各样的数据于一个表中
-</code></pre><p><3> 创建数据表</3></p>
-<pre><code>CREATE TABLE tab_name (
-     col_name(字段名称) datetype(数据类型),
-     ……
-);
-e.g
- #创建部门表
- CREATE TABLEdept(
- Deptno INT,
- Dname VARCHAR(14),
- Loc VARCHAR(13)
- );
-
- # 创建员工表
- CREATE TABLE emp(
- empNo INT,
- ename VARCHAR(10),
- job VARCHAR(10),
- mgr INT,
- hirdate DATETIME,
- sal DOUBLE,
- comm DOUBLE,
- deptno INT
- );
-</code></pre><p><4> 删除数据表</4></p>
-<pre><code>DROP TABLE tab_name;
-e.g
-   DROP TABLE emp;
+<li>数据表增加主键约束<pre><code>&lt;1&gt; 引入
+    在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据
+    垃圾数据太多会影响到数据库的一些性能
+&lt;2&gt; 主键
+    会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的
+    仅仅是用来表示当前的记录是唯一的
+    这个字段，就称为这张表的主键
+    表中经常有一个列或多列的组合，其值能唯一地标识表中的每一行
+&lt;3&gt; 主键的创建
+    当创建或更改表时可通过定义 PRIMARY KEY 约束来创建主键
+    一个表只能有一个 PRIMARY KEY 约束
+    而且 PRIMARY KEY 约束中的列不能接受null值
+&lt;4&gt; 自动增长
+    设计完一张表的主键列之后，在MySQL中最常规的做法就是让这一列自动按照自然顺序增长
+    避免人为操作引起的主键列数据冲突的问题
+    自动增长需要在该列上，添加auto_increment来实现
+&lt;5&gt; e.g 
+    # 创建员工表
+     CREATE TABLE emp(
+     empNo INT PRIMARY KEY AUTO_INCREMENT,
+     enameVARCHAR(10),
+     jobVARCHAR(10),
+     mgrINT,
+     hirdateDATETIME,
+     salDOUBLE,
+     commDOUBLE,
+     deptnoINT
+     );      
+     注:
+        创建emp表，定义了empNo的数据类型是整数
+        primary key关键词定义empNo为主键
+        auto_increment定义empNo中的数据自动增长
+&lt;6&gt; 另一种方法
+     # 给dept表增加主键约束
+         ALTER TABLE dept 
+         ADD CONSTRAINT  PRIMARY  KEY(deptno); 
+     注:
+         使用Alter table关键词修改dept表，给这张表的deptno字段增加主键约束
+&lt;7&gt; 总
+     更建议在创建表的同时添加主键约束
 </code></pre></li>
-<li>数据表的基本操作<br><1> 增加数据<pre><code>1. # 使用INSERT语句给表中所有字段添加值
-     INSERT INTO tab_name
-     VALUES(col_value1, col_value2, ...);
-2. # 使用INSERT语句，给表中指定的列添加值
-     INSERT INTO tab_name(col1, col2, col3, ...)
-     VALUES(col1_value, col2_value, col3_value,...);
-3. # 给dept表中添加数据
-     INSERT INTO dept 
-     VALUES(10, &apos;人事部&apos;, &apos;北京&apos;);
-     INSERT INTO dept(deptno,dname, loc) 
-     VALUES(20,&apos;软件部&apos;, &apos;深圳&apos;);
-4. # 给emp表中添加数据
-     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
-     VALUES(1001, &apos;宋江&apos;, &apos;董事长&apos;, null ,&apos;2001-1-1&apos;, 6000, 10000, 10);
-     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
-     VALUES(10011, &apos;卢俊义&apos;, &apos;董事助理&apos;, 1001,&apos;2003-1-1&apos;, 3000, 1000, 10);
-     INSERT INTO emp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
-     VALUES(10012, &apos;吴用&apos;, &apos;董事助理&apos;, 1001,&apos;2001-1-1&apos;, 4000, 4000, 10);
-     INSERT INTOemp(empNo, ename, job, mgr, hirdate, sal, comm, deptno) 
-     VALUES(2001, &apos;林冲&apos;, &apos;项目经理&apos;, 1001,&apos;2003-3-1&apos;, 6000, 5000, 20);
-</code></pre><2> 修改数据<pre><code># 修改表tab_name中符合条件condition的字段col_name的值为col_value
-UPDATE tab_name SET col_name=col_value,...WHERE condition;
-e.g 
-   #修改emp表中员工李逵的奖金，从1000升为3000
-    UPDATE emp SET comm = 3000 WHERE ename=&apos;李逵&apos;;
-</code></pre><3> 删除数据<pre><code>#删除数据表中符合条件的数据
-DELETE FROM tab_name WHERE condition;
-e.g 
-   # 删除员工表中李逵的信息
-    DELETE FROM emp WHERE ename=&apos;李逵&apos;;
-</code></pre><4> 查找数据<pre><code>#查看tab_name表中所有列
-SELECT * FROM tab_name;
-e.g  
-   #查看员工表emp中所有信息
-    SELECT * FROM emp;
-   #查看部门表dept中所有信息
-    SELECT * FROM dept;
-</code></pre></4></3></2></1></li>
-<li>使用cmd进行数据库的备份与恢复<br><1> 备份<pre><code>#数据库备份语法结构
-    Mysqldump –hxxx.xxx.xxx.xxx –uusername –ppassword db_name &gt; dir/file.sql
-注:
-   在命令行窗口，执行使用mysqldump命令
-   -h指定数据库所在服务器的ip地址
-   -u指定登录数据库的用户名
-   -p指定登录数据库的密码，并指定要备份的数据库名称db_name
-   使用输出目标操作符&gt;指定输出的文件具体路径dir/file.sql
-</code></pre><2> 还原<pre><code>#数据库还原语法结构
-    mysql–hxxx.xxx.xxx.xxx –uusername –ppassword db_name &lt; back.sql
-注:
-    使用mysql命令，将指定的备份文件back.sql还原到ip为xxx.xxx.xxx.xxx的数据库中
-    数据库登录账号username，数据库登录密码password
-</code></pre></2></1></li>
-<li>使用SQLYog进行数据库的备份与恢复<br><1> 备份<pre><code>1. 右键点击要备份的数据库，在弹出的菜单中，选择【备份/导出】--&gt;【备份数据库、转储到SQL...】
-2. 弹出的对话框中，选择备份【结构和数据】，勾选要备份的对象
-   然后选择备份到的文件，如M:\back.sql；点击确定即可
-</code></pre><2> 还原<pre><code>使用SQLYog登陆数据库 
-在SQLYog中以还原的数据库名称来创建新的数据库，然后右键点击该数据库，选择【导入】--&gt;【执行SQL脚本】
-在弹出的导入对话框中，选择要还原的数据文件所在的位置，点击执行
-还原完成后，检查数据库数据还原是否正常即可
-</code></pre></2></1></li>
+<li>数据表增加唯一约束<pre><code>&lt;1&gt; 语法
+         ALTER TABLE tab_name
+         ADD CONSTRAINT UNIQUE(col_name);
+&lt;2&gt; 注:
+         使用Alter table关键词，修改tab_name数据表
+         使用add constraint unique关键词给指定列col_name增加一个唯一约束
+&lt;3&gt; e.g  
+         ALTER TABLE dept
+         ADD CONSTRAINT UNIQUE(dname);
+         之后dept表中的dname就不允许出现重复数据
+</code></pre></li>
+<li>数据表增加默认约束<pre><code>&lt;1&gt; 默认值
+         数据表的数据是通过程序或者人工添加进去的，添加过程中需要指定添加列字段等信息
+         如果某些列没有指定值，在添加时数据库会自动使用默认值进行填充
+         默认值可以指定，在数据库设计中称之为默认约束
+&lt;2&gt; e.g
+         # 创建员工表；员工工资默认为起始工资2000
+         CREATE TABLEemp(
+         empNo INT PRIMARY KEY AUTO_INCREMENT,
+         ename VARCHAR(10),
+         job VARCHAR(10),
+         mgr INT,
+         sal DOUBLE DEFAULT2000,
+         );
+         使用default关键字，给工资字段sal指定默认值2000
+&lt;3&gt; 在已经存在的表上添加默认约束
+         # 给已经存在的表tab_name增加默认约束
+         ALTERTABLEtab_name
+         CHANGE COLUMN old_col_name new_col_name new_datatype DEFAULT500;
+</code></pre></li>
+<li>数据表增加外键约束<pre><code>&lt;1&gt; 外键
+         不同表之间可能存在各种各样的关系
+         最简单的是使用某个字段关联两张表
+         这个字段就是外键
+         如果一个表中的某个字段指向另一个表中的主键，这个字段就称为外键
+         被指向的表称为主表或者父表，负责指向的表称为从表或者子表
+         从表中的外键必须引用主表中的主键，外键的值可以为null
+&lt;2&gt; 语法
+         #给从表tab_name的col_name字段增加外键约束，引用主表re_col_name列
+         ALTER TABLE tab_name
+         ADD CONSTRAINT FOREIGN KEY fk_name (col_name)
+         REFERENCES re_tab_name(re_col_name);
+         注:
+            给tab_name表的col_name字段增加一个名称为fk_name的外键
+            外键约束引用了主表re_tab_name的re_col_name字段
+&lt;3&gt; e.g 
+         ALTER TABLE emp
+         ADD CONSTRAINT FOREIGN KEY fk_deptno (deptno)
+         REFERENCES dept(deptno);
+         给emp表的deptno字段添加一个名称为fk_deptno的外键约束，引用主表dept的deptno字段
+</code></pre></li>
+<li>数据表增加检查约束<pre><code>&lt;1&gt; 检查约束
+         在一些数据库设计时，已经将这样的需求考虑在内，在数据表中的某个字段上可以添加检查约束
+         所谓检查约束，就是定义数据表中的某个字段中只能出现符合提前预定好条件的值
+         条件之外的值是不允许添加的
+&lt;2&gt; 语法
+         #给一张表tab_name的col_name增加一个名称为chk_name的检查约束
+         ALTER TABLE tab_name
+         ADD CONSTRAINT chk_name
+         CHECK (col_name-condition);
+         给表tab_name的col_name字段增加一个名称为chk_name的检查约束
+         约束条件为(col_name-condition)
+&lt;3&gt; 提示
+         MySQL中暂时不支持检查约束
+         对于数据库中数据的检查，建议在程序中进行，而不是在数据库层面检查
+</code></pre></li>
 </ol>
 
       
@@ -738,8 +672,8 @@ e.g
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/07/Java22/" rel="next" title="Java学习——EL和JSTL">
-                <i class="fa fa-chevron-left"></i> Java学习——EL和JSTL
+              <a href="/2019/07/26/Mysql-数据库、数据表/" rel="next" title="Mysql——数据库、数据表">
+                <i class="fa fa-chevron-left"></i> Mysql——数据库、数据表
               </a>
             
           </div>
@@ -748,8 +682,8 @@ e.g
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/27/Mysql-约束/" rel="prev" title="Mysql——约束">
-                Mysql——约束 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/28/Mysql-查询/" rel="prev" title="MySQL-查询">
+                MySQL-查询 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1085,7 +1019,7 @@ e.g
   
     <script>
   window.livereOptions = {
-    refer: '2019/07/26/Mysql-数据库、数据表/'
+    refer: '2019/07/27/Mysql-约束/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
