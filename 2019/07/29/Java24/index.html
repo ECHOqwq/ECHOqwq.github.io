@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="纵有疾风起 人生不言弃">
+  <meta name="description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
 <meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java基础内容2">
+<meta property="og:title" content="JSP基础知识整理2">
 <meta property="og:url" content="http://yoursite.com/2019/07/29/Java24/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="纵有疾风起 人生不言弃">
+<meta property="og:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T12:04:03.306Z">
+<meta property="og:updated_time" content="2019-07-29T14:28:57.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java基础内容2">
-<meta name="twitter:description" content="纵有疾风起 人生不言弃">
+<meta name="twitter:title" content="JSP基础知识整理2">
+<meta name="twitter:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java基础内容2 | 兄控日记</title>
+  <title>JSP基础知识整理2 | 兄控日记</title>
   
 
 
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java基础内容2
+          <h1 class="post-title" itemprop="name headline">JSP基础知识整理2
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-07-29 20:02:05 / 修改时间：20:04:03" itemprop="dateCreated datePublished" datetime="2019-07-29T20:02:05+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-29 20:02:05 / 修改时间：22:28:57" itemprop="dateCreated datePublished" datetime="2019-07-29T20:02:05+08:00">2019-07-29</time>
             
 
             
@@ -494,7 +494,33 @@
       
 
       
-        
+        <ol>
+<li>EL表达式<br> <1> 简介<pre><code>EL，Expression Language，表达式语言
+是一种在JSP页面中获取数据的简单方式
+JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值
+</code></pre></1></li>
+<li>获取数据<br> <1> 从四大域中依次查找数据<pre><code>EL只能从pageContent、request、session、application四大域属性空间中获取数据
+</code></pre> <2> e.g<pre><code>&lt;%
+    String username = &quot;hahaha&quot;;
+    pageContext.setAttribute(&quot;username&quot;,username); //重要语句
+    request.setAttribute(&quot;username&quot;,username);//重要语句
+    session.setAttribute(&quot;username&quot;,username); //重要语句
+    application.setAttribute(&quot;username&quot;,username); //重要语句
+    //username是内容
+%&gt;
+username = ${username}&lt;br&gt;
+注:
+   如果去掉重要语句，out: username =
+   如果保留重要语句，out: username = hahaha
+</code></pre> <3> 顺序<pre><code>依次按照由小到大的范围从四大域中查找指定名称的属性值
+</code></pre> <4> 从指定域中获取数据<pre><code>利用EL的四个域属性空间相关的内置对象
+pageScope 从page范围域属性空间中查找指定的key
+requestScope 从request范围域属性空间中查找指定的key
+sessionScope 从session范围域属性空间中查找指定的key
+applicationScope 从application范围域属性空间中查找指定的key
+</code></pre></4></3></2></1></li>
+</ol>
+
       
     </div>
 
@@ -563,8 +589,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/Java23/" rel="next" title="Java基础知识整理">
-                <i class="fa fa-chevron-left"></i> Java基础知识整理
+              <a href="/2019/07/29/Java23/" rel="next" title="JSP基础知识整理1">
+                <i class="fa fa-chevron-left"></i> JSP基础知识整理1
               </a>
             
           </div>
