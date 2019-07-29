@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
-<meta name="keywords" content="mysql">
+  <meta name="description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
+<meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql——约束">
-<meta property="og:url" content="http://yoursite.com/2019/07/27/mysql2/index.html">
+<meta property="og:title" content="Java基础知识整理">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/Java23/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
+<meta property="og:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T10:35:42.319Z">
+<meta property="og:updated_time" content="2019-07-29T12:01:36.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mysql——约束">
-<meta name="twitter:description" content="数据表增加主键约束&amp;lt;1&amp;gt; 引入     在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据     垃圾数据太多会影响到数据库的一些性能 &amp;lt;2&amp;gt; 主键     会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的     仅仅是用来表示当前的记录是唯一的     这个字段，就称为这张表的主键     表中经常有一个列或多列的组合，其值能唯一地标识表中">
+<meta name="twitter:title" content="Java基础知识整理">
+<meta name="twitter:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/27/mysql2/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/29/Java23/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Mysql——约束 | 兄控日记</title>
+  <title>Java基础知识整理 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/27/mysql2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/Java23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mysql——约束
+          <h1 class="post-title" itemprop="name headline">Java基础知识整理
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-07-27 17:57:08 / 修改时间：18:35:42" itemprop="dateCreated datePublished" datetime="2019-07-27T17:57:08+08:00">2019-07-27</time>
+              <time title="创建时间：2019-07-29 16:34:58 / 修改时间：20:01:36" itemprop="dateCreated datePublished" datetime="2019-07-29T16:34:58+08:00">2019-07-29</time>
             
 
             
@@ -446,7 +446,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -465,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/27/mysql2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/27/mysql2/" itemprop="commentCount"></span>
+                <a href="/2019/07/29/Java23/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/29/Java23/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -495,112 +495,150 @@
 
       
         <ol>
-<li>数据表增加主键约束<pre><code>&lt;1&gt; 引入
-    在数据表中尽量避免重复数据的出现，重复的数据也称之为垃圾数据
-    垃圾数据太多会影响到数据库的一些性能
-&lt;2&gt; 主键
-    会单独给数据表添加一个字段，这个字段中的每个值都是唯一的不重复的
-    仅仅是用来表示当前的记录是唯一的
-    这个字段，就称为这张表的主键
-    表中经常有一个列或多列的组合，其值能唯一地标识表中的每一行
-&lt;3&gt; 主键的创建
-    当创建或更改表时可通过定义 PRIMARY KEY 约束来创建主键
-    一个表只能有一个 PRIMARY KEY 约束
-    而且 PRIMARY KEY 约束中的列不能接受null值
-&lt;4&gt; 自动增长
-    设计完一张表的主键列之后，在MySQL中最常规的做法就是让这一列自动按照自然顺序增长
-    避免人为操作引起的主键列数据冲突的问题
-    自动增长需要在该列上，添加auto_increment来实现
-&lt;5&gt; e.g 
-    # 创建员工表
-     CREATE TABLE emp(
-     empNo INT PRIMARY KEY AUTO_INCREMENT,
-     enameVARCHAR(10),
-     jobVARCHAR(10),
-     mgrINT,
-     hirdateDATETIME,
-     salDOUBLE,
-     commDOUBLE,
-     deptnoINT
-     );      
-     注:
-        创建emp表，定义了empNo的数据类型是整数
-        primary key关键词定义empNo为主键
-        auto_increment定义empNo中的数据自动增长
-&lt;6&gt; 另一种方法
-     # 给dept表增加主键约束
-         ALTER TABLE dept 
-         ADD CONSTRAINT  PRIMARY  KEY(deptno); 
-     注:
-         使用Alter table关键词修改dept表，给这张表的deptno字段增加主键约束
-&lt;7&gt; 总
-     更建议在创建表的同时添加主键约束
+<li>JSP基础<br> <1> JSP注释<pre><code>可以将要注释的内容用&lt;%-- --%&gt;括起来
+</code></pre> <2> 和HTML注释的区别<pre><code>HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中
+JSP注释会被JSP翻译引擎忽略
+</code></pre> <3> 代码块<pre><code>声明的变量是不能添加访问权限的
+不能定义方法
+不能定义静态语句块
+</code></pre> <4> 声明语句块<pre><code>可以声明实例变量、实例方法、静态方法、静态代码、块等
+</code></pre> <5> 表达式块<pre><code>&lt;%= %&gt;
+用来在JSP页面中输出变量、常量以及它们组成的各种表达式的值
+因为是表达式不是语句，所以没有分号
+其将被JSP引擎翻译到out.write()方法中输出
+</code></pre></5></4></3></2></1></li>
+<li>内置对象<br> <1> 定义<pre><code>在JSP的java代码块、表达式块等中可以直接使用的引用
+注:
+    为什么可以直接引用?
+      JAVA代码块和表达式块被JSP引擎翻译后出现在Servlet的_jspService()方法中
+      这九个对象是_jspService()方法中的局部变量
+</code></pre> <2> out对象<pre><code>out:输出流
+out.print(x);
+//输出x
+</code></pre></2></1></li>
+<li>JSP指令<br> <1> 作用<pre><code>JSP指令为当前页面做一些基本的属性设置，提供基本环境
+</code></pre> <2> 分类<pre><code>page指令(页面指令)
+include指令(包含指令)
+taglib指令(标签库指令)
+</code></pre> <3> 统一语法格式<pre><code>&lt;%@ 指令名称 属性名=属性值 属性名=属性值 …… %&gt;
+</code></pre></3></2></1></li>
+<li>page指令<br> <1> 作用<pre><code>用于设置当前JSP页面的相关信息，一个JSP文件可以包含多个page指令
+</code></pre> <2> pageEncoding属性<pre><code>用于设置当前JSP页面所使用的的字符编码格式
+即用户在浏览器中通过右击查看编码看到的格式
+&lt;%@ page pageEncoding = &quot;utf-8&quot; %&gt;
+注:
+   pageEncoding属性和contentType属性的区别:
+        &lt;%@ page contentType = &quot;text/html; charset = UTF-8&quot; %&gt;
+        如果是pageEncoding默认使用的类型是text/html
+        而contentType可以设置别的类型，比如text/xml
+</code></pre> <3> import属性<pre><code>用于在JSP页面中导入指定的类
+&lt;%@ page import = &quot;java.util.Date&quot; %&gt;
+即可在JSP中new一个Date()对象
+</code></pre> <4> errorPage属性<pre><code>&lt;%@ page errorPage = &quot;/error.jsp&quot; %&gt;
+当当前页面出现错误时，自动跳转到另一个页面
+该页面由error.jsp文件产生
+注:
+   关于/error.jsp前面的/问题(路径问题)
+   路径分为两大类
+     以斜杠开头的相对路径
+     不以斜杠开头的相对路径
+     其中以斜杠开头的相对路径又分为前台路径和后台路径
+     出现在html或者jsp页面的静态路径称为前台路径
+     出现在jsp的动态部分或者出现在java代码或者xml配置文件里的是后台路径
+     后台路径的参照路径是当前web项目的根
+     当前即是在webcontent文件夹下是否存在error.jsp文件
+</code></pre> <5> isErrorPage属性<pre><code>&lt;%@ page isErrorPage = &quot;true&quot; %&gt; (true和false值可改)
+即当前页面是一个错误处理页面
+错误处理页面里面会多出一个exception内置对象
+exception对象里有一个getMessage()方法
+可以通过使用该方法获取错误信息
+ex = &lt;%=exception.getMessage() %&gt;
+</code></pre> <6> session属性<pre><code> 使用request的getSession()的原则
+        若向Session域中存放数据，则使用getSession(true)，即getSession()
+        若从Session域中读取数据，则使用getSession(false)
+而此处的session调的是request的无参getSession()
+// session = pageContext.getSession();
+e.g
+//hello1.jsp
+&lt;%
+        session.setAttribute(&quot;user&quot;,&quot;hahaha&quot;);
+%&gt;
+//hello2.jsp
+&lt;%
+        String user = (String)session.getAttribute(&quot;user&quot;);
+        out.print(&quot;user =&quot;+user);
+%&gt;
+如果先访问hello1再访问hello2，out:user = hahaha
+如果先访问hello2，out:user = null
+</code></pre></6></5></4></3></2></1></li>
+<li>include指令<pre><code>&lt;1&gt; 作用
+        用于将指定的文件包含到当前的JSP文件中
+        该指令只有一个属性file，用于指定要包含的文件
+        可以利用include的该作用做一个框架
+&lt;2&gt; 用法
+        被include指定包含的文件，可以是JSP动态页面文件
+        也可以是HTML静态页面文件
+&lt;3&gt; 运行过程
+        使用include调用b文件的a文件先调用b文件过来再编译
+        也叫静态联编
+        静态联编后两个文件的变量是共享的
+        也可以在b文件中使用a文件的变量
+        但是注意使用的a文件的变量要在a文件的include指令后面出现
 </code></pre></li>
-<li>数据表增加唯一约束<pre><code>&lt;1&gt; 语法
-         ALTER TABLE tab_name
-         ADD CONSTRAINT UNIQUE(col_name);
-&lt;2&gt; 注:
-         使用Alter table关键词，修改tab_name数据表
-         使用add constraint unique关键词给指定列col_name增加一个唯一约束
-&lt;3&gt; e.g  
-         ALTER TABLE dept
-         ADD CONSTRAINT UNIQUE(dname);
-         之后dept表中的dname就不允许出现重复数据
+<li>JSP动作<pre><code>&lt;1&gt; 引入
+        在JSP页面中大量使用java代码块、表达式等内容，会使JSP页面看起来很乱
+        取而代之的是EL表达式、JSTL标签及JSP动作
+&lt;2&gt; 定义
+        使用系统定义好的标签完成本应由java代码来完成的功能
+&lt;3&gt; 语法格式
+        &lt;jsp:动作名称 属性名=属性值 属性名=属性值 ……&gt;&lt;/jsp:动作名称&gt;
+        &lt;jsp:动作名称 属性名=属性值 属性名=属性值 ……/&gt;
+&lt;4&gt; 常用动作
+        转发动作&amp;&amp;包含动作
 </code></pre></li>
-<li>数据表增加默认约束<pre><code>&lt;1&gt; 默认值
-         数据表的数据是通过程序或者人工添加进去的，添加过程中需要指定添加列字段等信息
-         如果某些列没有指定值，在添加时数据库会自动使用默认值进行填充
-         默认值可以指定，在数据库设计中称之为默认约束
+<li><p>forward动作</p>
+<pre><code>&lt;1&gt; 简介
+        页面一旦有了forward动作，当前页面所有要显示的内容都将无法显示
+        因为页面直接转发到了下一页面，无法向标准输出流写入数据
+        由目标页面给浏览器响应
 &lt;2&gt; e.g
-         # 创建员工表；员工工资默认为起始工资2000
-         CREATE TABLEemp(
-         empNo INT PRIMARY KEY AUTO_INCREMENT,
-         ename VARCHAR(10),
-         job VARCHAR(10),
-         mgr INT,
-         sal DOUBLE DEFAULT2000,
-         );
-         使用default关键字，给工资字段sal指定默认值2000
-&lt;3&gt; 在已经存在的表上添加默认约束
-         # 给已经存在的表tab_name增加默认约束
-         ALTERTABLEtab_name
-         CHANGE COLUMN old_col_name new_col_name new_datatype DEFAULT500;
+        //next.jsp
+        next page&lt;br&gt;
+        //index.jsp
+        index page before&lt;br&gt;
+        &lt;jsp:forward page=&quot;/next.jsp&quot;&gt;&lt;/jsp:forward&gt;
+        index page after&lt;br&gt;
+
+        out: next page
+        注:
+           forward动作无法向标准输出流写入数据，所以只输出next.jsp中的东西
 </code></pre></li>
-<li>数据表增加外键约束<pre><code>&lt;1&gt; 外键
-         不同表之间可能存在各种各样的关系
-         最简单的是使用某个字段关联两张表
-         这个字段就是外键
-         如果一个表中的某个字段指向另一个表中的主键，这个字段就称为外键
-         被指向的表称为主表或者父表，负责指向的表称为从表或者子表
-         从表中的外键必须引用主表中的主键，外键的值可以为null
-&lt;2&gt; 语法
-         #给从表tab_name的col_name字段增加外键约束，引用主表re_col_name列
-         ALTER TABLE tab_name
-         ADD CONSTRAINT FOREIGN KEY fk_name (col_name)
-         REFERENCES re_tab_name(re_col_name);
-         注:
-            给tab_name表的col_name字段增加一个名称为fk_name的外键
-            外键约束引用了主表re_tab_name的re_col_name字段
-&lt;3&gt; e.g 
-         ALTER TABLE emp
-         ADD CONSTRAINT FOREIGN KEY fk_deptno (deptno)
-         REFERENCES dept(deptno);
-         给emp表的deptno字段添加一个名称为fk_deptno的外键约束，引用主表dept的deptno字段
-</code></pre></li>
-<li>数据表增加检查约束<pre><code>&lt;1&gt; 检查约束
-         在一些数据库设计时，已经将这样的需求考虑在内，在数据表中的某个字段上可以添加检查约束
-         所谓检查约束，就是定义数据表中的某个字段中只能出现符合提前预定好条件的值
-         条件之外的值是不允许添加的
-&lt;2&gt; 语法
-         #给一张表tab_name的col_name增加一个名称为chk_name的检查约束
-         ALTER TABLE tab_name
-         ADD CONSTRAINT chk_name
-         CHECK (col_name-condition);
-         给表tab_name的col_name字段增加一个名称为chk_name的检查约束
-         约束条件为(col_name-condition)
-&lt;3&gt; 提示
-         MySQL中暂时不支持检查约束
-         对于数据库中数据的检查，建议在程序中进行，而不是在数据库层面检查
+<li><p>include动作</p>
+<pre><code>&lt;1&gt; 简介
+        用于完成将指定页面包含到当前页面中的功能
+        浏览器请求，include()动作发起页面，可以向标准输出流中写入数据
+        并且由它自己响应浏览器，把目标页面包含到发起页面中
+&lt;2&gt; e.g
+        //next.jsp
+        next page&lt;br&gt;
+        //index.jsp
+        index page before&lt;br&gt;
+        &lt;jsp:include page=&quot;/next.jsp&quot;&gt;&lt;/jsp:include&gt;
+        index page after&lt;br&gt;
+
+        out: index page before
+             next page
+             index page after
+        注:
+           include动作可以向标准输出流中写入数据
+&lt;3&gt; 动态联编
+        这是动态联编，变量之间不共享
+        会形成两个servlet
+&lt;4&gt; 静态联编和动态联编的应用
+        一般使用静态联编，因为在程序运行时只存在一个servlet
+        对资源的消耗较少，不存在调用问题，效率高
+        若两个文件中需要共享同一个变量，使用静态联编
+        如果两个文件中存在同名变量，使用动态联编
 </code></pre></li>
 </ol>
 
@@ -659,7 +697,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/Java-JSP/" rel="tag"><i class="fa fa-tag"></i> Java-JSP</a>
           
         </div>
       
@@ -672,8 +710,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/26/Mysql-数据库、数据表/" rel="next" title="Mysql——数据库、数据表">
-                <i class="fa fa-chevron-left"></i> Mysql——数据库、数据表
+              <a href="/2019/07/28/Mysql-函数、事务/" rel="next" title="Mysql-函数、事务">
+                <i class="fa fa-chevron-left"></i> Mysql-函数、事务
               </a>
             
           </div>
@@ -682,8 +720,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/28/MySQL-查询/" rel="prev" title="MySQL-查询">
-                MySQL-查询 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/29/Java24/" rel="prev" title="Java基础内容2">
+                Java基础内容2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -749,7 +787,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -801,9 +839,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1019,7 +1055,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '2019/07/27/mysql2/'
+    refer: '2019/07/29/Java23/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
