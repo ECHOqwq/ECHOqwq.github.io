@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
+  <meta name="description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据 &amp;lt;1&amp;gt; 从四大域中依次查找数据         EL只能从pageContent、request、session、application四大域属性空间中获取数据 &amp;lt;2&amp;gt">
 <meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP基础知识整理2">
 <meta property="og:url" content="http://yoursite.com/2019/07/29/Java24/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
+<meta property="og:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据 &amp;lt;1&amp;gt; 从四大域中依次查找数据         EL只能从pageContent、request、session、application四大域属性空间中获取数据 &amp;lt;2&amp;gt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T14:28:57.225Z">
+<meta property="og:updated_time" content="2019-07-31T11:45:11.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP基础知识整理2">
-<meta name="twitter:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据  从四大域中依次查找数据EL只能从pageContent、request、session、application四大域属性空间中获取数据   e.g&amp;lt;%     String user">
+<meta name="twitter:description" content="EL表达式  简介EL，Expression Language，表达式语言 是一种在JSP页面中获取数据的简单方式 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值  获取数据 &amp;lt;1&amp;gt; 从四大域中依次查找数据         EL只能从pageContent、request、session、application四大域属性空间中获取数据 &amp;lt;2&amp;gt">
 
 
 
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-07-29 20:02:05 / 修改时间：22:28:57" itemprop="dateCreated datePublished" datetime="2019-07-29T20:02:05+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-29 20:02:05" itemprop="dateCreated datePublished" datetime="2019-07-29T20:02:05+08:00">2019-07-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 19:45:11" itemprop="dateModified" datetime="2019-07-31T19:45:11+08:00">2019-07-31</time>
               
             
           </span>
@@ -499,26 +511,134 @@
 是一种在JSP页面中获取数据的简单方式
 JSP页面的任何静态部分可以通过${expression}获取到指定表达式的值
 </code></pre></1></li>
-<li>获取数据<br> <1> 从四大域中依次查找数据<pre><code>EL只能从pageContent、request、session、application四大域属性空间中获取数据
-</code></pre> <2> e.g<pre><code>&lt;%
-    String username = &quot;hahaha&quot;;
-    pageContext.setAttribute(&quot;username&quot;,username); //重要语句
-    request.setAttribute(&quot;username&quot;,username);//重要语句
-    session.setAttribute(&quot;username&quot;,username); //重要语句
-    application.setAttribute(&quot;username&quot;,username); //重要语句
-    //username是内容
-%&gt;
-username = ${username}&lt;br&gt;
-注:
-   如果去掉重要语句，out: username =
-   如果保留重要语句，out: username = hahaha
-</code></pre> <3> 顺序<pre><code>依次按照由小到大的范围从四大域中查找指定名称的属性值
-</code></pre> <4> 从指定域中获取数据<pre><code>利用EL的四个域属性空间相关的内置对象
-pageScope 从page范围域属性空间中查找指定的key
-requestScope 从request范围域属性空间中查找指定的key
-sessionScope 从session范围域属性空间中查找指定的key
-applicationScope 从application范围域属性空间中查找指定的key
-</code></pre></4></3></2></1></li>
+<li><p>获取数据</p>
+<pre><code>&lt;1&gt; 从四大域中依次查找数据
+        EL只能从pageContent、request、session、application四大域属性空间中获取数据
+&lt;2&gt; e.g
+    &lt;%
+        String username = &quot;hahaha&quot;;
+        pageContext.setAttribute(&quot;username&quot;,username); //重要语句
+        request.setAttribute(&quot;username&quot;,username);//重要语句
+        session.setAttribute(&quot;username&quot;,username); //重要语句
+        application.setAttribute(&quot;username&quot;,username); //重要语句
+        //username是内容
+    %&gt;
+    username = ${username}&lt;br&gt;
+    注:
+       如果去掉重要语句，out: username =
+       如果保留重要语句，out: username = hahaha
+&lt;3&gt; 顺序
+        依次按照由小到大的范围从四大域中查找指定名称的属性值
+&lt;4&gt; 从指定域中获取数据
+        利用EL的四个域属性空间相关的内置对象
+        pageScope 从page范围域属性空间中查找指定的key
+        requestScope 从request范围域属性空间中查找指定的key
+        sessionScope 从session范围域属性空间中查找指定的key
+        applicationScope 从application范围域属性空间中查找指定的key
+&lt;5&gt; EL访问bean的属性
+        若有一个包名为java.beans，要访问其中一个名为Student的类
+        先import = &quot;java.beans.Student&quot;
+        &lt;%
+                Student student = new Student(&quot;张三&quot;,20);
+                pageContext.setAttribute(&quot;student&quot;,student);
+        %&gt;
+        student = ${student } &lt;br&gt;
+        name = ${student.name } &lt;br&gt;
+        age = ${student.age } &lt;br&gt;
+        若访问为null的对象的属性，EL不会抛出空指针异常的信息，仅仅不显示而已\
+        即若Student类里不存在grade的属性，则
+        grade = ${student.grade } &lt;br&gt;    out:grade = 
+&lt;6&gt; EL访问数组中的元素
+        EL可以通过索引的方式获取到指定索引的元素
+        若数组不存在指定索引的元素，不会抛出数组越界异常
+        &lt;%
+            String[] names = {&quot;张三&quot;,&quot;李四&quot;}
+            pageContext.setAttribute(&quot;names&quot;,names);
+        %&gt;
+        names[1] = ${names[1] } &lt;br&gt;
+        names[5] = ${names[5] } &lt;br&gt; 
+        &lt;!--结合上面的访问bean属性访问数组中的元素--&gt;
+        &lt;%
+            Student[] students = new Student[2];
+            students[0] = new Student(&quot;张三&quot;,20);
+            students[1] = new Student(&quot;李四&quot;,21);
+            pageContext.setAttribute(&quot;student&quot;,student);
+        %&gt;
+        student[1].name = ${students[1].name} &lt;br&gt;
+&lt;7&gt; EL访问list中的元素
+        通过索引的方式可以获取list中指定索引的元素
+        若list中不存在指定索引元素，系统不会抛出越界异常
+        但无法访问set，因为set中没有索引的概念
+        &lt;%
+                Student student1 = new Student(&quot;张三&quot;,20);
+                Student student2 = new Student(&quot;李四&quot;,24);
+
+                List&lt;Student&gt; students = new ArrayList();
+                students.add(student1);
+                students.add(student2);
+                students.add(student3);
+                pageContext.getAttribute(&quot;stus&quot;,students);
+        %&gt;
+        students[2].name = ${stus[2].name} &lt;br&gt; 
+
+        &lt;%
+                List&lt;String&gt; names = new ArrayList&lt;&gt;(); // &lt;&gt;可写可不写
+                names.add(&quot;张三&quot;);
+                names.add(&quot;李四&quot;);
+                pageContext.setAttribute(&quot;names&quot;,names);
+        %&gt;
+        names[2] = ${names[2]} &lt;br&gt;
+&lt;8&gt; EL访问Map
+        EL通过${attributeName.mapKey}的方式可以获取指定的key的值
+        &lt;%
+                Map&lt;String, Object&gt; map = new HashMap();
+                map.put(&quot;school&quot;,new School(&quot;清华大学&quot;,&quot;北京海定&quot;));
+                map.put(&quot;mobile&quot;,&quot;1234567&quot;);
+                map.put(&quot;age&quot;,20);
+                pageContext.setAttribute(&quot;map&quot;,map);
+        %&gt;
+        school.name = ${map.school } &lt;br&gt;
+        mobile = ${map.mobile } &lt;br&gt;
+        age = ${map.age } &lt;br&gt;
+</code></pre></li>
+<li>运算符<pre><code>&lt;1&gt; 算术运算符
+        支持+ - × ÷ 但不支持++ --
+&lt;2&gt; 关系运算符
+        支持== != &gt; &gt;= &lt; &lt;=
+&lt;3&gt; 逻辑运算符
+        支持! &amp;&amp; || not and or
+&lt;4&gt; 取值运算符
+        支持[] 点号
+&lt;5&gt; empty变量
+        &lt;%
+                Map&lt;String, Object&gt; map = new HashMap();
+                map.put(&quot;school&quot;,new School(&quot;清华大学&quot;,&quot;北京海定&quot;));
+                map.put(&quot;mobile&quot;,&quot;1234567&quot;);
+                map.put(&quot;age&quot;,20);
+                pageContext.setAttribute(&quot;map&quot;,map);
+        %&gt;
+        empty name = ${empty name } &lt;br&gt;
+        &lt;!--empty对没有被定义的变量的引用返回true--&gt;
+        &lt;!--empty对于值为null的变量的引用也返回true--&gt;
+        &lt;!--empty对于空串的String的引用的运算结果也是true--&gt;
+        &lt;!--empty对于没有元素的数组或集合的运算结果也是true--&gt;
+</code></pre></li>
+<li>EL的内置对象<pre><code>&lt;1&gt; pageContext
+        该pageContext和JSP的pageContext是同一个对象
+        通过该对象可以获取request、response、session、servletContext、servletConfig等对象
+        这些对象在EL中只能通过pageContext获取
+        其余之后再补(19p)
+</code></pre></li>
+<li>自定义EL函数<pre><code>&lt;1&gt; 创建过程
+        先创建一个普通.java文件，并在里面创建一个函数写出需要实现的功能
+        该类及其函数，需要在一个扩展名为.tld的XML文件中进行注册
+        tld: tag library definition，标签库定义
+        XML文件是需要配置文件头部来进行约束的
+        可以在Tomcat的安装目录下:tomcat-9\webapps\examples\WEB-INF\jsp2
+        文件为 jsp2-example-taglib-tld文件中进行复制
+        这个.tld的XML文件需要定义在当前web项目的WEB-INF目录下
+        其余再补(21p)
+</code></pre></li>
 </ol>
 
       
@@ -599,6 +719,10 @@ applicationScope 从application范围域属性空间中查找指定的key
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/31/Java25/" rel="prev" title="JDBC">
+                JDBC <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -662,7 +786,7 @@ applicationScope 从application范围域属性空间中查找指定的key
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -714,7 +838,9 @@ applicationScope 从application范围域属性空间中查找指定的key
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

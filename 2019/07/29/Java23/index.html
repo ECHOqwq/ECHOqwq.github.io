@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
+  <meta name="description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来 拓:     html注释 &amp;lt;!-- --&amp;gt;     java注释 //         /* */   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静">
 <meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP基础知识整理1">
 <meta property="og:url" content="http://yoursite.com/2019/07/29/Java23/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
+<meta property="og:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来 拓:     html注释 &amp;lt;!-- --&amp;gt;     java注释 //         /* */   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T12:06:56.852Z">
+<meta property="og:updated_time" content="2019-08-09T04:06:37.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP基础知识整理1">
-<meta name="twitter:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静态语句块   声明语句块可以声明实例变量、实例方法、静态方法、静态代码、块等   表达式块&amp;lt;%= %&amp;gt;">
+<meta name="twitter:description" content="JSP基础  JSP注释可以将要注释的内容用&amp;lt;%-- --%&amp;gt;括起来 拓:     html注释 &amp;lt;!-- --&amp;gt;     java注释 //         /* */   和HTML注释的区别HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中 JSP注释会被JSP翻译引擎忽略   代码块声明的变量是不能添加访问权限的 不能定义方法 不能定义静">
 
 
 
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-07-29 16:34:58 / 修改时间：20:06:56" itemprop="dateCreated datePublished" datetime="2019-07-29T16:34:58+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-29 16:34:58" itemprop="dateCreated datePublished" datetime="2019-07-29T16:34:58+08:00">2019-07-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-09 12:06:37" itemprop="dateModified" datetime="2019-08-09T12:06:37+08:00">2019-08-09</time>
               
             
           </span>
@@ -496,6 +508,9 @@
       
         <ol>
 <li>JSP基础<br> <1> JSP注释<pre><code>可以将要注释的内容用&lt;%-- --%&gt;括起来
+拓:
+    html注释 &lt;!-- --&gt;
+    java注释 //         /* */
 </code></pre> <2> 和HTML注释的区别<pre><code>HTML注释会被JSP翻译引擎翻译到Servlet的out.write()中
 JSP注释会被JSP翻译引擎忽略
 </code></pre> <3> 代码块<pre><code>声明的变量是不能添加访问权限的
@@ -506,16 +521,115 @@ JSP注释会被JSP翻译引擎忽略
 用来在JSP页面中输出变量、常量以及它们组成的各种表达式的值
 因为是表达式不是语句，所以没有分号
 其将被JSP引擎翻译到out.write()方法中输出
-</code></pre></5></4></3></2></1></li>
-<li>内置对象<br> <1> 定义<pre><code>在JSP的java代码块、表达式块等中可以直接使用的引用
+</code></pre> <6> 总<pre><code>out.println()不能回车
+要想回车，应用out.print(&quot;string&quot;+&quot;&lt;br/&gt;&quot;)
+out.print()和&lt;%= %&gt;可以解析html代码
+&lt;%
+        局部变量、java语句
+%&gt;
+&lt;%!
+        全局变量、定义方法        
+%&gt;
+</code></pre> <7> e.g<pre><code>&lt;%!
+        public String name;
+        public void init(){
+                name = &quot;fafa&quot;;
+        }
+%&gt;
+&lt;%
+        out.print(&quot;这本书的名字是&quot;+name+&quot;&lt;br/&gt;&quot;);
+        &lt;%=book%&gt;
+%&gt;
+</code></pre></7></6></5></4></3></2></1></li>
+<li>九大内置对象<br> <1> 定义<pre><code>在JSP的java代码块、表达式块等中可以直接使用的引用
 注:
     为什么可以直接引用?
       JAVA代码块和表达式块被JSP引擎翻译后出现在Servlet的_jspService()方法中
       这九个对象是_jspService()方法中的局部变量
-</code></pre> <2> out对象<pre><code>out:输出流
+</code></pre> <2> out对象(输出对象)<pre><code>out:输出流
 out.print(x);
 //输出x
-</code></pre></2></1></li>
+</code></pre> <3> request对象(请求对象)<pre><code>请求对象:存储&quot;客户端向服务端发送的请求信息&quot;
+request对象的常见方法：
+    String getParameter(String name) 根据请求的字段名key(input标签的name属性的value)，返回value属性值
+    String[] getParameterValues(String name) 根据请求的字段名key，返回多个字段值
+    void setCharacterEncoding(&quot;编码格式utf-8&quot;) 设置请求编码
+    getRequestDispatcher().forward() 请求转发 A-&gt;B
+    ServletContext getServerContext() 获取项目的ServletContext对象
+</code></pre> <4> response对象(响应对象)<pre><code>响应对象:存储&quot;服务端向客户端响应的信息&quot;
+response对象的常见方法:
+    void addCookie(Cookie cookie) 服务端向客户端增加cookie对象
+    void sendRedirect(String location) throws IOException 页面跳转的方法(重定向)
+    void sendContextType(String type) 设置服务端响应的编码(设置服务端的contentType类型)
+</code></pre> <5> 比较request和response里的页面跳转<pre><code>response.sendRedirect(&quot;a.jsp&quot;); //页面跳转到a.jsp
+如果要输出上一个页面的数据，数据会丢失，显示null，且网址会到/a.jsp
+request.getRequestDispatcher(&quot;a.jsp&quot;).forward(request,response);//页面跳转到a.jsp
+如果要输出上一个页面的数据，可以成功输出，网址不会到/a.jsp，会停留在上一个
+</code></pre> <6> Cookie(学session前需要了解) <pre><code>客户端，不是内置对象
+    Cookie对象是由服务端产生，再发送给客户端保存
+    相当与本地缓存的作用，可以提高访问服务端的效率，但安全性较差
+Cookie包含键值对: key=value
+由javax.servlet.http.Cookie类产生
+方法:
+    public Cookie(String name,String value)
+    String getName():获取name
+    String getValue():获取value
+    void setMaxAge(int expiry):最大有效期/s
+服务端发送给客户端过程:
+    服务端准备Cookie
+            (放置)response.addCookie(Cookie cookie)
+    页面跳转
+    客户端获取Cookie
+            request.getCookies();
+注:
+    服务端增加cookie:response对象
+    客户端获取cookie:request对象
+    不能直接获取某一个单独对象，只能一次性获取全部对象
+通过f12可以发现，除了自己设置的Cookie对象外，还有一个name为JSESSIONID的cookie
+</code></pre> <7> session对象(会话对象)<pre><code>浏览网址：开始-关闭
+购物：浏览-付款-退出
+机制：
+    客户端第一次请求服务端时，服务端会产生一个session对象(用于保存该客户信息)
+    并且每个session对象都会有唯一一个sessionId(用于区分其他session)
+    服务端又会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务端sessionId
+    然后服务端会在响应客户端的同时，把cookie发给客户端
+    客户端的cookie就可以和服务端的session一一对应
+    (JSESSIONID-sessionId)
+注:
+    session存储在服务端
+    session是在同一个客户请求时共享
+常用方法：
+    String getId() 获取sessionId
+    boolean isNew() 判断是不是第一次访问
+    void invalidate() 使session失效
+    void setAttribute() 赋值
+    Object getAttribute() 取值
+    void setMaxInactiveInterval 设置最大有效非活动时间/s
+    int getMaxInactiveInterval() 获取最大有效非活动时间
+若通过login.jsp利用session的setAttribute()赋了值，和login.jsp在同一个web项目的其他文件如a.jsp等都可以利用session.getAttribute()得到值
+比如：我访问淘宝网站，第一次登陆以后，访问淘宝的任何子页面(比如某个产品页面)，我的登录信息就会一直存在
+注意我如果用谷歌浏览器登陆了淘宝，我用IE浏览器打开淘宝是不会有登录记录的，但是如果我再开一个新的谷歌浏览器访问淘宝，这时候是存在登录记录的
+</code></pre> <8> application对象(全局对象)<pre><code>常用方法:
+    String getContextPath() 当前项目的虚拟路径
+    String getRealPath(String name) 当前项目的绝对路径
+</code></pre> <9> pageContext JSP页面容器<br> <10> page 当前JSP页面对象(相当于java的this)<br> <11> exception 异常对象<br> <12> config 配置对象<br> <13> 四个对象比较<pre><code>pageContext 当前页面有效
+request     同一次请求有效
+session     同一次会话有效
+application 全局有效(整个项目有效)
+共有方法:
+        Object getAttribute(String name)
+        void setAttribute(String name,Object obj)
+        e.g
+                setAttribute(&quot;a&quot;,&quot;b&quot;);
+                如果a对象之前不存在，则新建一个a对象
+                如果a存在，则将a的值改为b
+        void removeAttribute(String name)
+pageContext:仅在当前页面有效，页面只要跳转就无效
+request:同一次请求有效，其他均无效(请求转发后有效，重定向后无效)
+session:同一次会话有效(无论怎么跳转，都有效；关闭/切换浏览器后无效)
+application:整个项目运行期间都有效(切换浏览器仍然有效，关闭服务器或重启其他项目后无效)
+如果要进行多个项目共享或重启后仍然有效，可以通过JNDI实现
+</code></pre></13></12></11></10></9></8></7></6></5></4></3></2></1></li>
 <li>JSP指令<br> <1> 作用<pre><code>JSP指令为当前页面做一些基本的属性设置，提供基本环境
 </code></pre> <2> 分类<pre><code>page指令(页面指令)
 include指令(包含指令)
@@ -570,7 +684,8 @@ e.g
 %&gt;
 如果先访问hello1再访问hello2，out:user = hahaha
 如果先访问hello2，out:user = null
-</code></pre></6></5></4></3></2></1></li>
+</code></pre> <7> contentType属性<pre><code>浏览器解析jsp的编码
+</code></pre></7></6></5></4></3></2></1></li>
 <li>include指令<pre><code>&lt;1&gt; 作用
         用于将指定的文件包含到当前的JSP文件中
         该指令只有一个属性file，用于指定要包含的文件
@@ -787,7 +902,7 @@ e.g
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -839,7 +954,9 @@ e.g
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

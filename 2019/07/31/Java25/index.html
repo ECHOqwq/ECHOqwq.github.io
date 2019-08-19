@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
-<meta name="keywords" content="Java基础">
+  <meta name="description" content="工作原理  定义可以为多种关系型数据库DBMS提供统一的访问方式，用java操作数据   原理如何使用java访问许多数据库呢？不同的数据库有不同的驱动程序 JDBC DriverManger去解析不同的驱动程序，即一些接口、方法、类和API，因此得以统一被java语言使用   主要功能DriverManager: 管理JDBC驱动 Statement：增删改查 Connection：连接 Ca">
+<meta name="keywords" content="Java-JSP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——Java异常处理机制">
-<meta property="og:url" content="http://yoursite.com/2019/05/13/Java10/index.html">
+<meta property="og:title" content="JDBC">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/Java25/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
+<meta property="og:description" content="工作原理  定义可以为多种关系型数据库DBMS提供统一的访问方式，用java操作数据   原理如何使用java访问许多数据库呢？不同的数据库有不同的驱动程序 JDBC DriverManger去解析不同的驱动程序，即一些接口、方法、类和API，因此得以统一被java语言使用   主要功能DriverManager: 管理JDBC驱动 Statement：增删改查 Connection：连接 Ca">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:13:06.919Z">
+<meta property="og:updated_time" content="2019-08-12T07:26:59.046Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——Java异常处理机制">
-<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
+<meta name="twitter:title" content="JDBC">
+<meta name="twitter:description" content="工作原理  定义可以为多种关系型数据库DBMS提供统一的访问方式，用java操作数据   原理如何使用java访问许多数据库呢？不同的数据库有不同的驱动程序 JDBC DriverManger去解析不同的驱动程序，即一些接口、方法、类和API，因此得以统一被java语言使用   主要功能DriverManager: 管理JDBC驱动 Statement：增删改查 Connection：连接 Ca">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/13/Java10/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/Java25/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——Java异常处理机制 | 兄控日记</title>
+  <title>JDBC | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/Java10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/Java25/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——Java异常处理机制
+          <h1 class="post-title" itemprop="name headline">JDBC
 
               
             
@@ -424,7 +424,7 @@
                 
               
 
-              <time title="创建时间：2019-05-13 20:20:27" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
+              <time title="创建时间：2019-07-31 19:54:50" itemprop="dateCreated datePublished" datetime="2019-07-31T19:54:50+08:00">2019-07-31</time>
             
 
             
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-27 09:13:06" itemprop="dateModified" datetime="2019-05-27T09:13:06+08:00">2019-05-27</time>
+                <time title="修改时间：2019-08-12 15:26:59" itemprop="dateModified" datetime="2019-08-12T15:26:59+08:00">2019-08-12</time>
               
             
           </span>
@@ -477,8 +477,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/13/Java10/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/Java10/" itemprop="commentCount"></span>
+                <a href="/2019/07/31/Java25/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/31/Java25/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -506,136 +506,139 @@
       
 
       
-        <p>首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类</p>
-<ol>
-<li>总<br> <1>总分类<br>   Throwable类是Error类和Exception类的父类<br>   Exception类解决由程本身及环境所产生的异常<br>   Error类则处理较少发生的内部系统错误<br>   Exception类异常可以被捕获并进行相应的处理<br>   对于Error类异常，程序员通常无能为力<br> <2>子分类<br>   Exception类异常还分为设计时异常和运行时异常<br>   所有运行时异常类的父类是RuntimeException类<br>   设计时异常也称为checked异常<br>   运行时异常也称为unchecked异常<br>   设计时异常在编写代码时就必须处理<br>   运行时异常在编写代码时可以不处理<br>   因为运行时异常是在程序运行以后才有可能发生<br> <3> 关键字<br>   Java处理异常使用5个关键字try、catch、finally、throw、throws</3></2></1></li>
-<li>类型<pre><code>Exception:异常层次结构的根类
-RuntimeException:运行时异常的根类
-ArithmeticException:算术运算异常
-IllegalArgumentException:方法接收到非法参数
-ArrayIndexOutOfBoundsException:数组越界访问异常
-NullPointerException:尝试访问null对象的成员时发生的空指针异常
-IOException:IO异常的根类，属于非运行时异常
-FileNotFoundException:文件操作时找不到文件，非运行时异常
-</code></pre></li>
-<li>try…catch…finally结构<pre><code>try{
-    //此处放可能产生错误的代码
-}catch(异常类名1 异常对象名1){
-    //此处放处理异常对象1的代码
-} catch(异常类名2 异常对象名2){
-    //此处放处理异常对象2的代码
-}finally{
-    //必须执行的代码
+        <ol>
+<li>工作原理<br> <1> 定义<pre><code>可以为多种关系型数据库DBMS提供统一的访问方式，用java操作数据
+</code></pre> <2> 原理<pre><code>如何使用java访问许多数据库呢？不同的数据库有不同的驱动程序
+JDBC DriverManger去解析不同的驱动程序，即一些接口、方法、类和API，因此得以统一被java语言使用
+</code></pre> <2> 主要功能<pre><code>DriverManager: 管理JDBC驱动
+Statement：增删改查
+Connection：连接
+CallableStatement：调用数据库中的存储过程/存储函数
+Result：返回的结果集
+</code></pre> <3> 步骤<pre><code>a. 导入驱动，加载具体的驱动类
+b.与数据库建立连接
+c.发送sql，执行
+d.处理结果集，查询
+</code></pre></3></2></2></1></li>
+<li>使用对象<br> <1> 对象的产生<pre><code>connection通过DriverManager产生
+e.g: connection = DriverManager.getConnection(URL,USERNAME,PWD);
+Statement通过connection产生
+e.g: stmt = connection.createStatement();
+PreparedStatement通过connection产生
+e.g: pstmt = connection.prepareStatement();
+CallableStatement通过connection产生
+e.g: cstmt = connection.prepareCall();
+result通过Statement产生
+</code></pre> <2> Statement操作数据库<pre><code>增删改: executeUpdate()
+查询: executeQuery()
+ResultSet: 保存结果集 select * from xxx
+next(): 光标下移，判断是否有下一条数据 (return true/false)
+previous(): 光标上移，其余同next()
+e.g
+    stmt = connection.createStatement();
+    String sql = &quot;insert into student values(1,&apos;fafa&apos;)&quot;;
+    int count = stmt.executeUpdate(sql); //返回删改几条数据
+</code></pre> <3> PreparedStatement操作数据库    <pre><code>public interface PreparedStatement extends Statement
+增删改: executeUpdate()
+查询: executeQuery()
+赋值: setXxx()
+e.g
+    String sql = &quot;insert into student values(1,&apos;fafa&apos;)&quot;;
+    pstmt = connection.prepareStatement(sql);
+e.g
+    String sql = &quot;insert into student values(?,?,?,?)&quot;;
+    pstmt = connection.prepareStatement(sql);
+    pstmt.setInt(1,36); //给第一个?赋36
+    pstmt.setString(2,&quot;fafa&quot;); //给第二个?赋fafa
+    pstmt.setString(3,&quot;haha&quot;);
+    pstmt.setInt(4,16);
+    ?相当于占位符，再用setXxx给它赋值
+</code></pre> <4> PreparedStatement和Statement的区别<pre><code>Statement的执行流程:
+    sql
+    executeUpdate(sql)
+PreparedStatement的执行流程:
+    sql(可能存在占位符&apos;?&apos;)
+    在创建PreparedStatement对象时，把sql预编译为prepareStatement(sql)
+    executeUpdate()
+    setXxx()替换占位符&apos;?&apos;
+推荐使用preparedstatement
+可防止sql注入
+</code></pre> <5> sql注入<pre><code>例如输入 用户名:任意值&apos; or 1=1 --
+        密码:任意值
+        就算任意值对不上数据库里存储的用户名和密码
+        也会提示登陆成功
+分析
+    select count(*) from login where uname=&apos;任意值&apos; or 1=1 --&apos; and upwd=&apos;任意值&apos;;
+    任意值为false，用or连接1=1为true，而--在jsp里是注释，后面的语句被注释掉
+    相当于select count(*) from login where 1=1;
+        又select count(*) from login;
+</code></pre> <6> CallableStatement<pre><code>调用存储过程、存储函数
+connection.prepareCall(参数:存储过程或存储函数名)
+参数格式
+    存储过程:(无返回值return，用Out参数替代)
+        {call 存储过程名(参数列表)}
+    存储函数:(有返回值return)
+        { ？ = call 存储函数名(参数列表)}
+</code></pre></6></5></4></3></2></1></li>
+<li>总结<br> <1> 步骤<pre><code>导入驱动包、加载具体驱动类Class.forName(&quot;具体驱动类&quot;);
+与数据库建立连接connection = DriverManager.getConnection(…);
+通过connection，获取操作数据库的对象(Statement/preparedStatement)
+    stmt = connection.createStatement();
+(查询)处理结果集 rs = pstmt.executeQuery()
+while (rs.next()){
+    rs.getXxx)(…);
 }
-</code></pre> 注: 把可能异常的程序代码放在try块中<pre><code>程序运行时如果该块无异常，后面的catch不起作用
-如果出现了异常，将终止try块执行catch块
-catch块执行完后继续执行catch块
-finally是可选项
-如果有finally无论是否异常都会执行finally
-finally是统一的出口，用来关闭资源、回收内存
-如果catch块之间有父子关系，应该子在父前
-</code></pre> e.g<pre><code>public class TestError {
-    public static void main(String[] args) {
-        try {
-            int i=1,j=0,res;
-            int array[] =new int[2];
-            System.out.println(&quot;begin&quot;);
-            res = i / j;
-            array[2] = j;
-            System.out.println(&quot;end&quot;);
-        }catch (ArithmeticException e) {
-            System.out.println(&quot;catched ArithmeticException&quot;);
-            e.printStackTrace();
-        }catch(ArrayIndexOutOfBoundsException e){
-            System.out.println(&quot;catched ArrayIndexOutOfBoundsException&quot;);
-            e.printStackTrace();
-        }
-        System.out.println(&quot;over&quot;);
-    }
+</code></pre> <2> try…catch的使用<pre><code>a. try……catch(ClassNotFoundException e){
+    ……(处理异常)
+} //加载驱动类时可能找不到
+b.try……catch(SQLException e){
+    ……
 }
-</code></pre> 输出：begin<pre><code>java.lang.ArithmeticException: / by zero
-        at TestError.main(TestError.java:8)
-catched ArithmeticException
-over
-</code></pre></li>
-<li>异常类的方法<br> 异常信息调用Throwable的几个方法进行处理<br> 主要方法：<pre><code>printStackTrace()，getMessage()，getStackTrace()
-</code></pre> (1) printStackTrace()<pre><code>printStackTrace()用于输出有关的异常信息
-包括异常的原因，以及该异常发生在类文件的第几行代码中
-同时还可以从该信息中查看异常是从其他哪些方法中引起的
-从这些信息中就可以确定具体发生异常的位置
-如上例的e.printStackTrace();
-</code></pre> (2) getMessage()<pre><code>返回异常相关的详细信息，但无法跟踪到具体行
-</code></pre> (3) getStackTrace()<pre><code>该方法把printStackTrace输出的信息进行保存，返回一个数组
-数组中的每个元素，封装一个具体的错误信息
-该信息封装在StackTraceElement对象中
-包括类的全限定名，方法名，文件名，以及行号等
-</code></pre></li>
-<li>抛出异常<br> (1) throw语句<br> 格式:<pre><code>throw new 异常类名(异常描述);
-其中异常类名为系统异常类名或用户自定义异常类名
-</code></pre> e.g<pre><code>try {
-    int i=1,j=0,res;
-    res = i / j;
-} catch (ArithmeticException e) {
-    throw new ArithmeticException(&quot;除数不能为零&quot;);
+c.try……catch(Exception e){
+    ……
 }
-</code></pre> 输出:<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: 除数不能为零
-at com.senchen.exception.Demo5.main(Demo5.java:9)
-</code></pre> 注:<pre><code>如果一个方法没有捕获可能触发的异常，调用该方法的其它方法应该捕获并处理该异常
-为了明确某个方法不能捕获某个异常，而让调用该方法的其它方法捕获异常
-可以在方法声明的时候，使用throws可选项抛出该类异常 
-</code></pre> 格式:<pre><code>[修饰符] 返回值类型 方法名(参数列表) throws 异常类型名{
-    方法体
-    } 
-</code></pre> e.g<pre><code>public static void calc() throws ArithmeticException{
-    int i = 1,j=0,res;
-    System.out.println(&quot;calc start&quot;);
-    res = i / j;
-    System.out.println(&quot;calc end&quot;);
-}  
-public static void main(String[] args) {
-    try {
-        System.out.println(&quot;main start&quot;);
-        calc();
-        System.out.println(&quot;main end&quot;);
-        } catch (ArithmeticException e) {
-            System.out.println(&quot;main catched&quot;);
-        }
-        System.out.println(&quot;over&quot;);
+d.finally{
+    打开顺序与关闭顺序相反
+    if(rs!=null)rs.close();//最后一个用的rs，就先关rs
+    if(stmt!=null)stmt.close();
+    if(connection!=null)connection.close();
 }
-</code></pre> 输出:<pre><code>main start
-calc start
-main catched
-over
-</code></pre> 注:<pre><code>1.calc方法声明的后面添加了throws ArithmeticException
-  表示calc方法不能处理ArithmeticException异常
-  调用calc方法的其它方法必须捕获ArithmeticException异常
-2.main方法调用了calc方法
-  由于calc方法声明抛出ArithmeticException异常
-  因此main方法就必须使用try…catch语句捕获ArithmeticException异常
-</code></pre></li>
-<li>自定义异常<br>   系统定义的异常不能代表应用程序中所有的异常，有时需要创建用户自定义异常<br>   用户自定义异常一般继承Exception类<br>   但是从Exception继承的自定义异常在应用程序中激发时必须捕获<br>   而用户自定义异常一般是可控的异常，大部分情况下不需要捕获<br>   因此建议用户自定义异常继承自RuntimeException<br> e.g<pre><code>public class InputException extends RuntimeException {
-    public InputException() {
-        super();
-    }
-    public InputException(String message) {
-        super(message);
-    }
+如果发现了ClassNotFoundException异常，就不会给stmt赋值，那么stmt为空
+所以stmt.close()前要检查stmt是否为空，排除空异常
+注:
+    除了Class.forName()抛出的异常是ClassNotFoundException
+    其余都是抛SQLException
+即
+try{
+    ……(内容)
+}catch(ClassNotFoundException e){
+    e.printStackTrace();
+}catch(SQLException e){
+    e.printStackTrace();
+}catch(Exception e){
+    e.printStackTrace();
 }
-public static void main(String[] args) {
-    java.util.Scanner input  = new java.util.Scanner(System.in);
-    System.out.println(&quot;请输入用户名&quot;);
-    String name = input.next();
-    if(name==null || name.length()&lt;6){
-        throw new InputException(&quot;用户名必须填写，长度不小于6位&quot;);
-    }
+finally{
+    try{
+        if (stmt!=null) stmt.close();
+        if (connection!=null) connection.close();
+    }catch(SQLException e){
+        e.printStackTrace();
+    }WS
 }
-</code></pre> 输出:<pre><code>请输入用户名
-admin
-Exception in thread &quot;main&quot; com.senchen.exception.InputException: 
-用户名必须填写，长度不小于6位
-at com.senchen.exception.Demo7.main(Demo7.java:9)
-</code></pre> 注:<pre><code>1. InputException是自定义异常类，继承自RuntimeException
-2. main方法中对输入的用户名进行验证，如果非法，抛出自定义异常InputException对象
+</code></pre></2></1></li>
+<li>处理CLOB/BLOB类型<br> 处理稍大型数据:<pre><code>a.
+    通过JDBC存储文件路径，然后根据IO操作处理
+    例如:
+    JDBC将某文件以字符串形式(即加一个“”)存储到数据库中
+    获取: 获取路径 再通过IO操作取出来
+b.
+    CLOB：大文本数据 (小说-&gt;数据)
+    优点: 可以直接通过字符串找到路径取出来
+    缺点：如果路径改变就找不到了
+    BLOB: 二进制 (电影等)
+    优点：不受路径影响
+    缺点：太笨重了，解析太麻烦
 </code></pre></li>
 </ol>
 
@@ -694,7 +697,7 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+            <a href="/tags/Java-JSP/" rel="tag"><i class="fa fa-tag"></i> Java-JSP</a>
           
         </div>
       
@@ -707,8 +710,8 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/11/week4-周报/" rel="next" title="Week4">
-                <i class="fa fa-chevron-left"></i> Week4
+              <a href="/2019/07/29/Java24/" rel="next" title="JSP基础知识整理2">
+                <i class="fa fa-chevron-left"></i> JSP基础知识整理2
               </a>
             
           </div>
@@ -717,8 +720,8 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/05/14/Java11/" rel="prev" title="Java学习——内存管理">
-                Java学习——内存管理 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/19/Java26/" rel="prev" title="Spring框架">
+                Spring框架 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1054,7 +1057,7 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/13/Java10/'
+    refer: '2019/07/31/Java25/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
