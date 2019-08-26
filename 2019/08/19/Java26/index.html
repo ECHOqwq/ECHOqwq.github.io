@@ -97,16 +97,16 @@
 
 
   <meta name="description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
-<meta name="keywords" content="Java-框架">
+<meta name="keywords" content="Java-Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring框架">
+<meta property="og:title" content="bean装配基于XML">
 <meta property="og:url" content="http://yoursite.com/2019/08/19/Java26/index.html">
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-19T03:49:40.827Z">
+<meta property="og:updated_time" content="2019-08-26T02:35:21.514Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring框架">
+<meta name="twitter:title" content="bean装配基于XML">
 <meta name="twitter:description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Spring框架 | 兄控日记</title>
+  <title>bean装配基于XML | 兄控日记</title>
   
 
 
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring框架
+          <h1 class="post-title" itemprop="name headline">bean装配基于XML
 
               
             
@@ -424,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-08-19 09:47:55 / 修改时间：11:49:40" itemprop="dateCreated datePublished" datetime="2019-08-19T09:47:55+08:00">2019-08-19</time>
+              <time title="创建时间：2019-08-19 09:47:55" itemprop="dateCreated datePublished" datetime="2019-08-19T09:47:55+08:00">2019-08-19</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-26 10:35:21" itemprop="dateModified" datetime="2019-08-26T10:35:21+08:00">2019-08-26</time>
               
             
           </span>
@@ -530,6 +542,150 @@ globalSession   一般用于Portlet应用环境，该作用域仅适用于WebApp
 prototype 多例，每执行一次getBean将获得一个实例
 </code></pre> <4> 配置信息<pre><code>&lt;bean id=&quot;&quot; class=&quot;&quot; scope=&quot;&quot;&gt;
 </code></pre></4></3></2></1></li>
+<li>生命周期<br> <1> 初始化与销毁<pre><code>目标方法执行前后，将进行初始化或销毁
+&lt;bean id=&quot;&quot; class=&quot;&quot; init-method=&quot;初始化方法名称&quot; destroy-method=&quot;销毁方法名称&quot;&gt;
+注：
+    需要执行销毁方法容器需要close，并且需要是单例 即scope不能等于prototype
+    init-method用于配置初始化方法，准备数据
+    destroy-method用于销毁方法，清理资源
+</code></pre> <2> BeanPostProcessor后处理Bean<pre><code>spring提供一种机制，只要实现此接口BeanPostProcessor，并将实现类提供给spring容器
+spring容器将自动执行，在初始化方法前执行before(),在初始化方法后实现after()
+spring提供工厂勾子，用于修改实例对象，可以生成代理对象，是AOP底层
+</code></pre></2></1></li>
+<li>属性注入——setter方法<br> setter方法注入<pre><code>普通数据
+    &lt;property name=&quot;&quot; value=&quot;&quot;&gt;
+    等价于
+    &lt;property name=&quot;&quot;&gt;
+        &lt;value 值&gt;
+引用数据
+    &lt;property name=&quot;&quot; ref=&quot;另一个bean的名字&quot;&gt;
+    等价于
+    &lt;property name=&quot;&quot;&gt;
+        &lt;ref bean=&quot;另一个bean&quot; /&gt;
+注：
+    下面那种等价于的方法几乎不用
+</code></pre></li>
+<li>P命令空间(了解)<br> 对setter方法注入进行简化，替换了<property name="属性名"><br> 而是提供了P命令空间<pre><code>&lt;bean p:属性名=&quot;普通值&quot;&gt;
+&lt;bean p:属性名-ref=&quot;引用值&quot;&gt;
+</code></pre> p命名空间使用前提，必须添加命名空间<br> xmlns:p=”<a href="http://www.springframework.org/schema/p&quot;" target="_blank" rel="noopener">http://www.springframework.org/schema/p&quot;</a><br> 但不常用</property></li>
+<li>SpEL(了解)<br> 对<property>进行统一编程，所有的内容都使用value<pre><code>&lt;property name=&quot;&quot; value=&quot;#{表达式}&quot;&gt;
+e.g
+    #{123}：数字
+    #{&apos;java&apos;}：字符串
+    #{beanId}：另一个bean引用
+    #{beanId propName}：操作数据
+    #{beanId toString()}：执行方法
+    #{T(类).字段/方法}：静态方法或字段
+&lt;property name=&quot;cname&quot; value=&quot;#{customerId.cname.toUpperCase()}&quot;&gt;&lt;/property&gt;
+//通过另一个bean，获得属性，调用的方法
+&lt;property name=&quot;cname&quot; value=&quot;#{customerId.cname?.toUpperCase()}&quot;&gt;&lt;/property&gt;
+//?.表示如果对象不为null才调用方法
+&lt;property name=&quot;pi&quot; value=&quot;#{T(java.lang.Math).PI}&quot;&gt;&lt;/property&gt;
+//调用java.lang.Math中的PI对象赋值到pi上
+</code></pre></property></li>
+<li><p>属性注入——集合注入</p>
+<pre><code>集合的注入都是给&lt;property&gt;添加子标签
+    数组:&lt;array&gt;
+    List:&lt;list&gt;
+    Set:&lt;set&gt;
+    Map:&lt;map&gt; map中存放键key、值value，使用&lt;entry&gt;描述
+    Properties:&lt;props&gt; &lt;prop key=&quot;&quot;&gt;&lt;/prop&gt;
+
+普通数据:&lt;value&gt;
+引用数据:&lt;ref&gt;
+</code></pre> <bean id="collDataId" class="com.itheima.f_xml.e_coll.CollData"><br>     <property name="arrayData"><br>         <array><br>             <value>DS</value><br>             <value>DZD</value><br>         </array><br>     </property><br><br>     <property name="listData"><br>         <list><br>             <value>哈哈</value><br>             <value>嘻嘻</value><br>         </list><br>     </property><br><br>     <property name="setData"><br>         <set><br>             <value>听风</value><br>             <value>博智</value><br>             <value>关系</value><br>         </set><br>     </property><br><br>     <property name="mapData"><br>         <map><br>             <entry key="jack" value="杰克"></entry><br>             <entry><br>                 <key><value>rose</value></key><br>                 <value>肉丝</value><br>             </entry><br>         </map><br>     </property><br><br>     <property name="propsData"><br>         <props><br>             <prop key="高富帅">嫐</prop><br>             <prop key="白富美">嬲</prop><br>             <prop key="男屌丝">挊</prop><br>         </props><br>     </property><br> </bean></li>
+<li><p>装配bean基于注解<br>注解：就是一个类，使用@注解名称<br>开发中：使用注解取代xml配置文件<br><1> @Component取代<bean class></bean></1></p>
+<pre><code>@Component取代&lt;bean id=&quot;&quot; class=&quot;&quot;&gt;
+
+注解使用前提，添加命名空间，让spring扫描含有注解的类
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&quot;&gt;
+</code></pre><p><2> schema命名空间</2></p>
+<pre><code>命名空间声明
+    默认：xmlns=&quot;&quot;   &lt;标签名&gt; e.g &lt;bean&gt;  
+    显示：xmlns:别名=&quot;&quot;  &lt;别名:标签名&gt; e.g &lt;context:……&gt;
+确定schema xsd文件位置
+    xsi:schemaLocation=&quot;名称1 位置
+                        名称2 位置
+                        ……&quot; 
+    //内容都是成对的
+</code></pre><p><3> web开发，提供三个@Component注解衍生注解(功能一样)</3></p>
+<pre><code>@Repository: dao层
+@Service: service层
+@Controller: web层
+</code></pre><p><4> 依赖注入，给私有字段设值，也可以给setter方法设值</4></p>
+<pre><code>普通值: @Value(&quot;值&quot;)
+引用值：
+    方式一：按照类型注入
+        @Autowired
+    方式二：按照名称注入1
+        @Autowired
+        @Qualifier(&quot;名称&quot;)
+    方式三：按照名称注入2
+        @Resource(&quot;名称&quot;)
+</code></pre><p><5> 生命周期</5></p>
+<pre><code>初始化：@PostConstruct
+销毁方法:@PreDestroy
+</code></pre><p><6> 作用域：@Scope(“prototype”)</6></p>
+</li>
+<li>总<br><1> 编写流程<pre><code>导入jar包 beans/core/context/expression | commons-logging
+编写目标类：dao和service
+</code></pre><2> spring的配置文件<pre><code>IoC:&lt;bean id=&quot;&quot; class=&quot;&quot;&gt;
+DI:&lt;bean&gt;&lt;property name=&quot;&quot; value=&quot;&quot;/ref=&quot;&quot;&gt;
+实例化方式:
+    默认构造
+    静态工厂：&lt;bean id=&quot;&quot; class=&quot;工厂类&quot; factory-method=&quot;静态方法&gt;
+    实例工厂：&lt;bean id=&quot;工厂id&quot; class=&quot;工厂类&quot;&gt;
+            &lt;bean id=&quot;&quot; factory-bean=&quot;工厂id&quot; factory-method=&quot;方法&gt;
+作用域：
+    &lt;bean id=&quot;&quot; class=&quot;&quot; scope=&quot;&quot;&gt;
+生命周期
+    &lt;bean id=&quot;&quot; class=&quot;&quot; init-method=&quot;&quot; destroy-method=&quot;&quot;&gt;
+后处理bean BeanPostProcessor接口
+    &lt;bean class=&quot;注册&quot;&gt;，对容器中所有bean都生效
+属性注入
+    构造方法注入:&lt;bean&gt;&lt;constructor-arg index=&quot;&quot; type=&quot;&quot;&gt;
+    setter方法注入:&lt;bean&gt;&lt;property&gt;
+    p命名空间：了解
+    SpEL:&lt;property name=&quot;&quot; value=&quot;#{表达式}&quot;&gt;
+    集合
+        数组&lt;array&gt;
+        List&lt;list&gt;
+        ……
+</code></pre><3> 核心api<pre><code>BeanFactory
+ApplicationContext
+</code></pre><4> 注解<pre><code>扫描含有注解的类 &lt;context:component-scan base-package&quot;&quot;&gt;
+常见的注解
+    @Component 组件，任意bean
+    WEB
+        @Controller web层
+        @Service service层
+        @Repository dao层
+    注入 --&gt;字段或setter方法
+        普通值 @Value
+        引用值
+            类型：@Autowired
+            名称1:@Autowired @Qualifier(&quot;名称&quot;)
+            名称2:@Resource(&quot;名称&quot;)
+    作用域：@Scope(&quot;prototype&quot;)
+    生命周期
+        初始化：@PostConstruct
+        销毁方法:@PreDestroy
+</code></pre><5> 注解和xml混合使用<pre><code>将所有的bean都配置到xml中
+    &lt;bean id=&quot;&quot; class=&quot;&quot;&gt;
+将所有的依赖都使用注解
+    @Autowired
+    默认不生效，为了生效，需要在xml中配置：&lt;context:annotation-config&gt;&lt;/context:annotation-config&gt;
+总结
+    &lt;context:component-scan base-package=&quot;&quot;&gt;
+    &lt;context:annotation-config&gt;
+    一般情况下两个注解不一起使用
+    注解一扫描包含注解(@Component等)类，注入注解自动生效
+    注解二只在xml和注解（注入）混合使用时，使注入注解生效
+</code></pre></5></4></3></2></1></li>
 </ol>
 
       
@@ -587,7 +743,7 @@ prototype 多例，每执行一次getBean将获得一个实例
       
         <div class="post-tags">
           
-            <a href="/tags/Java-框架/" rel="tag"><i class="fa fa-tag"></i> Java-框架</a>
+            <a href="/tags/Java-Spring/" rel="tag"><i class="fa fa-tag"></i> Java-Spring</a>
           
         </div>
       
@@ -609,6 +765,10 @@ prototype 多例，每执行一次getBean将获得一个实例
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/26/Java27/" rel="prev" title="AOP">
+                AOP <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -673,7 +833,7 @@ prototype 多例，每执行一次getBean将获得一个实例
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -727,7 +887,9 @@ prototype 多例，每执行一次getBean将获得一个实例
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
