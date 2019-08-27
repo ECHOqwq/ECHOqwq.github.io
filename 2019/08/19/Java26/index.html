@@ -99,14 +99,14 @@
   <meta name="description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
 <meta name="keywords" content="Java-Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bean装配基于XML">
+<meta property="og:title" content="bean装配基于XML、DI、IoC">
 <meta property="og:url" content="http://yoursite.com/2019/08/19/Java26/index.html">
 <meta property="og:site_name" content="兄控日记">
 <meta property="og:description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T02:35:21.514Z">
+<meta property="og:updated_time" content="2019-08-26T14:32:33.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bean装配基于XML">
+<meta name="twitter:title" content="bean装配基于XML、DI、IoC">
 <meta name="twitter:description" content="核心api  BeanFactory: 这是一个工厂，用于生成任意bean采取延时加载，第一次getBean的时候才会初始化Bean   ApplicationContext：是BeanFactory的一个子接口，功能更强大(国际化处理、时间传递、配置文件加载、bean自动装配)ClassPathXmlApplicationContext：用于加载classpath(类路径、src)下的指定的x">
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>bean装配基于XML | 兄控日记</title>
+  <title>bean装配基于XML、DI、IoC | 兄控日记</title>
   
 
 
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">bean装配基于XML
+          <h1 class="post-title" itemprop="name headline">bean装配基于XML、DI、IoC
 
               
             
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-26 10:35:21" itemprop="dateModified" datetime="2019-08-26T10:35:21+08:00">2019-08-26</time>
+                <time title="修改时间：2019-08-26 22:32:33" itemprop="dateModified" datetime="2019-08-26T22:32:33+08:00">2019-08-26</time>
               
             
           </span>
@@ -519,7 +519,8 @@ FileSystemXmlApplicationContext：用于加载指定盘符下的xml
 静态工厂：用于生成实例对象，所有方法必须是static
 &lt;bean id=&quot;&quot; class=&quot;工厂全限定类名&quot; factory-method=&quot;静态方法&quot;&gt;&lt;/bean&gt;
 </code></pre> <3> 实例工厂<pre><code>必须先由工厂的实例对象，然后通过实例对象创建对象，所有办法都是非静态的
-</code></pre></3></2></1></li>
+</code></pre> <4> 前面的配置<pre><code>D:\Eclipse\spring-framework-4.1.0.RELEASE\docs\spring-framework-reference\html\xsd-config.html
+</code></pre></4></3></2></1></li>
 <li>Bean的种类<br> <1> 普通bean<pre><code>之前操作的都是普通bean
 &lt;bean id=&quot;&quot; class=&quot;A&quot;&gt;，spirng会直接创建A实例，并返回
 </code></pre> <2> FactoryBean<pre><code>是一个特殊的bean，具有工厂生成对象的能力，只能生成特定的对象
@@ -833,7 +834,7 @@ ApplicationContext
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -887,9 +888,7 @@ ApplicationContext
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
