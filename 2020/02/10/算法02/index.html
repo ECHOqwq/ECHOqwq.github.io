@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="方法1：暴力法    //判断是否是回文序列    public static boolean isPalindromic(String s) {        int len = s.length();        for (int i = 0; i &amp;lt; len/2; i++) {            if (s.charAt(i) != s.charAt(len - i - 1))">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法02——最长回文子串">
+<meta property="og:url" content="http://yoursite.com/2020/02/10/算法02/index.html">
+<meta property="og:site_name" content="兄控日记">
+<meta property="og:description" content="方法1：暴力法    //判断是否是回文序列    public static boolean isPalindromic(String s) {        int len = s.length();        for (int i = 0; i &amp;lt; len/2; i++) {            if (s.charAt(i) != s.charAt(len - i - 1))">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-10T13:16:19.667Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法02——最长回文子串">
+<meta name="twitter:description" content="方法1：暴力法    //判断是否是回文序列    public static boolean isPalindromic(String s) {        int len = s.length();        for (int i = 0; i &amp;lt; len/2; i++) {            if (s.charAt(i) != s.charAt(len - i - 1))">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/02/10/算法02/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>算法02——最长回文子串 | 兄控日记</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+  
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">兄控日记</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">36.2</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-留言板">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/guestbook" rel="section"><i class="menu-item-icon fa fa-fw fa-newspaper-o"></i> <br>留言板</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/10/算法02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="水深真的一米六">
+      <meta itemprop="description" content="纵有疾风起 人生不言弃">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="兄控日记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法02——最长回文子串
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-02-10 19:41:43 / 修改时间：21:16:19" itemprop="dateCreated datePublished" datetime="2020-02-10T19:41:43+08:00">2020-02-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2020/02/10/算法02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/10/算法02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>方法1：暴力法<br>    //判断是否是回文序列<br>    public static boolean isPalindromic(String s) {<br>        int len = s.length();<br>        for (int i = 0; i &lt; len/2; i++) {<br>            if (s.charAt(i) != s.charAt(len - i - 1)) {<br>                return false;<br>            }<br>        }<br>        return true;<br>    }<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        String s = sc.next();<br>        String ant = “”; //用于存储当前得到的最大的回文序列<br>        String s2 = “”;//用于存储切出来的子序列<br>        int max = 0;<br>        for (int i = 0; i&lt;s.length();i++) {<br>            for (int j = i+1; j&lt;=s.length();j++) {<br>                s2 = s.substring(i,j);<br>                if (isPalindromic(s2)&amp;&amp;s2.length()&gt;max) {<br>                    ant = s2; //即为当前范围最大的回文序列<br>                    max = Math.max(max, ant.length());<br>                }<br>            }<br>        }<br>        System.out.println(ant);<br>    }<br>    时间复杂度为O(n³）<br>方法2：动态规划<br>    思想：前面计算出的子回文序列再次碰到时不用重新判断，第一次得到的时候就把它存储起来<br>    思路：<br>        利用了一个二维数组P[][]<br>        若s[i]~s[j]是回文序列，则P[i][j]=true<br>        若s[i]~s[j]不是回文序列，则P[i][j]=false<br>        P[i][j]=(P[i+1][j-1]&amp;&amp;s[i]==s[j])<br>        所以想要知道P[i][j]的状态，只需要知道P[i+1][j-1]，而不需要重新从中心看起<br>    注意：<br>        需要注意的是长度为1和长度为2的字符串，如果此时i+1,j-1，则会出现i&gt;j的情况<br>        所以len == 1 和 len == 2两个条件需要单独列出来<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        String s = sc.next();<br>        int length = s.length();<br>        boolean[][] P = new boolean[length][length];//用于记录<br>        int max = 0;<br>        String ans = “”;<br>        for (int len = 1; len &lt;= length; len++) //遍历所有的长度<br>            for (int start = 0; start &lt; length; start++) {<br>                int end = start + len - 1;<br>                if (end &gt;= length) //下标已经越界，结束本次循环<br>                    break;<br>                P[start][end] = (len == 1 || len == 2 || P[start + 1][end - 1]) &amp;&amp; s.charAt(start) == s.charAt(end);<br>                if (P[start][end] &amp;&amp; len &gt; max) {<br>                    ans = s.substring(start, end + 1);<br>                }<br>            }<br>        System.out.println(maxPal);<br>    }<br>    倒着遍历：<br>    public String longestPalindrome(String s) {<br>        int n = s.length();<br>        String res = “”;<br>        boolean[][] dp = new boolean[n][n];<br>        for (int i = n - 1; i &gt;= 0; i–) {<br>            for (int j = i; j &lt; n; j++) {<br>                dp[i][j] = s.charAt(i) == s.charAt(j) &amp;&amp; (j - i &lt; 2 || dp[i + 1][j - 1]); //j - i 代表长度减去 1<br>                if (dp[i][j] &amp;&amp;  j - i + 1 &gt; res.length()) {<br>                    res = s.substring(i, j + 1);<br>                }<br>            }<br>        }<br>        return res;<br>    }<br>    当求i的时候我们只需要第i+1的信息<br>    j的话只需要j-1的信息<br>    public String longestPalindrome7(String s) {<br>        int n = s.length();<br>        String res = “”;<br>        boolean[] P = new boolean[n];<br>        for (int i = n - 1; i &gt;= 0; i–) {<br>            for (int j = n - 1; j &gt;= i; j–) {<br>                P[j] = s.charAt(i) == s.charAt(j) &amp;&amp; (j - i &lt; 3 || P[j - 1]);<br>                if (P[j] &amp;&amp; j - i + 1 &gt; res.length()) {<br>                    res = s.substring(i, j + 1);<br>                }<br>            }<br>        }<br>        return res;<br>    }<br>    降低了空间复杂度<br>方法3：扩展中心<br>    首先需要明确的是，字符串有2n-1个中心。<br>    先来解释一下为什么中心是2n-1而不是n。<br>        比如有字符串abcba，这时回文子串是abcba，中心是c；<br>        又有字符串adccda，这时回文子串是adccda，中心是cc。<br>        由此可见中心点既有可能是一个字符，也有可能是两个字符。<br>        当中心为一个字符的时候有n个中心，当中心为两个字符的时候有n-1个中心，所以一共有n+n-1个中心。<br>    public static void main(String[] args) {<br>        Scanner sc = new Scanner(System.in);<br>        String s = sc.next();<br>        s = longestPalindrome(s);<br>        System.out.println(s);<br>    }<br>    //得到最长的回文子串并返回<br>    public String longestPalindrome(String s) {<br>        if (s == null || s.length() &lt; 1) return “”;<br>        int start = 0, end = 0;<br>        for (int i = 0; i &lt; s.length(); i++) {<br>            int len1 = expandAroundCenter(s, i, i);//一个字符为中心的情况<br>            int len2 = expandAroundCenter(s, i, i + 1);//两个字符为中心的情况<br>            int len = Math.max(len1, len2);//取最长的长度<br>            if (len &gt; end - start) {//根据当前i值和得到的len长度计算出当前的子字符串的开始和结束位置<br>                start = i - (len - 1) / 2;<br>                end = i + len / 2;<br>            }<br>        }<br>        return s.substring(start, end + 1);<br>    }<br>    //返回当前得到的回文子串的长度<br>    public static int expandAroundCenter(String s, int left, int right) {<br>        int L = left, R = right;<br>        while (L &gt;= 0 &amp;&amp; R &lt; s.length() &amp;&amp; s.charAt(L) == s.charAt(R)) {<br>            L–;<br>            R++;<br>        }<br>        return R - L - 1;<br>    }<br>方法4：Manacher’s Algorithm 马拉车算法<br>    首先我们解决下奇数和偶数的问题，在每个字符间插入 “#”，并且为了使得扩展的过程中，到边界后自动结束，在两端分别插入 “^” 和 “$”，两个不可能在字符串中出现的字符，这样中心扩展的时候，判断两端字符是否相等的时候，如果到了边界就一定会不相等，从而出了循环。经过处理，字符串的长度永远都是奇数了。<br>作者：windliang<br>链接：<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-bao-gu/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-palindromic-substring/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-bao-gu/</a><br>来源：力扣（LeetCode）</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>Donate comment here</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/weixin.jpg" alt="水深真的一米六 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/zhifubao.jpg" alt="水深真的一米六 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/04/css08/" rel="next" title="css08">
+                <i class="fa fa-chevron-left"></i> css08
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="[object Object]"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">水深真的一米六</p>
+              <div class="site-description motion-element" itemprop="description">纵有疾风起 人生不言弃</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">水深真的一米六</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'liwmFDxJHSrcG52PwBUPsSqi-gzGzoHsz',
+    appKey: 'JoT4MKfJ5q6KdIMyoHJBBGwL',
+    placeholder: 'Just go go',
+    avatar: '/images/老薛.png',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2020/02/10/算法02/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</body>
+</html>
