@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
-<meta name="keywords" content="Java基础">
+  <meta name="description" content="自己的思路(运行超时)： 受算法02求最长回文子串的启发，我决定用一个test[][]来记录已经求出的值，从而减少时间 使用一个test[i][length] 其中每个length列用于存放个数为length个的数相加的和 每个i行表示开始位置是nums[i] 所以test[i][length]表示从nums[i]开始连续向后加length个数的和 通过推算，我发现 当 i + length &amp;">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习——Java异常处理机制">
-<meta property="og:url" content="http://yoursite.com/2019/05/13/Java10/index.html">
+<meta property="og:title" content="算法03——最大子序和">
+<meta property="og:url" content="http://yoursite.com/2020/02/11/算法03/index.html">
 <meta property="og:site_name" content="兄控日记">
-<meta property="og:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
+<meta property="og:description" content="自己的思路(运行超时)： 受算法02求最长回文子串的启发，我决定用一个test[][]来记录已经求出的值，从而减少时间 使用一个test[i][length] 其中每个length列用于存放个数为length个的数相加的和 每个i行表示开始位置是nums[i] 所以test[i][length]表示从nums[i]开始连续向后加length个数的和 通过推算，我发现 当 i + length &amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T01:13:06.919Z">
+<meta property="og:updated_time" content="2020-02-11T11:52:08.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习——Java异常处理机制">
-<meta name="twitter:description" content="首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类  总 总分类   Throwable类是Error类和Exception类的父类   Exception类解决由程本身及环境所产生的异常   Error类则处理较少发生的内部系统错误   Exception类异常可以被捕获并进行相应的处理   对于Error类异常，程序员通常无能为力 子分类   Exceptio">
+<meta name="twitter:title" content="算法03——最大子序和">
+<meta name="twitter:description" content="自己的思路(运行超时)： 受算法02求最长回文子串的启发，我决定用一个test[][]来记录已经求出的值，从而减少时间 使用一个test[i][length] 其中每个length列用于存放个数为length个的数相加的和 每个i行表示开始位置是nums[i] 所以test[i][length]表示从nums[i]开始连续向后加length个数的和 通过推算，我发现 当 i + length &amp;">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/13/Java10/">
+  <link rel="canonical" href="http://yoursite.com/2020/02/11/算法03/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>Java学习——Java异常处理机制 | 兄控日记</title>
+  <title>算法03——最大子序和 | 兄控日记</title>
   
 
 
@@ -381,7 +381,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/13/Java10/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/11/算法03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="水深真的一米六">
@@ -398,7 +398,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习——Java异常处理机制
+          <h1 class="post-title" itemprop="name headline">算法03——最大子序和
 
               
             
@@ -424,24 +424,12 @@
                 
               
 
-              <time title="创建时间：2019-05-13 20:20:27" itemprop="dateCreated datePublished" datetime="2019-05-13T20:20:27+08:00">2019-05-13</time>
+              <time title="创建时间：2020-02-11 18:37:26 / 修改时间：19:52:08" itemprop="dateCreated datePublished" datetime="2020-02-11T18:37:26+08:00">2020-02-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-27 09:13:06" itemprop="dateModified" datetime="2019-05-27T09:13:06+08:00">2019-05-27</time>
               
             
           </span>
@@ -458,7 +446,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Leetcode/" itemprop="url" rel="index"><span itemprop="name">Leetcode</span></a></span>
 
                 
                 
@@ -477,8 +465,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/13/Java10/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/13/Java10/" itemprop="commentCount"></span>
+                <a href="/2020/02/11/算法03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/11/算法03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -506,138 +494,74 @@
       
 
       
-        <p>首先，在java中将异常情况分为Exception(异常)和Error(错误)两大类</p>
-<ol>
-<li>总<br> <1>总分类<br>   Throwable类是Error类和Exception类的父类<br>   Exception类解决由程本身及环境所产生的异常<br>   Error类则处理较少发生的内部系统错误<br>   Exception类异常可以被捕获并进行相应的处理<br>   对于Error类异常，程序员通常无能为力<br> <2>子分类<br>   Exception类异常还分为设计时异常和运行时异常<br>   所有运行时异常类的父类是RuntimeException类<br>   设计时异常也称为checked异常<br>   运行时异常也称为unchecked异常<br>   设计时异常在编写代码时就必须处理<br>   运行时异常在编写代码时可以不处理<br>   因为运行时异常是在程序运行以后才有可能发生<br> <3> 关键字<br>   Java处理异常使用5个关键字try、catch、finally、throw、throws</3></2></1></li>
-<li>类型<pre><code>Exception:异常层次结构的根类
-RuntimeException:运行时异常的根类
-ArithmeticException:算术运算异常
-IllegalArgumentException:方法接收到非法参数
-ArrayIndexOutOfBoundsException:数组越界访问异常
-NullPointerException:尝试访问null对象的成员时发生的空指针异常
-IOException:IO异常的根类，属于非运行时异常
-FileNotFoundException:文件操作时找不到文件，非运行时异常
+        <ol>
+<li><p>自己的思路(运行超时)：<br> 受算法02求最长回文子串的启发，我决定用一个test[][]来记录已经求出的值，从而减少时间<br> 使用一个test[i][length]<br> 其中每个length列用于存放个数为length个的数相加的和<br> 每个i行表示开始位置是nums[i]<br> 所以test[i][length]表示从nums[i]开始连续向后加length个数的和<br> 通过推算，我发现</p>
+<pre><code>当 i + length &gt;= len(nums)时：
+    直接退出该层循环
+当length-1&lt;0时(即第一列)
+    test[i][length]即为nums[i]
+    即只有自己一个数
+其他情况
+    test[i][length] = nums[i] + test[i+1][length-1]
+</code></pre><p> 这样通过一个双重循环即可填完test矩阵<br> 在填的同时更新max的数值<br> nums = [-1]<br> import numpy as np<br> test = np.zeros((len(nums), len(nums)), dtype=np.int)</p>
+<p> _max, start, end = -111111111111,0,0</p>
+<p> for length in range(0,len(nums)):</p>
+<pre><code>for i in range(0,len(nums)):
+    if i + length &gt;= len(nums):
+        break
+    if length-1&lt;0:
+        test[i][length] = nums[i]
+    else:
+        test[i][length] = nums[i] + test[i+1][length-1]
+    if test[i][length]&gt;_max:
+        _max = test[i][length] 
+        start = i
+        end = i + length + 1
+</code></pre><p> print(_max)</p>
+</li>
+<li>动态规划 (Kadane 算法)<br> 利用算法02的方法，声明一个test[][]用于存储，的确可以减少一定的计算，但还是超出了时间<br> 于是可以注意到，本题要求的是数字，比起字符串更为简单<br> 我们可以将前面的数字直接加在后面的数字上，在原数组修改，从而节省空间<br> 同时，我们应该注意到这样的一个特性，一个数只要不加上负数，它的和就不会变小<br> 利用这个特性我们可以减少运算的时间<pre><code>_max = nums[0]
+for i in range(1, len(nums)):
+    if nums[i - 1] &gt; 0:
+        nums[i] += nums[i - 1] 
+    _max = max(nums[i], _max)
+print(_max)
 </code></pre></li>
-<li>try…catch…finally结构<pre><code>try{
-    //此处放可能产生错误的代码
-}catch(异常类名1 异常对象名1){
-    //此处放处理异常对象1的代码
-} catch(异常类名2 异常对象名2){
-    //此处放处理异常对象2的代码
-}finally{
-    //必须执行的代码
+<li><p>分治法<br> //返回给定区间内的最大和<br> public int crossSum(int[] nums, int left, int right, int p) {</p>
+<pre><code>if (left == right){ //如果只有一个数，返回该数
+    return nums[left];
 }
-</code></pre> 注: 把可能异常的程序代码放在try块中<pre><code>程序运行时如果该块无异常，后面的catch不起作用
-如果出现了异常，将终止try块执行catch块
-catch块执行完后继续执行catch块
-finally是可选项
-如果有finally无论是否异常都会执行finally
-finally是统一的出口，用来关闭资源、回收内存
-如果catch块之间有父子关系，应该子在父前
-</code></pre> e.g<pre><code>public class TestError {
-    public static void main(String[] args) {
-        try {
-            int i=1,j=0,res;
-            int array[] =new int[2];
-            System.out.println(&quot;begin&quot;);
-            res = i / j;
-            array[2] = j;
-            System.out.println(&quot;end&quot;);
-        }catch (ArithmeticException e) {
-            System.out.println(&quot;catched ArithmeticException&quot;);
-            e.printStackTrace();
-        }catch(ArrayIndexOutOfBoundsException e){
-            System.out.println(&quot;catched ArrayIndexOutOfBoundsException&quot;);
-            e.printStackTrace();
-        }
-        System.out.println(&quot;over&quot;);
-    }
+int leftSubsum = Integer.MIN_VALUE; //左区间的最大值
+int currSum = 0;
+for(int i = p; i &gt; left - 1; --i) {
+    currSum += nums[i];
+    //如果中间加了一个负数让它变小，则不更新leftSubsum的值
+    leftSubsum = Math.max(leftSubsum, currSum);
 }
-</code></pre> 输出：begin<pre><code>java.lang.ArithmeticException: / by zero
-        at TestError.main(TestError.java:8)
-catched ArithmeticException
-over
-</code></pre></li>
-<li>异常类的方法<br> 异常信息调用Throwable的几个方法进行处理<br> 主要方法：<pre><code>printStackTrace()，getMessage()，getStackTrace()
-</code></pre> (1) printStackTrace()<pre><code>printStackTrace()用于输出有关的异常信息
-包括异常的原因，以及该异常发生在类文件的第几行代码中
-同时还可以从该信息中查看异常是从其他哪些方法中引起的
-从这些信息中就可以确定具体发生异常的位置
-如上例的e.printStackTrace();
-</code></pre> (2) getMessage()<pre><code>返回异常相关的详细信息，但无法跟踪到具体行
-</code></pre> (3) getStackTrace()<pre><code>该方法把printStackTrace输出的信息进行保存，返回一个数组
-数组中的每个元素，封装一个具体的错误信息
-该信息封装在StackTraceElement对象中
-包括类的全限定名，方法名，文件名，以及行号等
-</code></pre></li>
-<li>抛出异常<br> (1) throw语句<br> 格式:<pre><code>throw new 异常类名(异常描述);
-其中异常类名为系统异常类名或用户自定义异常类名
-</code></pre> e.g<pre><code>try {
-    int i=1,j=0,res;
-    res = i / j;
-} catch (ArithmeticException e) {
-    throw new ArithmeticException(&quot;除数不能为零&quot;);
+
+int rightSubsum = Integer.MIN_VALUE; //右区间的最大值
+currSum = 0;
+for(int i = p + 1; i &lt; right + 1; ++i) {
+    currSum += nums[i];
+    rightSubsum = Math.max(rightSubsum, currSum);
 }
-</code></pre> 输出:<pre><code>Exception in thread &quot;main&quot; java.lang.ArithmeticException: 除数不能为零
-at com.senchen.exception.Demo5.main(Demo5.java:9)
-</code></pre> 注:<pre><code>如果一个方法没有捕获可能触发的异常，调用该方法的其它方法应该捕获并处理该异常
-为了明确某个方法不能捕获某个异常，而让调用该方法的其它方法捕获异常
-可以在方法声明的时候，使用throws可选项抛出该类异常 
-</code></pre> 格式:<pre><code>[修饰符] 返回值类型 方法名(参数列表) throws 异常类型名{
-    方法体
-    } 
-</code></pre> e.g<pre><code>public static void calc() throws ArithmeticException{
-    int i = 1,j=0,res;
-    System.out.println(&quot;calc start&quot;);
-    res = i / j;
-    System.out.println(&quot;calc end&quot;);
-}  
-public static void main(String[] args) {
-    try {
-        System.out.println(&quot;main start&quot;);
-        calc();
-        System.out.println(&quot;main end&quot;);
-        } catch (ArithmeticException e) {
-            System.out.println(&quot;main catched&quot;);
-        }
-        System.out.println(&quot;over&quot;);
-}
-</code></pre> 输出:<pre><code>main start
-calc start
-main catched
-over
-</code></pre> 注:<pre><code>1.calc方法声明的后面添加了throws ArithmeticException
-  表示calc方法不能处理ArithmeticException异常
-  调用calc方法的其它方法必须捕获ArithmeticException异常
-2.main方法调用了calc方法
-  由于calc方法声明抛出ArithmeticException异常
-  因此main方法就必须使用try…catch语句捕获ArithmeticException异常
-</code></pre></li>
-<li>自定义异常<br>   系统定义的异常不能代表应用程序中所有的异常，有时需要创建用户自定义异常<br>   用户自定义异常一般继承Exception类<br>   但是从Exception继承的自定义异常在应用程序中激发时必须捕获<br>   而用户自定义异常一般是可控的异常，大部分情况下不需要捕获<br>   因此建议用户自定义异常继承自RuntimeException<br> e.g<pre><code>public class InputException extends RuntimeException {
-    public InputException() {
-        super();
-    }
-    public InputException(String message) {
-        super(message);
-    }
-}
-public static void main(String[] args) {
-    java.util.Scanner input  = new java.util.Scanner(System.in);
-    System.out.println(&quot;请输入用户名&quot;);
-    String name = input.next();
-    if(name==null || name.length()&lt;6){
-        throw new InputException(&quot;用户名必须填写，长度不小于6位&quot;);
-    }
-}
-</code></pre> 输出:<pre><code>请输入用户名
-admin
-Exception in thread &quot;main&quot; com.senchen.exception.InputException: 
-用户名必须填写，长度不小于6位
-at com.senchen.exception.Demo7.main(Demo7.java:9)
-</code></pre> 注:<pre><code>1. InputException是自定义异常类，继承自RuntimeException
-2. main方法中对输入的用户名进行验证，如果非法，抛出自定义异常InputException对象
-</code></pre></li>
+
+return leftSubsum + rightSubsum;
+</code></pre><p> }<br> //用于分割区间，同时返回最大值<br> public int helper(int[] nums, int left, int right) {</p>
+<pre><code>if (left == right) return nums[left];
+int p = (left + right) / 2;
+int leftSum = helper(nums, left, p);
+int rightSum = helper(nums, p + 1, right);
+int crossSum = crossSum(nums, left, right, p);
+return Math.max(Math.max(leftSum, rightSum), crossSum);
+</code></pre><p> }<br> public int maxSubArray(int[] nums) {</p>
+<pre><code>return helper(nums, 0, nums.length - 1);
+</code></pre><p> }</p>
+</li>
+<li>贪心<br> 使用单个数组作为输入来查找最大（或最小）元素（或总和）的问题，贪心算法是可以在线性时间解决的方法之一<br> n = len(nums)<br> curr_sum = max_sum = nums[0]<br> for i in range(1, n):<pre><code>curr_sum = max(nums[i], curr_sum + nums[i])
+max_sum = max(max_sum, curr_sum)
+</code></pre> print(max_sum)</li>
 </ol>
+<p>作者：LeetCode<br>链接：<a href="https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/maximum-subarray/solution/zui-da-zi-xu-he-by-leetcode/</a><br>来源：力扣（LeetCode）</p>
 
       
     </div>
@@ -694,7 +618,7 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
       
         <div class="post-tags">
           
-            <a href="/tags/Java基础/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -707,8 +631,8 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/11/week4-周报/" rel="next" title="Week4">
-                <i class="fa fa-chevron-left"></i> Week4
+              <a href="/2020/02/10/算法02/" rel="next" title="算法02——最长回文子串">
+                <i class="fa fa-chevron-left"></i> 算法02——最长回文子串
               </a>
             
           </div>
@@ -716,10 +640,6 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/14/Java11/" rel="prev" title="Java学习——内存管理">
-                Java学习——内存管理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1068,7 +988,7 @@ at com.senchen.exception.Demo7.main(Demo7.java:9)
   
     <script>
   window.livereOptions = {
-    refer: '2019/05/13/Java10/'
+    refer: '2020/02/11/算法03/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
